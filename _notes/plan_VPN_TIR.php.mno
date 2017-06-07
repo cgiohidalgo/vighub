@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_imagendatos" value="name:idusuario;datatype:int,name:grupo;datatype:string,name:email;datatype:string,name:password;datatype:string,name:activo;datatype:int,name:imagen;datatype:string,name:created;datatype:datetime,name:modified;datatype:datetime,name:admin_priv;datatype:string,name:categoria;datatype:string,name:precio;datatype:int,name:usuarios;datatype:string" />
+	<infoitem key="UD_datosvpntir" value="name:idsuma;datatype:int,name:tasa_interes;datatype:real,name:inicial;datatype:real,name:primer_ano;datatype:real,name:segundo_ano;datatype:real,name:tercer_ano;datatype:real,name:cuarto_ano;datatype:real,name:quinto_ano;datatype:real" />
+	<infoitem key="UD_Recordset1" value="name:idsuma;datatype:int,name:tasa_interes;datatype:real,name:inicial;datatype:real,name:primer_ano;datatype:real,name:segundo_ano;datatype:real,name:tercer_ano;datatype:real,name:cuarto_ano;datatype:real,name:quinto_ano;datatype:real,name:resultado;datatype:real" />
+</info>

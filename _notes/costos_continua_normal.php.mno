@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:idcosto_total;datatype:int,name:numero1;datatype:real,name:numero2;datatype:real,name:numero3;datatype:real,name:numero4;datatype:real,name:numero5;datatype:real,name:numero6;datatype:real,name:numero7;datatype:real,name:numero8;datatype:real,name:numero9;datatype:real,name:resultado;datatype:real" />
+</info>

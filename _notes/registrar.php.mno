@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_consulta_grupos" value="name:idgrupo;datatype:int,name:nombre_grupo;datatype:string" />
+	<infoitem key="UD_Recordset1" value="name:idcategoria;datatype:int,name:descripcion;datatype:string" />
+</info>

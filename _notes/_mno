@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="PageAccessControlMethod" value="useAccessList" />
+	<infoitem key="PageAccessControl" value="Admin,Usuario" />
+	<infoitem key="MM_Form1" value="admin_priv" />
+	<infoitem key="MM_Form_Count" value="1" />
+</info>
