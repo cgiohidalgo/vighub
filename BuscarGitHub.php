@@ -383,6 +383,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
   <script src="search/scripts/libs/angular.min.js"></script>
   <script src="search/scripts/libs/angular-route.min.js"></script>
   <script src="search/scripts/libs/angular-animate.min.js"></script>
+  <script src="webroot/jquery.js"></script>
 
 <script src="search/scripts/app.js"></script>
 
@@ -414,31 +415,31 @@ $totalRows_imageness = mysql_num_rows($imageness);
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
 		<div id="pun-intro" class="clearfix">
-		  <div class="sun-intro"><img src="imagenes/crenesoft/logo2.png" alt="CreneSoft"></a>
+		  <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
 	      
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
-          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="http://www.monografias.com/trabajos6/isof/isof.shtml" target="_blank" >Descargar Software</a></li>
-           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
           
             
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li><li id="menu-item-5491" class="comunidad menu-item menu-item-type-custom menu-item-object-custom menu-item-5491"><a href="preguntas.php">¿Dudas?</a></li><li id="menu-item-3762" class="articulos menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3762"><a href="#" class="sf-with-ul">Enterate<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3763" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3763"><a href="">Vigilancia Tecnologica</a></li><li id="menu-item-4327" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4327"><a href=""></a></li><li id="menu-item-3765" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3765"><a <a href="">¿Que es? ¿para para que sirve? esta platforma</a></li></ul></li><li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Recursos<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li></a>
+
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="http://www.monografias.com/trabajos6/isof/isof.shtml" target="_blank" >Descargar Software</a></li>
-           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
           
             
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li><li id="menu-item-5491" class="comunidad menu-item menu-item-type-custom menu-item-object-custom menu-item-5491"><a href="preguntas.php">¿Dudas?</a></li><li id="menu-item-3762" class="articulos menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3762"><a href="#" class="sf-with-ul">Enterate<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3763" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3763"><a href="">Vigilancia Tecnologica</a></li><li id="menu-item-4327" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4327"><a href=""></a></li><li id="menu-item-3765" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3765"><a <a href="">¿Que es? ¿para para que sirve? esta platforma</a></li></ul></li><li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Recursos<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li></a>
+
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
         <?php } ?>
           
           
@@ -482,7 +483,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
 <?php } else{?>
 		
         <?php } ?>
-        <h1>VigTech - GitHub</h1> 
+ 
 	</header>
     <nav>
     	<p> 
@@ -513,20 +514,62 @@ $totalRows_imageness = mysql_num_rows($imageness);
 
     
 
-    <title>VigTech</title>
+    <title>VigHub</title>
 </head>
 
     <div class="container">
             
-            <h1 align="center">Busqueda en GitHub </h1>
+            <h1 align="center">Search </h1>
             <div class="row">
             <hr>
             <div class="page" ng-view></div>
         </div>
         <hr>
         <div class="row"></div>
-       <div id="container1"><svg id="svg1"></svg></div>
     </div>
+       
+    </div>
+    <div class="container">
+    <div class="row">
+      <div id="container1" align="center" class="col-md-6"></div>
+      <div id="container2" align="center" class="col-md-6"></div>
+       <div class="row">
+      <div id="container3" class="col-md-6"></div>
+      <div id="container4" class="col-md-6"></div>
+      </div>
+      </div> 
+    <div class="container">
+    <div class="row">
+    <div id="chart_div" align="center" class="col-md-8" style="width: 575px;"></div>
+    <div id="piechart" align="center" class="col-md-8" style="width: 575px;"></div>
+    </BR>
+    </BR>.
+    <div class="row">
+    </BR>.
+    <div id="frec_lang" align="center" class="col-md-8" style="width: 800x;"></div>
+    </div>
+    <div class="row">
+    </BR>.
+    
+    <div id="series_chart_div" align="center" class="col-md-6"  style="width: 1200px;"></div>
+    </div>
+    </div></div>
+    
+
+
+      <!--<div  class="col-md-6">
+        <svg height="210" width="200">
+  <polygon points="100,10 40,198 190,78 10,78 1600,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+  Sorry, your browser does not support inline SVG.
+</svg>
+      </div>
+      <div class="col-md-6"><svg height="30" width="800">
+  <text x="0" y="15" fill="red">I love SVG!</text>
+  Sorry, your browser does not support inline SVG.
+</svg></div>-->
+    
+
+     
    
 
           
@@ -571,7 +614,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
     </div>
      
     <div id="pun-foot"><div id="shitpe" style="display: block;"><img src="http://i.imgur.com/0LsMnPJ.png" onclick="javascript:history.back(-1);" title="Regresa uno pagina antes"></div><div id="pun-about" class="clearfix"><div class="logobottom"></div><div class="info-foot">
-      <h2>SOBRE VIgtech | GHS</h2>
+      <h2>SOBRE VigHub | GHS</h2>
          
           Esta plataforma web está desarrollada única y exclusivamente con fines de emprendimiento y busca brindar al usuario la posibilidad de realizar vigilancia tecnologica con los datos de la plataforma GitHub
           
@@ -579,6 +622,9 @@ $totalRows_imageness = mysql_num_rows($imageness);
         <h6 align="center">
 				Este sitio está optimizado para <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" target="_blank"><img src="imagenes/crenesoft/icon_google.png"> Google Chrome </h6></div></div></div></div>
 
+
+</div>  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
 <style type="text/css">
 
 #container1 {
@@ -588,11 +634,39 @@ $totalRows_imageness = mysql_num_rows($imageness);
   /*border-radius: 20px 20px 20px 20px;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;*/
-  margin-left: -73%;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  margin-left: -73%;*/
+
 }
-svg{
-  width: 1216px;
+#container2 {
+  background: none repeat scroll 0 0 rgba rgba(0,0,0,1);
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  /*border-radius: 20px 20px 20px 20px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  margin-left: -60%;*/
+}
+#container3 {
+  background: none repeat scroll 0 0 rgba rgba(0,0,0,1);
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  /*border-radius: 20px 20px 20px 20px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  margin-left: -73%;*/
+}
+#container4 {
+  background: none repeat scroll 0 0 rgba rgba(0,0,0,1);
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  /*border-radius: 20px 20px 20px 20px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+  margin-left: -60%;*/
 }
 circle.nodeg {
 fill: lightsteelblue;
@@ -630,7 +704,7 @@ if (mysql_num_rows($Recordset1) == 0) {
 echo "historial = [";
 while ($fila = mysql_fetch_assoc($Recordset1)) {
 //    
-echo '{id:"'.$fila["id"].'",consulta:"'.$fila["consulta"].'"},';
+echo '{id:"'.$fila["id"].'",consulta:"'.urlencode($fila["consulta"]).'"},';
 }
 echo "]";
 mysql_free_result($Recordset1);
@@ -639,9 +713,13 @@ mysql_free_result($Recordset1);
 </script>
 <script src="search/scripts/libs/d3/d3.min.js"></script>
 <script type="text/javascript"> 
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
     function renderizargrafico(){
-var width = window.innerWidth-20, // svg width
-height = window.innerHeight-21, // svg height
+var width = $("#container1").innerWidth()-20, // svg width
+height = 400, // svg height
 dr = 8, // default point radius
 off = 10, // cluster hull offset
 expand = {}, // expanded clusters
@@ -767,10 +845,534 @@ vis.attr("width", width);
 vis.attr("height", height);
 //"miserables1.json"
 var json = datos;
+colors = randomColor({luminosity: 'dark', count: 30});
 //d3.json("/vighubjson/search/prueba.php?cache=true&id="+id, function(json) {
 data = {}
 data.links = [];
 data.nodes = json.items;  
+data.nodes.map(function(item,i,a){
+  return item.color = colors[i];
+});
+for (var i=0; i<data.links.length; ++i) {
+o = data.links[i];
+o.source = data.nodes[o.source];
+o.target = data.nodes[o.target];
+}
+hullg = vis.append("g");
+linkg = vis.append("g");
+nodeg = vis.append("g");
+init(); 
+
+vis.attr("opacity", 1e-6)
+.transition()
+.duration(1000)
+.attr("opacity", 1);
+//});
+function init() {
+if (force) force.stop();
+
+net = network(data, net, getGroup, expand);
+force = d3.layout.force()
+.nodes(net.nodes)
+.links(net.links)
+.size([width, height])
+.linkDistance(function(l, i) {
+var n1 = l.source, n2 = l.target;
+// larger distance for bigger groups:
+// both between single nodes and _other_ groups (where size of own node group still counts),
+// and between two group nodes.
+//
+// reduce distance for groups with very few outer links,
+// again both in expanded and grouped form, i.e. between individual nodes of a group and
+// nodes of another group or other group node or between two group nodes.
+//
+// The latter was done to keep the single-link groups ('blue', rose, ...) close.
+return 30 +
+Math.min(20 * Math.min((n1.size || (n1.group != n2.group ? n1.group_data.size : 0)),
+(n2.size || (n1.group != n2.group ? n2.group_data.size : 0))),
+-30 +
+30 * Math.min((n1.link_count || (n1.group != n2.group ? n1.group_data.link_count : 0)),
+(n2.link_count || (n1.group != n2.group ? n2.group_data.link_count : 0))),
+100);
+//return 150;
+})
+.linkStrength(function(l, i) {
+return 1;
+})
+.gravity(0.85) // gravity+charge tweaked to ensure good 'grouped' view (e.g. green group not smack between blue&orange, ...
+.charge(-3000) // ... charge is important to turn single-linked groups to the outside
+.friction(0.2) // friction adjusted to get dampened display: less bouncy bouncy ball [Swedish Chef, anyone?]
+.start();
+hullg.selectAll("path.hull").remove();
+hull = hullg.selectAll("path.hull")
+.data(convexHulls(net.nodes, getGroup, off))
+.enter().append("path")
+.attr("class", "hull")
+.attr("d", drawCluster)
+.style("fill", function(d) { return fill(d.group); })
+.on("click", function(d) {
+console.log("hull click", d, arguments, this, expand[d.group]);
+expand[d.group] = false; init();
+});
+link = linkg.selectAll("line.link").data(net.links, linkid);
+link.exit().remove();
+link.enter().append("line")
+.attr("class", "link")
+.attr("x1", function(d) { return d.source.x; })
+.attr("y1", function(d) { return d.source.y; })
+.attr("x2", function(d) { return d.target.x; })
+.attr("y2", function(d) { return d.target.y; })
+.style("stroke-width", function(d) { return d.size || 1; });
+
+node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
+node.exit().remove();
+var onEnter = node.enter();
+  var g = onEnter
+      .append("g")
+      .attr("class", function(d) { return "node" + (d.size?"":" leaf"); })
+      .attr("transform", function(d) { 
+          return "translate(" + d.x + "," + d.y + ")"; 
+      }); 
+
+
+  
+  g.append("circle")
+      // if (d.size) -- d.size > 0 when d is a group node.      
+      .attr("r", function(d) { return !d.name ? d.size + dr : dr+1; })
+      //.style("fill", function(d) { return fill(d.group); })
+      .style("fill", function(d) { return fill(d.color); })
+      .on("click", function(d) {
+if(d.clone_url)
+openInNewTab(d.clone_url) 
+console.log("node click", d, arguments, this, expand[d.group]);
+ 
+        expand[d.group] = !expand[d.group];
+init();
+});
+//aqui 
+g.append("text")
+      .attr("fill","black")
+  
+
+  .text(function(d,i){
+      if (d['name']){          
+          //return d['name']+ "["+ d['language']+"]"; //importante
+          return d['name'];
+      }
+  });
+
+node.call(force.drag);
+force.on("tick", function() {
+if (!hull.empty()) {
+hull.data(convexHulls(net.nodes, getGroup, off))
+.attr("d", drawCluster);
+}
+link.attr("x1", function(d) { return d.source.x; })
+  .attr("y1", function(d) { return d.source.y; })
+  .attr("x2", function(d) { return d.target.x; })
+  .attr("y2", function(d) { return d.target.y; });
+
+node.attr("transform", function(d){
+    return "translate("+d.x+","+d.y+")"});
+});
+}
+    }
+
+    </script>
+    
+    <script type="text/javascript"> 
+    function renderizargrafico1(){
+var width = $("#container2").innerWidth()-20, // svg width
+height = 400, // svg height
+dr = 8, // default point radius
+off = 10, // cluster hull offset
+expand = {}, // expanded clusters
+data, net, force, hullg, hull, linkg, link, nodeg, node;
+var curve = d3.svg.line()
+.interpolate("cardinal-closed")
+.tension(.75);
+var fill = d3.scale.category20();
+function noop() { return false; }
+function nodeid(n) {
+return n.size ? "_g_"+n.group : n.name;
+}
+function linkid(l) {
+var u = nodeid(l.source),
+v = nodeid(l.target);
+return u<v ? u+"|"+v : v+"|"+u;
+}
+function getGroup(n) { return n.group; }
+// constructs the network to visualize
+function network(data, prev, index, expand) {
+expand = expand || {};
+var gm = {}, // group map
+nm = {}, // node map
+lm = {}, // link map
+gn = {}, // previous group nodes
+gc = {}, // previous group centroids
+nodes = [], // output nodes
+links = []; // output links
+// process previous nodes for reuse or centroid calculation
+if (prev) {
+prev.nodes.forEach(function(n) {
+var i = index(n), o;
+if (n.size > 0) {
+gn[i] = n;
+n.size = 0;
+} else {
+o = gc[i] || (gc[i] = {x:0,y:0,count:0});
+o.x += n.x;
+o.y += n.y;
+o.count += 1;
+}
+});
+}
+// determine nodes
+for (var k=0; k<data.nodes.length; ++k) {
+var n = data.nodes[k],
+i = index(n),
+l = gm[i] || (gm[i]=gn[i]) || (gm[i]={group:i, size:0, nodes:[]});
+if (expand[i]) {
+// the node should be directly visible
+nm[n.name] = nodes.length;
+nodes.push(n);
+if (gn[i]) {
+// place new nodes at cluster location (plus jitter)
+n.x = gn[i].x + Math.random();
+n.y = gn[i].y + Math.random();
+}
+} else {
+// the node is part of a collapsed cluster
+if (l.size == 0) {
+// if new cluster, add to set and position at centroid of leaf nodes
+nm[i] = nodes.length;
+nodes.push(l);
+if (gc[i]) {
+l.x = gc[i].x / gc[i].count;
+l.y = gc[i].y / gc[i].count;
+}
+}
+nodes.push(n);
+}
+// always count group size as we also use it to tweak the force graph strengths/distances
+l.size += 1;
+n.group_data = l;
+}
+for (i in gm) { gm[i].link_count = 0; }
+// determine links
+for (k=0; k<data.links.length; ++k) {
+var e = data.links[k],
+u = index(e.source),
+v = index(e.target);
+if (u != v) {
+gm[u].link_count++;
+gm[v].link_count++;
+}
+u = expand[u] ? nm[e.source.name] : nm[u];
+v = expand[v] ? nm[e.target.name] : nm[v];
+var i = (u<v ? u+"|"+v : v+"|"+u),
+l = lm[i] || (lm[i] = {source:u, target:v, size:0});
+l.size += 1;
+}
+for (i in lm) { links.push(lm[i]); }
+return {nodes: nodes, links: links};
+}
+function convexHulls(nodes, index, offset) {
+var hulls = {};
+// create point sets
+for (var k=0; k<nodes.length; ++k) {
+var n = nodes[k];
+if (n.size) continue;
+var i = index(n),
+l = hulls[i] || (hulls[i] = []);
+l.push([n.x-offset, n.y-offset]);
+l.push([n.x-offset, n.y+offset]);
+l.push([n.x+offset, n.y-offset]);
+l.push([n.x+offset, n.y+offset]);
+}
+// create convex hulls
+var hullset = [];
+for (i in hulls) {
+hullset.push({group: i, path: d3.geom.hull(hulls[i])});
+}
+return hullset;
+}
+function drawCluster(d) {
+return curve(d.path); // 0.8
+}
+// --------------------------------------------------------
+var body = d3.select('#container2');
+body.selectAll("*").remove();
+var vis = body.append("svg")
+//var vis = d3.select("#svg1");
+vis.attr("width", width);
+vis.attr("height", height);
+//"miserables1.json"
+var json = datos;
+//d3.json("/vighubjson/search/prueba.php?cache=true&id="+id, function(json) {
+data = {}
+data.links = [];
+data.nodes = json.items;  
+for (var i=0; i<data.links.length; ++i) {
+o = data.links[i];
+o.source = data.nodes[o.source];
+o.target = data.nodes[o.target];
+}
+hullg = vis.append("g");
+linkg = vis.append("g");
+nodeg = vis.append("g");
+init(); 
+
+vis.attr("opacity", 1e-6)
+.transition()
+.duration(1000)
+.attr("opacity", 1);
+//});
+function init() {
+if (force) force.stop();
+
+net = network(data, net, getGroup, expand);
+force = d3.layout.force()
+.nodes(net.nodes)
+.links(net.links)
+.size([width, height])
+.linkDistance(function(l, i) {
+var n1 = l.source, n2 = l.target;
+// larger distance for bigger groups:
+// both between single nodes and _other_ groups (where size of own node group still counts),
+// and between two group nodes.
+//
+// reduce distance for groups with very few outer links,
+// again both in expanded and grouped form, i.e. between individual nodes of a group and
+// nodes of another group or other group node or between two group nodes.
+//
+// The latter was done to keep the single-link groups ('blue', rose, ...) close.
+return 30 +
+Math.min(20 * Math.min((n1.size || (n1.group != n2.group ? n1.group_data.size : 0)),
+(n2.size || (n1.group != n2.group ? n2.group_data.size : 0))),
+-30 +
+30 * Math.min((n1.link_count || (n1.group != n2.group ? n1.group_data.link_count : 0)),
+(n2.link_count || (n1.group != n2.group ? n2.group_data.link_count : 0))),
+100);
+//return 150;
+})
+.linkStrength(function(l, i) {
+return 1;
+})
+.gravity(0.85) // gravity+charge tweaked to ensure good 'grouped' view (e.g. green group not smack between blue&orange, ...
+.charge(-3000) // ... charge is important to turn single-linked groups to the outside
+.friction(0.2) // friction adjusted to get dampened display: less bouncy bouncy ball [Swedish Chef, anyone?]
+.start();
+hullg.selectAll("path.hull").remove();
+hull = hullg.selectAll("path.hull")
+.data(convexHulls(net.nodes, getGroup, off))
+.enter().append("path")
+.attr("class", "hull")
+.attr("d", drawCluster)
+.style("fill", function(d) { return fill(d.group); })
+.on("click", function(d) {
+console.log("hull click", d, arguments, this, expand[d.group]);
+expand[d.group] = false; init();
+});
+link = linkg.selectAll("line.link").data(net.links, linkid);
+link.exit().remove();
+link.enter().append("line")
+.attr("class", "link")
+.attr("x1", function(d) { return d.source.x; })
+.attr("y1", function(d) { return d.source.y; })
+.attr("x2", function(d) { return d.target.x; })
+.attr("y2", function(d) { return d.target.y; })
+.style("stroke-width", function(d) { return d.size || 1; });
+
+node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
+node.exit().remove();
+var onEnter = node.enter();
+  var g = onEnter
+      .append("g")
+      .attr("class", function(d) { return "node" + (d.size?"":" leaf"); })
+      .attr("transform", function(d) { 
+          return "translate(" + d.x + "," + d.y + ")"; 
+      }); 
+
+  
+  g.append("circle")
+      // if (d.size) -- d.size > 0 when d is a group node.      
+      .attr("r", function(d) { return !d.name ? d.size + dr : dr+1; })
+      .style("fill", function(d) { return fill(d.color); })
+      .on("click", function(d) {
+if(d.clone_url)
+openInNewTab(d.clone_url) 
+console.log("node click", d, arguments, this, expand[d.group]);
+ 
+        expand[d.group] = !expand[d.group];
+init();
+});
+//aqui 
+g.append("text")
+      .attr("fill","black")
+  
+
+  .text(function(d,i){
+      if (d['name']){          
+          return d['language']; //importante
+      }
+  });
+
+node.call(force.drag);
+force.on("tick", function() {
+if (!hull.empty()) {
+hull.data(convexHulls(net.nodes, getGroup, off))
+.attr("d", drawCluster);
+}
+link.attr("x1", function(d) { return d.source.x; })
+  .attr("y1", function(d) { return d.source.y; })
+  .attr("x2", function(d) { return d.target.x; })
+  .attr("y2", function(d) { return d.target.y; });
+
+node.attr("transform", function(d){
+    return "translate("+d.x+","+d.y+")"});
+});
+}
+
+    }
+    </script>
+    <script type="text/javascript"> 
+    function renderizargrafico2(){
+var width = $("#container3").innerWidth()-20, // svg width
+height = 400, // svg height
+dr = 8, // default point radius
+off = 10, // cluster hull offset
+expand = {}, // expanded clusters
+data, net, force, hullg, hull, linkg, link, nodeg, node;
+var curve = d3.svg.line()
+.interpolate("cardinal-closed")
+.tension(.75);
+var fill = d3.scale.category20();
+function noop() { return false; }
+function nodeid(n) {
+return n.size ? "_g_"+n.group : n.name;
+}
+function linkid(l) {
+var u = nodeid(l.source),
+v = nodeid(l.target);
+return u<v ? u+"|"+v : v+"|"+u;
+}
+function getGroup(n) { return n.group; }
+// constructs the network to visualize
+function network(data, prev, index, expand) {
+expand = expand || {};
+var gm = {}, // group map
+nm = {}, // node map
+lm = {}, // link map
+gn = {}, // previous group nodes
+gc = {}, // previous group centroids
+nodes = [], // output nodes
+links = []; // output links
+// process previous nodes for reuse or centroid calculation
+if (prev) {
+prev.nodes.forEach(function(n) {
+var i = index(n), o;
+if (n.size > 0) {
+gn[i] = n;
+n.size = 0;
+} else {
+o = gc[i] || (gc[i] = {x:0,y:0,count:0});
+o.x += n.x;
+o.y += n.y;
+o.count += 1;
+}
+});
+}
+// determine nodes
+for (var k=0; k<data.nodes.length; ++k) {
+var n = data.nodes[k],
+i = index(n),
+l = gm[i] || (gm[i]=gn[i]) || (gm[i]={group:i, size:0, nodes:[]});
+if (expand[i]) {
+// the node should be directly visible
+nm[n.name] = nodes.length;
+nodes.push(n);
+if (gn[i]) {
+// place new nodes at cluster location (plus jitter)
+n.x = gn[i].x + Math.random();
+n.y = gn[i].y + Math.random();
+}
+} else {
+// the node is part of a collapsed cluster
+if (l.size == 0) {
+// if new cluster, add to set and position at centroid of leaf nodes
+nm[i] = nodes.length;
+nodes.push(l);
+if (gc[i]) {
+l.x = gc[i].x / gc[i].count;
+l.y = gc[i].y / gc[i].count;
+}
+}
+nodes.push(n);
+}
+// always count group size as we also use it to tweak the force graph strengths/distances
+l.size += 1;
+n.group_data = l;
+}
+for (i in gm) { gm[i].link_count = 0; }
+// determine links
+for (k=0; k<data.links.length; ++k) {
+var e = data.links[k],
+u = index(e.source),
+v = index(e.target);
+if (u != v) {
+gm[u].link_count++;
+gm[v].link_count++;
+}
+u = expand[u] ? nm[e.source.name] : nm[u];
+v = expand[v] ? nm[e.target.name] : nm[v];
+var i = (u<v ? u+"|"+v : v+"|"+u),
+l = lm[i] || (lm[i] = {source:u, target:v, size:0});
+l.size += 1;
+}
+for (i in lm) { links.push(lm[i]); }
+return {nodes: nodes, links: links};
+}
+function convexHulls(nodes, index, offset) {
+var hulls = {};
+// create point sets
+for (var k=0; k<nodes.length; ++k) {
+var n = nodes[k];
+if (n.size) continue;
+var i = index(n),
+l = hulls[i] || (hulls[i] = []);
+l.push([n.x-offset, n.y-offset]);
+l.push([n.x-offset, n.y+offset]);
+l.push([n.x+offset, n.y-offset]);
+l.push([n.x+offset, n.y+offset]);
+}
+// create convex hulls
+var hullset = [];
+for (i in hulls) {
+hullset.push({group: i, path: d3.geom.hull(hulls[i])});
+}
+return hullset;
+}
+function drawCluster(d) {
+return curve(d.path); // 0.8
+}
+// --------------------------------------------------------
+var body = d3.select('#container3');
+body.selectAll("*").remove();
+var vis = body.append("svg")
+//var vis = d3.select("#svg1");
+vis.attr("width", width);
+vis.attr("height", height);
+//"miserables1.json"
+var json = datos;
+colors = randomColor({luminosity: 'dark', count: 30});
+//d3.json("/vighubjson/search/prueba.php?cache=true&id="+id, function(json) {
+data = {}
+data.links = [];
+data.nodes = json.items;  
+data.nodes.map(function(item,i,a){
+  return item.color = colors[i];
+});
 for (var i=0; i<data.links.length; ++i) {
 o = data.links[i];
 o.source = data.nodes[o.source];
@@ -859,8 +1461,9 @@ function openInNewTab(url) {
   
   g.append("circle")
       // if (d.size) -- d.size > 0 when d is a group node.      
-      .attr("r", function(d) { return d.size ? d.size + dr : dr+1; })
-      .style("fill", function(d) { return fill(d.group); })
+      .attr("r", function(d) { return !d.name ? d.size + dr : dr+1; })
+      //.style("fill", function(d) { return fill(d.group); })
+      .style("fill", function(d) { return fill(d.color); })
       .on("click", function(d) {
 if(d.clone_url)
 openInNewTab(d.clone_url) 
@@ -876,7 +1479,8 @@ g.append("text")
 
   .text(function(d,i){
       if (d['name']){          
-          return d['name']+ "["+ d['language']+"]"; //importante
+          //return d['name']+ "["+ d['language']+"]"; //importante
+          return d['full_name'];
       }
   });
 
@@ -897,5 +1501,479 @@ node.attr("transform", function(d){
 }
     }
     </script>
+<script type="text/javascript"> 
+    function renderizargrafico3(){
+var width = $("#container4").innerWidth()-20, // svg width
+height = 400, // svg height
+dr = 8, // default point radius
+off = 10, // cluster hull offset
+expand = {}, // expanded clusters
+data, net, force, hullg, hull, linkg, link, nodeg, node;
+var curve = d3.svg.line()
+.interpolate("cardinal-closed")
+.tension(.75);
+var fill = d3.scale.category20();
+function noop() { return false; }
+function nodeid(n) {
+return n.size ? "_g_"+n.group : n.name;
+}
+function linkid(l) {
+var u = nodeid(l.source),
+v = nodeid(l.target);
+return u<v ? u+"|"+v : v+"|"+u;
+}
+function getGroup(n) { return n.group; }
+// constructs the network to visualize
+function network(data, prev, index, expand) {
+expand = expand || {};
+var gm = {}, // group map
+nm = {}, // node map
+lm = {}, // link map
+gn = {}, // previous group nodes
+gc = {}, // previous group centroids
+nodes = [], // output nodes
+links = []; // output links
+// process previous nodes for reuse or centroid calculation
+if (prev) {
+prev.nodes.forEach(function(n) {
+var i = index(n), o;
+if (n.size > 0) {
+gn[i] = n;
+n.size = 0;
+} else {
+o = gc[i] || (gc[i] = {x:0,y:0,count:0});
+o.x += n.x;
+o.y += n.y;
+o.count += 1;
+}
+});
+}
+// determine nodes
+for (var k=0; k<data.nodes.length; ++k) {
+var n = data.nodes[k],
+i = index(n),
+l = gm[i] || (gm[i]=gn[i]) || (gm[i]={group:i, size:0, nodes:[]});
+if (expand[i]) {
+// the node should be directly visible
+nm[n.name] = nodes.length;
+nodes.push(n);
+if (gn[i]) {
+// place new nodes at cluster location (plus jitter)
+n.x = gn[i].x + Math.random();
+n.y = gn[i].y + Math.random();
+}
+} else {
+// the node is part of a collapsed cluster
+if (l.size == 0) {
+// if new cluster, add to set and position at centroid of leaf nodes
+nm[i] = nodes.length;
+nodes.push(l);
+if (gc[i]) {
+l.x = gc[i].x / gc[i].count;
+l.y = gc[i].y / gc[i].count;
+}
+}
+nodes.push(n);
+}
+// always count group size as we also use it to tweak the force graph strengths/distances
+l.size += 1;
+n.group_data = l;
+}
+for (i in gm) { gm[i].link_count = 0; }
+// determine links
+for (k=0; k<data.links.length; ++k) {
+var e = data.links[k],
+u = index(e.source),
+v = index(e.target);
+if (u != v) {
+gm[u].link_count++;
+gm[v].link_count++;
+}
+u = expand[u] ? nm[e.source.name] : nm[u];
+v = expand[v] ? nm[e.target.name] : nm[v];
+var i = (u<v ? u+"|"+v : v+"|"+u),
+l = lm[i] || (lm[i] = {source:u, target:v, size:0});
+l.size += 1;
+}
+for (i in lm) { links.push(lm[i]); }
+return {nodes: nodes, links: links};
+}
+function convexHulls(nodes, index, offset) {
+var hulls = {};
+// create point sets
+for (var k=0; k<nodes.length; ++k) {
+var n = nodes[k];
+if (n.size) continue;
+var i = index(n),
+l = hulls[i] || (hulls[i] = []);
+l.push([n.x-offset, n.y-offset]);
+l.push([n.x-offset, n.y+offset]);
+l.push([n.x+offset, n.y-offset]);
+l.push([n.x+offset, n.y+offset]);
+}
+// create convex hulls
+var hullset = [];
+for (i in hulls) {
+hullset.push({group: i, path: d3.geom.hull(hulls[i])});
+}
+return hullset;
+}
+function drawCluster(d) {
+return curve(d.path); // 0.8
+}
+// --------------------------------------------------------
+var body = d3.select('#container4');
+body.selectAll("*").remove();
+var vis = body.append("svg")
+//var vis = d3.select("#svg1");
+vis.attr("width", width);
+vis.attr("height", height);
+//"miserables1.json"
+var json = datos;
+colors = randomColor({luminosity: 'dark', count: 30});
+//d3.json("/vighubjson/search/prueba.php?cache=true&id="+id, function(json) {
+data = {}
+data.links = [];
+data.nodes = json.items;  
+data.nodes.map(function(item,i,a){
+  return item.color = colors[i];
+});
+for (var i=0; i<data.links.length; ++i) {
+o = data.links[i];
+o.source = data.nodes[o.source];
+o.target = data.nodes[o.target];
+}
+hullg = vis.append("g");
+linkg = vis.append("g");
+nodeg = vis.append("g");
+init(); 
+
+vis.attr("opacity", 1e-6)
+.transition()
+.duration(1000)
+.attr("opacity", 1);
+//});
+function init() {
+if (force) force.stop();
+
+net = network(data, net, getGroup, expand);
+force = d3.layout.force()
+.nodes(net.nodes)
+.links(net.links)
+.size([width, height])
+.linkDistance(function(l, i) {
+var n1 = l.source, n2 = l.target;
+// larger distance for bigger groups:
+// both between single nodes and _other_ groups (where size of own node group still counts),
+// and between two group nodes.
+//
+// reduce distance for groups with very few outer links,
+// again both in expanded and grouped form, i.e. between individual nodes of a group and
+// nodes of another group or other group node or between two group nodes.
+//
+// The latter was done to keep the single-link groups ('blue', rose, ...) close.
+return 30 +
+Math.min(20 * Math.min((n1.size || (n1.group != n2.group ? n1.group_data.size : 0)),
+(n2.size || (n1.group != n2.group ? n2.group_data.size : 0))),
+-30 +
+30 * Math.min((n1.link_count || (n1.group != n2.group ? n1.group_data.link_count : 0)),
+(n2.link_count || (n1.group != n2.group ? n2.group_data.link_count : 0))),
+100);
+//return 150;
+})
+.linkStrength(function(l, i) {
+return 1;
+})
+.gravity(0.85) // gravity+charge tweaked to ensure good 'grouped' view (e.g. green group not smack between blue&orange, ...
+.charge(-3000) // ... charge is important to turn single-linked groups to the outside
+.friction(0.2) // friction adjusted to get dampened display: less bouncy bouncy ball [Swedish Chef, anyone?]
+.start();
+hullg.selectAll("path.hull").remove();
+hull = hullg.selectAll("path.hull")
+.data(convexHulls(net.nodes, getGroup, off))
+.enter().append("path")
+.attr("class", "hull")
+.attr("d", drawCluster)
+.style("fill", function(d) { return fill(d.group); })
+.on("click", function(d) {
+console.log("hull click", d, arguments, this, expand[d.group]);
+expand[d.group] = false; init();
+});
+link = linkg.selectAll("line.link").data(net.links, linkid);
+link.exit().remove();
+link.enter().append("line")
+.attr("class", "link")
+.attr("x1", function(d) { return d.source.x; })
+.attr("y1", function(d) { return d.source.y; })
+.attr("x2", function(d) { return d.target.x; })
+.attr("y2", function(d) { return d.target.y; })
+.style("stroke-width", function(d) { return d.size || 1; });
+
+node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
+node.exit().remove();
+var onEnter = node.enter();
+  var g = onEnter
+      .append("g")
+      .attr("class", function(d) { return "node" + (d.size?"":" leaf"); })
+      .attr("transform", function(d) { 
+          return "translate(" + d.x + "," + d.y + ")"; 
+      }); 
+
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+  
+  g.append("circle")
+      // if (d.size) -- d.size > 0 when d is a group node.      
+      .attr("r", function(d) { return !d.name ? d.size + dr : dr+1; })
+      //.style("fill", function(d) { return fill(d.group); })
+      .style("fill", function(d) { return fill(d.color); })
+      .on("click", function(d) {
+if(d.clone_url)
+openInNewTab(d.clone_url) 
+console.log("node click", d, arguments, this, expand[d.group]);
+ 
+        expand[d.group] = !expand[d.group];
+init();
+});
+//aqui 
+g.append("text")
+      .attr("fill","black")
+  
+
+  .text(function(d,i){
+      if (d['name']){          
+          //return d['name']+ "["+ d['language']+"]"; //importante
+          return d['updated_at'];
+      }
+  });
+
+node.call(force.drag);
+force.on("tick", function() {
+if (!hull.empty()) {
+hull.data(convexHulls(net.nodes, getGroup, off))
+.attr("d", drawCluster);
+}
+link.attr("x1", function(d) { return d.source.x; })
+  .attr("y1", function(d) { return d.source.y; })
+  .attr("x2", function(d) { return d.target.x; })
+  .attr("y2", function(d) { return d.target.y; });
+
+node.attr("transform", function(d){
+    return "translate("+d.x+","+d.y+")"});
+});
+}
+reporte();
+reporte2();
+reporte3();
+reporte4();
+    }
+    </script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    function reporte(){
+      var criterio = "score"
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var arr = [["name","score"]].concat(datos.items.map(function(item){
+            return [item.name, item[criterio]];
+           }));
+        var data = google.visualization.arrayToDataTable(
+           arr);
+
+        var options = {
+          title: 'Value of the authors (score)',
+          legend: { position: 'none' },
+        };
+        $("#chart_div").height(560)
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        google.visualization.events.addListener(chart, 'select', selectHandler); 
+
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
+      }
+      
+    }
+    </script>
+    <script type="text/javascript">
+    function reporte2(){
+      var criterio = "stargazers_count";
+
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var arr = [["name","stargazers_count"]].concat(datos.items.map(function(item){
+            return [item.name, item[criterio]];
+           }));
+        var data = google.visualization.arrayToDataTable(arr);
+
+        var options = {
+          title: 'Stars'
+        };
+        $("#piechart").height(560)
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+        google.visualization.events.addListener(chart, 'select', selectHandler); 
+
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
+      }
+    }
+    </script>
+
+    <script type="text/javascript">
+    function reporte3() {
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var arr = [["name","forks_count","stargazers_count","language","score"]].concat(datos.items.map(function(item){
+            return [item.name, item.forks_count, item.stargazers_count, item.language, item.score];
+           }));
+      var data = google.visualization.arrayToDataTable(arr);
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.7;
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*0.7;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
+      var options = {
+        title: 'Correlation between name, fork, stargazers_count, language, score',
+        hAxis: {
+          title: 'fork',
+          scaleType: 'log',
+          gridlines: { count: 1000},
+          minValue: -200, 
+          ticks: [minimoh, maximoh ]
+
+        },
+         vAxis: {
+          title: 'stargazers_count',
+          scaleType: 'log',
+          gridlines: { count: 1000},
+          minValue: -200, 
+          ticks: [minimo, maximo ]
+        },
+        //vAxis: {title: 'stargazers_count'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+      $("#series_chart_div").height(560)
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+
+      google.visualization.events.addListener(chart, 'select', selectHandler); 
+
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
+    }}
+    </script>
+    <script type="text/javascript">
+    function reporte4 (){
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawAxisTickColors);
+
+function drawAxisTickColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'frecuency');
+      data.addColumn('number', 'languages');
+
+function getFrequency(items) {
+    var freq = {};
+    for (var i=0; i<items.length;i++) {
+        var character = items[i][1];
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+    var obj = []
+    for (var prop in freq) {
+        obj.push([prop, freq[prop]]);
+    }
+
+    return obj;
+};
+   var arr = getFrequency(datos.items.map(function(item){
+            return [item.name, item.language];
+           }));
+
+      data.addRows(arr);
+
+      var options = {
+        title: 'Frequency of language by topic',
+        hAxis: {
+          title: 'Language',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          },
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Frequency',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        }
+      };
+      $("#frec_lang").height(560)
+      var chart = new google.visualization.ColumnChart(document.getElementById('frec_lang'));
+      chart.draw(data, options);
+
+      google.visualization.events.addListener(chart, 'select', selectHandler); 
+
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
+    }
+  }
+    </script>
+    
 </body>
 <!-- InstanceEnd --></html>

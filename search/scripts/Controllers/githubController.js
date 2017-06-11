@@ -12,6 +12,9 @@
             datos = data;
             scope.id = data.idconsulta;
             renderizargrafico();
+            renderizargrafico1();
+            renderizargrafico2();
+            renderizargrafico3();
             scope.list = data.items;
             if(data.total_count > 1000)
                 scope.totalResults = 1000;
@@ -73,8 +76,6 @@
         };
 
         scope.searchistory = function(busqueda){
-
-            console.log("click.registrohistorial",busqueda);
             githubService
                         .getResult(false, false, false, busqueda)
                         .then(onSearchComplete, onError);
@@ -93,7 +94,7 @@
         scope.username = "";
         scope.order = "+owner.login";
         scope.page = 1;
-        scope.pageSize = 30;
+        scope.pageSize = 70;
     
         //scope.save = function () {
             scope.savedJSON = angular.toJson(scope.tosave);

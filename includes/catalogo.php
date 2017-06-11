@@ -3,12 +3,12 @@
 {
 	echo "EMPRESA: "; echo ObtenerNombreUsuario($_SESSION['MM_idusuario']);
 	?> 
-<a class="holly" href="usuario_modifica.php">(Editar)</a> ...... <a id="fa_welcome" href="cerrar_sesion.php"> cerrar sesion</a>
+<a id="fa_welcome" href="usuario_modifica.php">(Edit)</a> ...... <a href="cerrar_sesion.php"> Log out</a>
 
 <?php }
 else
 {
 ?>	
-	<a id="fa_welcome" href="index.php">Iniciar Sesión </a>
+	<a id="fa_welcome" href="index.php">Log in user</a>
    
 <?php }?>

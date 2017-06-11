@@ -115,7 +115,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
 		<div id="pun-intro" class="clearfix">
-		  <div class="sun-intro"><img src="imagenes/crenesoft/logo2.png" alt="CreneSoft"></a>
+		  <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
 	      
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
@@ -183,7 +183,6 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <?php } else{?>
 		
         <?php } ?>
-        <h1>VigTech - GitHub</h1> 
 	</header>
     <nav>
     	<p> 
@@ -212,7 +211,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <div id="contenedor_formulario" class="well">
 
        <fieldset class="well">
-      <legend align="center">¡Es hora de registrarse!</legend>
+      <legend align="center">¡It's time to sign up!</legend>
 
            <div id="datos_usuario" class="span5">
 		<!--==============================================================-->
@@ -222,18 +221,18 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 			<!--==============================================================-->
 			<!-- Titulo para el formulario -->
 			<!--==============================================================-->
-			<legend align="center">Datos de integrante o grupo</legend>
+			<legend align="center">Personal information</legend>
 			<div align="center" class="span4">
           <form  method="post" data-validate="parsley" name="form1" id="form1" action="<?php echo $editFormAction; ?>">
-          <input name="grupo" type="text" required id="grupo" placeholder="Nombre" value="" size="32" data-rangelength="[5,100]">
-          <input type="email" name="email" placeholder="Correo electronico" required  value="" size="32">
+          <input name="grupo" type="text" required id="grupo" placeholder="Name*" value="" size="32" data-rangelength="[5,100]">
+          <input type="email" name="email" placeholder="email*" required  value="" size="32">
           
-          <input name="imagen" type="text" id="imagen" placeholder="logo. PNG O JPG"  size="32">
+          <input name="imagen" type="text" id="imagen" value="null" placeholder="Avatar. PNG O JPG"  size="32">
           
-          <input type="button" name="button" onClick="javascript:cargarimagen();" id="button" class="btn btn-success" title="Si deseas saber como hacer un logo PNG con photoshop escribe en el link de ¿Dudas?" value="Subir logo">
+          <input type="button" name="button" onClick="javascript:cargarimagen();" id="button" class="btn btn-success" value="load">
           
-          <input type="password" placeholder="contraseña" name="password" id="password" data-required="true"  data-rangelength="[5,15]" value="" size="32">
-          <input type="password" name="password2" id="password3" placeholder="Escriba nuevamente su contraseña" required data-equalTo="#password" data-error-message="Las contraseñas no coinciden" />
+          <input type="password" placeholder="password*" name="password" id="password" data-required="true"  data-rangelength="[5,15]" value="" size="32">
+          <input type="password" name="password2" id="password3" placeholder="Re-type your password" required data-equalTo="#password" data-error-message="password wrong" />
           <select name="categoria" id="categoria">
             <?php
 do {  
@@ -250,7 +249,8 @@ do {
           </select>
           
           <br></br>
-           <input type="submit" class="btn btn-primary"   value="Registrarse">
+           <input type="submit" class="btn btn-primary"   value="
+check in">
            </div>
            </fieldset>
            </div>

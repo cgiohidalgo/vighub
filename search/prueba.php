@@ -70,7 +70,7 @@ $curl = curl_init();
 
 //
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.github.com/search/repositories?q=".urlencode($q)."&amp%3Bpage=".$page."&amp%3Bper_page=".$per_page,
+  CURLOPT_URL => "https://api.github.com/search/repositories?q=".urlencode($q)."&amp%3Bpage=".$page."&amp%3Bper_page=".$per_page."&sort=stars&order=desc",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

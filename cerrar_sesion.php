@@ -33,7 +33,7 @@
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
 		<div id="pun-intro" class="clearfix">
-		  <div class="sun-intro"><img src="imagenes/crenesoft/logo2.png" alt="CreneSoft"></a>
+		  <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
 	      
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
@@ -101,7 +101,6 @@
 <?php } else{?>
 		
         <?php } ?>
-        <h1>VigTech - GitHub</h1> 
 	</header>
     <nav>
     	<p> 
