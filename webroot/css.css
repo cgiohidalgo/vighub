@@ -9,11 +9,10 @@ a {
 	color: rgb(190, 66, 35);
 }
 
-body {
+/*body {
 	background: url(../img/background-body.png) repeat;
 	width: 100%;
-}
-
+}*/
 footer {
 	clear: both;
 }

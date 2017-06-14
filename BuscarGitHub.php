@@ -422,24 +422,24 @@ $totalRows_imageness = mysql_num_rows($imageness);
           <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
           
             
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li></a>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
 		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/plandenegocios.pdf" target="_blank" >GitHub</a></li>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
           
             
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdg" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="">Arquitectura base</a></li><li id="menu-item-3776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3776"><a href="">Industria del Software libre</a></li></ul></li></a>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3769"><a href="www.youtube.com/">Tienes problemas para utlizar el software</a></li><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">copia de seguridad de tus datos</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
         <?php } ?>
           
           
@@ -500,8 +500,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
        
 
 
-			<legend align="center">Utiliza las ayudas y/o utiliza el boton <span class="label label-info"> <a  class="linkeos"  title="Esta es una prueba">Ver mas</a></span> pasando el cursor sobre el para guiarte</legend>
-			
+			<!--<legend align="center">Utiliza las ayudas y/o utiliza el boton <span class="label label-info"> <a  class="linkeos"  title="Esta es una prueba">Ver mas</a></span> pasando el cursor sobre el para guiarte</legend>-->			
 		
         		 
         <fieldset class="well well-small">
@@ -517,43 +516,38 @@ $totalRows_imageness = mysql_num_rows($imageness);
     <title>VigHub</title>
 </head>
 
-    <div class="container">
-            
-            <h1 align="center">Search </h1>
-            <div class="row">
-            <hr>
-            <div class="page" ng-view></div>
-        </div>
-        <hr>
-        <div class="row"></div>
+    <div class="container">   
+          <h1 align="center">browser</h1>
+            <div class="page" ng-view></div> 
     </div>
        
-    </div>
     <div class="container">
-    <div class="row">
-      <div id="container1" align="center" class="col-md-6"></div>
-      <div id="container2" align="center" class="col-md-6"></div>
-       <div class="row">
-      <div id="container3" class="col-md-6"></div>
-      <div id="container4" class="col-md-6"></div>
+        <div class="row">
+              <div id="container1" align="center" class="col-md-6"></div>
+              <div id="container2" align="center" class="col-md-6"></div>
+        </div>  
+        <div class="row">
+              <div id="container3" class="col-md-6"></div>
+              <div id="container4" class="col-md-6"></div>
+        </div>
+    </div> 
+    <div class="container">
+      <div class="row">
+          <div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>
+          <div id="piechart" align="center" class="col-md-8" style="width: 48%;"></div>
       </div>
-      </div> 
-    <div class="container">
-    <div class="row">
-    <div id="chart_div" align="center" class="col-md-8" style="width: 575px;"></div>
-    <div id="piechart" align="center" class="col-md-8" style="width: 575px;"></div>
-    </BR>
-    </BR>.
-    <div class="row">
-    </BR>.
-    <div id="frec_lang" align="center" class="col-md-8" style="width: 800x;"></div>
+      </br>
+      </br>
+      <div class="row">
+          <div id="frec_lang" align="center" class="col-md-8" style="width: 50%;"></div>
+          <div id="frec_type" align="center" class="col-md-8" style="width: 48%;"></div>
+      </div>
+      </br>
+      </br>
+      <div class="row">
+          <div id="series_chart_div" align="center" class="col-md-6"  style="width: 100%;"></div>
     </div>
-    <div class="row">
-    </BR>.
-    
-    <div id="series_chart_div" align="center" class="col-md-6"  style="width: 1200px;"></div>
     </div>
-    </div></div>
     
 
 
@@ -626,7 +620,9 @@ $totalRows_imageness = mysql_num_rows($imageness);
 </div>  
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
 <style type="text/css">
-
+.container {
+  width: 100% !important;
+}
 #container1 {
   background: none repeat scroll 0 0 rgba rgba(0,0,0,1);
   -webkit-border-radius: 20px 20px 20px 20px;
@@ -694,7 +690,7 @@ pointer-events: none;
 </style>
 <script type="text/javascript">
     <?php 
-$query_Recordset1 = "SELECT id,consulta FROM resultclustering WHERE userid=".$_SESSION["MM_idusuario"]." ORDER BY id DESC LIMIT 10";
+$query_Recordset1 = "SELECT id,consulta FROM resultclustering WHERE userid=".$_SESSION["MM_idusuario"]." ORDER BY id DESC LIMIT 20";
 mysql_select_db($database_crenesoft, $crenesoft);
 $Recordset1 = mysql_query($query_Recordset1, $crenesoft) or die (mysql_error());
      
@@ -720,8 +716,8 @@ function openInNewTab(url) {
     function renderizargrafico(){
 var width = $("#container1").innerWidth()-20, // svg width
 height = 400, // svg height
-dr = 8, // default point radius
-off = 10, // cluster hull offset
+dr = 12, // default point radius
+off = 20, // cluster hull offset
 expand = {}, // expanded clusters
 data, net, force, hullg, hull, linkg, link, nodeg, node;
 var curve = d3.svg.line()
@@ -899,7 +895,7 @@ Math.min(20 * Math.min((n1.size || (n1.group != n2.group ? n1.group_data.size : 
 .linkStrength(function(l, i) {
 return 1;
 })
-.gravity(0.85) // gravity+charge tweaked to ensure good 'grouped' view (e.g. green group not smack between blue&orange, ...
+.gravity(0.45) // gravity+charge tweaked to ensure good 'grouped' view (e.g. green group not smack between blue&orange, ...
 .charge(-3000) // ... charge is important to turn single-linked groups to the outside
 .friction(0.2) // friction adjusted to get dampened display: less bouncy bouncy ball [Swedish Chef, anyone?]
 .start();
@@ -1768,6 +1764,7 @@ reporte();
 reporte2();
 reporte3();
 reporte4();
+reporte5();
     }
     </script>
 
@@ -1785,9 +1782,43 @@ reporte4();
            arr);
 
         var options = {
-          title: 'Value of the authors (score)',
-          legend: { position: 'none' },
-        };
+
+        title: 'Size of authors by score in topic',
+        hAxis: {
+          title: 'Score',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          },
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Frequency',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        }
+      };
         $("#chart_div").height(560)
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
         chart.draw(data, options);
@@ -1818,7 +1849,7 @@ reporte4();
         var data = google.visualization.arrayToDataTable(arr);
 
         var options = {
-          title: 'Stars'
+          title: 'Star repositories by users'
         };
         $("#piechart").height(560)
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -1844,34 +1875,60 @@ reporte4();
 
     function drawSeriesChart() {
 
-      var arr = [["name","forks_count","stargazers_count","language","score"]].concat(datos.items.map(function(item){
+      var arr = [["name","forks_count","stargazers_count","language","Score"]].concat(datos.items.map(function(item){
             return [item.name, item.forks_count, item.stargazers_count, item.language, item.score];
            }));
       var data = google.visualization.arrayToDataTable(arr);
       var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
       var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.7;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*0.7;
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
-      var options = {
+      var options =  {
+
         title: 'Correlation between name, fork, stargazers_count, language, score',
         hAxis: {
-          title: 'fork',
+          title: 'Size of fork(copies) per repository',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
+          ticks: [minimoh, maximoh],
           scaleType: 'log',
-          gridlines: { count: 1000},
-          minValue: -200, 
-          ticks: [minimoh, maximoh ]
-
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          },
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
         },
-         vAxis: {
-          title: 'stargazers_count',
+        vAxis: {
+          title: 'Size of stars per repository',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
+          ticks: [minimo, maximo],
           scaleType: 'log',
-          gridlines: { count: 1000},
-          minValue: -200, 
-          ticks: [minimo, maximo ]
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
         },
-        //vAxis: {title: 'stargazers_count'},
         bubble: {textStyle: {fontSize: 11}}
       };
+
       $("#series_chart_div").height(560)
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
       chart.draw(data, options);
@@ -1895,7 +1952,7 @@ google.charts.setOnLoadCallback(drawAxisTickColors);
 function drawAxisTickColors() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'frecuency');
-      data.addColumn('number', 'languages');
+      data.addColumn('number', 'Repos ');
 
 function getFrequency(items) {
     var freq = {};
@@ -1915,6 +1972,8 @@ function getFrequency(items) {
     return obj;
 };
    var arr = getFrequency(datos.items.map(function(item){
+            //return [item.name, item.created_at];
+            //return [item.name, item.owner.type];
             return [item.name, item.language];
            }));
 
@@ -1924,7 +1983,6 @@ function getFrequency(items) {
         title: 'Frequency of language by topic',
         hAxis: {
           title: 'Language',
-          format: 'h:mm a',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -1962,7 +2020,98 @@ function getFrequency(items) {
       var chart = new google.visualization.ColumnChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
 
-      google.visualization.events.addListener(chart, 'select', selectHandler); 
+      google.visualization.events.addListener(chart, 'select ', selectHandler); 
+
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
+    }
+  }
+    </script>
+    <script type="text/javascript">
+    function reporte5 (){
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawAxisTickColors);
+
+function drawAxisTickColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'frecuency');
+      data.addColumn('number', 'Repos ');
+
+function getFrequency(items) {
+    var freq = {};
+    for (var i=0; i<items.length;i++) {
+        var character = items[i][1];
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+    var obj = []
+    for (var prop in freq) {
+        obj.push([prop, freq[prop]]);
+    }
+
+    return obj;
+};
+   var arr = getFrequency(datos.items.map(function(item){
+            //return [item.name, item.created_at];
+            return [item.name, item.owner.type];
+            //return [item.name, item.language];
+           }));
+
+      data.addRows(arr);
+
+      var options = {
+        title: 'Frequency of users or organizations worked on topic',
+        hAxis: {
+          title: 'type(users or organizations)',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+        
+          },
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Frequency',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        }
+      };
+      $("#frec_type").height(560)
+      var chart = new google.visualization.ColumnChart(document.getElementById('frec_type'));
+      chart.draw(data, options);
+
+      google.visualization.events.addListener(chart, 'select ', selectHandler); 
 
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
@@ -1977,3 +2126,45 @@ function getFrequency(items) {
     
 </body>
 <!-- InstanceEnd --></html>
+function getFrequency(items) {
+    var freq = {};
+    for (var i=0; i<items.length;i++) {
+        var character = items[i][1];
+        if (freq[character]) {
+           freq[character].push(items[i]);
+        } else {
+           freq[character] = [items[i]];
+        }
+    }
+  return freq;
+};
+
+function promedio(args){
+  return args.reduce(function(acc, e){return acc+e;}, 0)/args.length;
+}
+
+   var arr = getFrequency(datos.items.map(function(item){
+           var a = moment(new Date());
+           var b = moment(new Date(item.created_at));
+            return [item.name, item.language,promedio([item.stargazers_count,
+                    item.forks_count, item.score]), a.diff(b, 'days')];
+           }));
+
+var resultados = {};
+    for (var lenguaje in arr) {
+        resultados[lenguaje.toLowerCase()] = {
+            promedio_value : promedio(arr[lenguaje].map(function(e){
+              return e[2];
+            })),
+            promedio_duracion : promedio(arr[lenguaje].map(function(e){
+              return e[3];
+            }))
+       }
+        
+    }
+
+function esBueno(resultados, lenguaje, valor ,duracion){
+  return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
+}
+console.log(resultados.php)
+console.log(esBueno(resultados, "php", 20, 400));

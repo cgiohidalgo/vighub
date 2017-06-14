@@ -46,6 +46,10 @@
         </tr>
     </thead>
     <tbody>
+    <tr>
+    <a ng-click="crearJSON()" ng-href="{{ url }}">Export to JSON</a>
+     
+</tr>
         <tr ng-repeat="item in list | orderBy:order">
             <td>{{$index + 1}}</td>
             <td><a title="View details of {{item.owner.login}}" ng-click="userDetails(item.owner.login)">{{item.owner.login}}</a></td>
@@ -53,4 +57,7 @@
             <td><a ng-href="{{item.html_url}}" target="_blank">{{item.html_url}}</a></td>
         </tr>
     </tbody>
+    
+    
+    
 </table>

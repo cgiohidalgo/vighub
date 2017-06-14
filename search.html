@@ -3,20 +3,50 @@
     <div class="well profile col-md-12">
         <form class="form-horizontal" role="form">
             <div class="form-group">
-                <label class="col-sm-2 control-label">Topic:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Topic to search" ng-model="topic" autofocus="autofocus"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="button" value="Search" class="btn btn-primary" ng-click="search(topic)" ng-disabled="!topic.length" ng-keypress="alert('dd')" autofocus="autofocus"/>
+            
+                <div class="col-sm-2">
+                  <input type="button" value="Search" class="btn btn-primary" ng-click="search(topic)" ng-disabled="!topic.length" ng-keypress="alert('dd')" autofocus="autofocus"/>
+                  </div>
+                  <div class="col-sm-10">
+                    <input type="text" class="buscador_" placeholder="Topic to search" ng-model="topic" autofocus="autofocus"/>
                 </div>
             </div>
         </form>
         <br>
-        <div ng-include="'githubresults.html'" ng-show="list"></div>
+        <div ng-include="'githubresults.html'" ng-show="list"   ></div>
     </div>
 </div>
 
+<style type="text/css">
+.buscador_{
+    width: 108%;
+    height: 39px !important;
+    /*margin-left: 150px;*/
+    float: right;
+    font-size: 18px !important;
+}
+.botonssearch{
+    width: 88px !important;
+    height: 37px;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+
+}
+
+.btn[disabled]{
+    height: 38px !important;
+    width: 92px !important;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    width: 92px !important;
+    height: 38px !important;
+}
+</style>

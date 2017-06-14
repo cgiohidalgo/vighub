@@ -13,6 +13,10 @@ background-color: rgba(0, 0, 0, 0.2);
 ::-webkit-scrollbar-thumb:hover{background-color: rgba(0, 0, 0, 0.45);
 -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.12);}
 
+.logotipovighub{
+	width: 50% !important;
+	vertical-align: top !important;
+}
 #VigHub {
     position: absolute;
     padding: 21px;
@@ -28,7 +32,7 @@ background-color: rgba(0, 0, 0, 0.2);
   background-image:url(/vighubjson/imagenes/search.png);
   background-repeat:no-repeat;
   height: 384px;
-  width: 665px !important;
+  width: 50% !important;
   background-position:center;
   box-shadow: 0 12px 30px rgba(0,0,0,0.7);
   cursor: pointer;
@@ -37,7 +41,7 @@ background-color: rgba(0, 0, 0, 0.2);
   background-image:url(/vighubjson/imagenes/Report.png);
   background-repeat:no-repeat;
   height: 384px;
-  width: 665px !important;
+  width: 49% !important;
   background-position:center;
   box-shadow: 0 12px 30px rgba(0,0,0,0.7);
   cursor: pointer;

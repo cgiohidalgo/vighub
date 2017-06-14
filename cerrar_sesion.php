@@ -101,16 +101,32 @@
 <?php } else{?>
 		
         <?php } ?>
+        <style type="text/css">
+          .cerrarses{
+            font-size: 3.7em;
+    padding: 144px;
+          }
+        </style>
 	</header>
-    <nav>
-    	<p> 
-         
-        </p>
-    </nav>
+   <p></p>
+   <p></p>
+   <p></p>
+   <p></p>
+   <p></p>
+   <p></p>
     <section id="principal">
     	<article> 
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
 		<!-- InstanceBeginEditable name="Contenido" -->
-        <h3>¡VuelvePronto!</h3>
+        <h1 class="cerrarses">Bye, come back soon!</h1>
 		<!-- InstanceEndEditable -->
         </article>    	
     </section>
@@ -150,12 +166,10 @@
     </div>
      
     <div id="pun-foot"><div id="shitpe" style="display: block;"><img src="http://i.imgur.com/0LsMnPJ.png" onclick="javascript:history.back(-1);" title="Regresa uno pagina antes"></div><div id="pun-about" class="clearfix"><div class="logobottom"></div><div class="info-foot">
-      <h2>SOBRE VIgtech | GHS</h2>
-         
-          Esta plataforma web está desarrollada única y exclusivamente con fines de emprendimiento y busca brindar al usuario la posibilidad de realizar vigilancia tecnologica con los datos de la plataforma GitHub
-          
+      <p></p>
+      <p></p>
+        
            </div>
-        <h6 align="center">
-				Este sitio está optimizado para <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" target="_blank"><img src="imagenes/crenesoft/icon_google.png"> Google Chrome </h6></div></div></div></div>
+        </div></div></div></div>
 </body>
 <!-- InstanceEnd --></html>

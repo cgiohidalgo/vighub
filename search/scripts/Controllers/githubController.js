@@ -8,13 +8,7 @@
 
         var onSearchComplete = function(data)
         {
-            id = data.idconsulta;
-            datos = data;
-            scope.id = data.idconsulta;
-            renderizargrafico();
-            renderizargrafico1();
-            renderizargrafico2();
-            renderizargrafico3();
+            
             scope.list = data.items;
             if(data.total_count > 1000)
                 scope.totalResults = 1000;
@@ -24,6 +18,13 @@
             scope.totalPage = scope.totalResults/scope.pageSize;
             scope.pages = [];
         scope.tosave = data.items;
+        id = data.idconsulta;
+            datos = data;
+            scope.id = data.idconsulta;
+            renderizargrafico();
+            renderizargrafico1();
+            renderizargrafico2();
+            renderizargrafico3();
     //scope.tosave['descripcion'] = data.items.description;
             for(var i = 1; i <= scope.totalPage; i++)
             {
@@ -57,7 +58,7 @@
                 scope.pages1.push(i);
               
             }
-            scope.toJSON = angular.toJson(scope.tosave1, scope.tosave);
+            //scope.toJSON = angular.toJson(scope.tosave1, scope.tosave);
             //var blob = new Blob([scope.toJSON], { type:"application/json;charset=utf-8;" });
             //saveAs(blob, "archivo");  
             
@@ -94,7 +95,7 @@
         scope.username = "";
         scope.order = "+owner.login";
         scope.page = 1;
-        scope.pageSize = 70;
+        scope.pageSize = 30;
     
         //scope.save = function () {
             scope.savedJSON = angular.toJson(scope.tosave);
@@ -108,14 +109,13 @@
               scope.crearJSON = function () {
             scope.toJSON = '';
             scope.toJSON = angular.toJson(scope.tosave1, scope.tosave );
-            var blob = new Blob([scope.toJSON], { type:"application/json;charset=utf-8;" });
-            //saveAs(blob, "/home/archivo");            
+            var blob = new Blob([scope.toJSON], { type:"application/json;charset=utf-8;" });            
             JSON.stringify (scope.toJSON);
             console.log (scope.toJSON.replace("["," "));
                         var downloadLink = angular.element('<a></a>');
-                        //downloadLink.attr('href',window.URL.createObjectURL(blob));
-                        //downloadLink.attr('download', '/home/fileName.json');
-            //downloadLink[0].click();
+                        downloadLink.attr('href',window.URL.createObjectURL(blob));
+                        downloadLink.attr('download', 'fileName.json');
+            downloadLink[0].click();
             
              //window.location = '../home/giovanny/Escritorio/fileName.json'
              
@@ -132,9 +132,9 @@
             JSON.stringify (scope.toJSON);
            // console.log (scope.toJSON.replace("["," "));
                         var downloadLink = angular.element('<a></a>');
-                        //downloadLink.attr('href',window.URL.createObjectURL(blob));
-                        //downloadLink.attr('download', 'fileNames.json');
-            //downloadLink[0].click();
+                        downloadLink.attr('href',window.URL.createObjectURL(blob));
+                        downloadLink.attr('download', 'fileNames.json');
+            downloadLink[0].click();
             
              //window.location = '../home/giovanny/Escritorio/fileName.json'
              

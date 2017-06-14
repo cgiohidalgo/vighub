@@ -269,6 +269,8 @@ if (isset($_POST['email'])) {
          
         </p>
     </nav>
+     <p>&nbsp;</p>
+   
     <section id="principal">
     	<article> 
 		<!-- InstanceBeginEditable name="Contenido" -->      
@@ -288,12 +290,12 @@ if (isset($_POST['email'])) {
 		      <input type="submit" class="btn btn-primary"  value="Sing in"> 
               <a class="btn btn-success" href="registrar.php">check in</a>
         </fieldset></form>
-        <img src="imagenes/crenesoft/logo4.png">
+        <img class="logotipovighub" src="imagenes/logo.png">
         </article>
 		<!-- InstanceEndEditable -->
         </article>    	
     </section>
-    <p>&nbsp;</p>
+    </br>
    
 <div>
       <div>
@@ -329,12 +331,11 @@ if (isset($_POST['email'])) {
     </div>
      
     <div id="pun-foot"><div id="shitpe" style="display: block;"><img src="http://i.imgur.com/0LsMnPJ.png" onclick="javascript:history.back(-1);" title="Regresa uno pagina antes"></div><div id="pun-about" class="clearfix"><div class="logobottom"></div><div class="info-foot">
-      <h2>SOBRE VigHub | GHS</h2>
-         
-          Esta plataforma web está desarrollada única y exclusivamente con fines de emprendimiento y busca brindar al usuario la posibilidad de realizar vigilancia tecnologica con los datos de la plataforma GitHub
+      <p></p>
+    
+
           
            </div>
-        <h6 align="center">
-				Este sitio está optimizado para <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" target="_blank"><img src="imagenes/crenesoft/icon_google.png"> Google Chrome </h6></div></div></div></div>
+        </div></div></div></div>
 </body>
 <!-- InstanceEnd --></html>
