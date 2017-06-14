@@ -368,6 +368,12 @@ $totalRows_imageness = mysql_num_rows($imageness);
     <link rel="stylesheet" type="text/css" href="search/content/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="search/content/bootstrap-superhero.min.css">
     <link rel="stylesheet" type="text/css" href="search/content/site.css">
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <head>
 <meta charset="utf-8">
@@ -520,6 +526,36 @@ $totalRows_imageness = mysql_num_rows($imageness);
           <h1 align="center">browser</h1>
             <div class="page" ng-view></div> 
     </div>
+
+    <div>
+      <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+          <p>Some text in the modal.</p>
+          <input type="text" id="lenguaje">
+          <input type="text" id="duracion">
+          <p id="resultado_cla"></p>
+          <button type="button" class="btn btn-default" onclick="esExitoso()">¿es exitoso?</button>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
        
     <div class="container">
         <div class="row">
@@ -619,6 +655,9 @@ $totalRows_imageness = mysql_num_rows($imageness);
 
 </div>  
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.0/moment.min.js"></script>
+
 <style type="text/css">
 .container {
   width: 100% !important;
@@ -2123,9 +2162,7 @@ function getFrequency(items) {
     }
   }
     </script>
-    
-</body>
-<!-- InstanceEnd --></html>
+    <script>
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
@@ -2143,6 +2180,7 @@ function promedio(args){
   return args.reduce(function(acc, e){return acc+e;}, 0)/args.length;
 }
 
+function esExitoso(){
    var arr = getFrequency(datos.items.map(function(item){
            var a = moment(new Date());
            var b = moment(new Date(item.created_at));
@@ -2150,7 +2188,7 @@ function promedio(args){
                     item.forks_count, item.score]), a.diff(b, 'days')];
            }));
 
-var resultados = {};
+    var resultados = {};
     for (var lenguaje in arr) {
         resultados[lenguaje.toLowerCase()] = {
             promedio_value : promedio(arr[lenguaje].map(function(e){
@@ -2163,8 +2201,20 @@ var resultados = {};
         
     }
 
-function esBueno(resultados, lenguaje, valor ,duracion){
-  return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
-}
-console.log(resultados.php)
-console.log(esBueno(resultados, "php", 20, 400));
+    var lenguajeU = $("#lenguaje").val().trim().toLowerCase();
+    var duracionU = $("#duracion").val();
+    var resultado_cla = $("#resultado_cla");
+    
+    
+
+  function esBueno(resultados, lenguaje, valor ,duracion){
+    return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
+  }
+
+  var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
+  resultado_cla.text(esb);
+ }
+ </script>
+    
+</body>
+<!-- InstanceEnd --></html>
