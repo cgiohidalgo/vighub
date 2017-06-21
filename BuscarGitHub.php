@@ -668,33 +668,32 @@ bootstrap.min.css:5*/
 </style>
  <div class="container">
    <div class="row">
-
-<table class="table table-hover table-striped">
-    <thead>
-        <tr class="success">
-            <th>Type your languaje</th>
-            <th>Type your time (in days)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="text" placeholder="e.i: c++" id="lenguaje" value="php"></td>
-            <td><input type="text" placeholder="e.i: 365" id="duracion" value="2000"></td>
-            <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
-        </tr>
-        <tr>
-            <td colspan="4"><p id="resultado_cla"></p></td>
-        </tr>
-        <tr>
-        <td >
-        <div id="imagenc" ></div>
-        </td>
-        </tr>
-    </tbody>
-</table>
-  
-  </div></div>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="success">
+                <th>Type your languaje</th>
+                <th>Type your time (in days)</th>
+                <th></th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr>
+                <td><input type="text" placeholder="e.i: c++" id="lenguaje" value="php"></td>
+                <td><input type="text" placeholder="e.i: 365" id="duracion" value="2000"></td>
+                <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
+            </tr>
+            <tr>
+                <td colspan="4"><p id="resultado_cla"></p></td>
+            </tr>
+            <tr>
+            <td>
+            <div id="imagenc" ></div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
 
 
       <!--<div  class="col-md-6">
