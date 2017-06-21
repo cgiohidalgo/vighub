@@ -9,15 +9,15 @@
     app.config(function($routeProvider){
         $routeProvider
             .when("/search", {
-                templateUrl: "search.html",
+                templateUrl: "../search.html",
                 controller: "githubController"
             })
             .when("/user/:username", {
-                templateUrl: "user.html",
+                templateUrl: "../user.html",
                 controller: "githubUserController"
             })
             .when("/demo", {
-                templateUrl: "demo.html",
+                templateUrl: "../demo.html",
                 controller: "demoController"
             })
             .otherwise({redirectTo:"/search"});

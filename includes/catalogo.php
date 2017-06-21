@@ -3,12 +3,12 @@
 {
 	echo "EMPRESA: "; echo ObtenerNombreUsuario($_SESSION['MM_idusuario']);
 	?> 
-<a id="fa_welcome" href="usuario_modifica.php">(Edit)</a> ...... <a href="cerrar_sesion.php"> Log out</a>
+<a id="fa_welcome" href="/vighubjson/usuario_modifica/">(Edit)</a> ...... <a href="/vighubjson/cerrar_sesion/"> Log out</a>
 
 <?php }
 else
 {
 ?>	
-	<a id="fa_welcome" href="index.php">Log in user</a>
+	<a id="fa_welcome" href="/vighubjson/"/>Log in user</a>
    
 <?php }?>

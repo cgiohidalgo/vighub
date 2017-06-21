@@ -119,7 +119,7 @@ else
 
   }
   $resultadofinal = null;
-  for($i =0; $i < 2 ; $i++){
+  for($i =0; $i < 1 ; $i++){
     $resultadofinal = peticciongithub($q, $i+1,$per_page,$resultadofinal );
     $tc = $resultadofinal->total_count;
     if($tc <= ($i+1)*30){

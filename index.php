@@ -47,8 +47,8 @@ if (isset($_POST['email'])) {
   $loginUsername=$_POST['email'];
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "inicio.php";
-  $MM_redirectLoginFailed = "acceso_error.php";
+  $MM_redirectLoginSuccess = "/vighubjson/inicio/";
+  $MM_redirectLoginFailed = "/vighubjson/acceso_error/";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_crenesoft, $crenesoft);
   
@@ -92,8 +92,8 @@ if (isset($_POST['email'])) {
   $loginUsername=$_POST['email'];
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "idusuario";
-  $MM_redirectLoginSuccess = "inicio";
-  $MM_redirectLoginFailed = "acceso_error.php";
+  $MM_redirectLoginSuccess = "/vighubjson/inicio/";
+  $MM_redirectLoginFailed = "/vighubjson/acceso_error/";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_crenesoft, $crenesoft);
   	
@@ -136,8 +136,8 @@ if (isset($_POST['email'])) {
   $loginUsername=$_POST['email'];
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "admin_priv";
-  $MM_redirectLoginSuccess = "inicio.php";
-  $MM_redirectLoginFailed = "acceso_error.php";
+  $MM_redirectLoginSuccess = "/vighubjson/inicio/";
+  $MM_redirectLoginFailed = "/vighubjson/acceso_error/";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_crenesoft, $crenesoft);
   	
@@ -288,7 +288,7 @@ if (isset($_POST['email'])) {
              
 		      <br></br>
 		      <input type="submit" class="btn btn-primary"  value="Sing in"> 
-              <a class="btn btn-success" href="registrar.php">check in</a>
+              <a class="btn btn-success" href="/vighubjson/registrar/">check in</a>
         </fieldset></form>
         <img class="logotipovighub" src="imagenes/logo.png">
         </article>

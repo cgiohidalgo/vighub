@@ -6,9 +6,9 @@
     var githubService = function(http, log){
 
         var getResult = function(topic, page, pageSize, id){
-            var url="search/prueba.php?q=" + topic + "&page=" + page + "&per_page=" + pageSize;
+            var url="../search/prueba.php?q=" + topic + "&page=" + page + "&per_page=" + pageSize;
             if(id){
-                url="search/prueba.php?cache=true&id="+id;
+                url="../search/prueba.php?cache=true&id="+id;
             }
 
             return http.get(url)

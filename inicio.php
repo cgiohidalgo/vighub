@@ -299,22 +299,22 @@ $totalRows_Recordset2 = mysql_num_rows($Recordset2);
 <head>
 <meta charset="utf-8">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>VigTech</title>
+<title>VigHub</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable --> 
-<link href="webroot/crenesoft.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/css.css" rel="stylesheet" type="text/css">
-<link href="webroot/docs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menú-estilo.css" rel="stylesheet" type="text/css">
-<link href="webroot/style.css" rel="stylesheet" type="text/css">
-<link href="webroot/menurapido.css" rel="stylesheet" type="text/css">
-<link href="webroot/ghs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu_centro.css" rel="stylesheet" type="text/css">
+<link href="../webroot/crenesoft.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/css.css" rel="stylesheet" type="text/css">
+<link href="../webroot/docs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menú-estilo.css" rel="stylesheet" type="text/css">
+<link href="../webroot/style.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menurapido.css" rel="stylesheet" type="text/css">
+<link href="../webroot/ghs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu_centro.css" rel="stylesheet" type="text/css">
  
 </head>
 <body> 
@@ -327,7 +327,7 @@ $totalRows_Recordset2 = mysql_num_rows($Recordset2);
 	      
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
-          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -335,11 +335,11 @@ $totalRows_Recordset2 = mysql_num_rows($Recordset2);
             
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -347,7 +347,7 @@ $totalRows_Recordset2 = mysql_num_rows($Recordset2);
             
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/inicio/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
         <?php } ?>
           
           
@@ -458,8 +458,8 @@ $totalRows_Recordset2 = mysql_num_rows($Recordset2);
 </style>
 </div>
  <p>&nbsp;</p>
-<input type="button" class="botonimagensear" onclick="window.location='BuscarGitHub.php';">
-<input type="button" class="botonimagenreport"  onclick="window.location='ExtraerGitHub.php';">
+<input type="button" class="botonimagensear" onclick="window.location='/vighubjson/BuscarGitHub/';">
+<input type="button" class="botonimagenreport"  onclick="window.location='/vighubjson/ExtraerGitHub/';">
 </br>
 
 
@@ -486,7 +486,7 @@ if (mysql_num_rows($Recordset1) != 0) {
   while ($fila = mysql_fetch_assoc($Recordset1)) {
     echo '<tr>
             <th>'.$fila["consulta"].'</th>
-            <th><a href="query_delete.php"><img src="imagenes/crenesoft/eliminar.png" width="38" height="38"></a></th>
+            <th><a href="query_delete.php"><img src="../imagenes/crenesoft/eliminar.png" width="38" height="38"></a></th>
           </tr>';
   }
   echo '</tbody>';

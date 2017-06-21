@@ -36,7 +36,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 // *** Redirect if username exists
 $MM_flag="MM_insert";
 if (isset($_POST[$MM_flag])) {
-  $MM_dupKeyRedirect="comprueba_correo_registro.php";
+  $MM_dupKeyRedirect="/vighubjson/comprueba_correo_registro/";
   $loginUsername = $_POST['grupo'];
   $LoginRS__query = sprintf("SELECT grupo FROM usuarios WHERE grupo=%s", GetSQLValueString($loginUsername, "text"));
   mysql_select_db($database_crenesoft, $crenesoft);
@@ -71,7 +71,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($insertSQL, $crenesoft) or die(mysql_error());
 
-  $insertGoTo = "registro_ok.php";
+  $insertGoTo = "/vighubjson/registro_ok/";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
@@ -95,18 +95,18 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable --> 
-<link href="webroot/crenesoft.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/css.css" rel="stylesheet" type="text/css">
-<link href="webroot/docs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menú-estilo.css" rel="stylesheet" type="text/css">
-<link href="webroot/style.css" rel="stylesheet" type="text/css">
-<link href="webroot/menurapido.css" rel="stylesheet" type="text/css">
-<link href="webroot/ghs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu_centro.css" rel="stylesheet" type="text/css">
+<link href="../webroot/crenesoft.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/css.css" rel="stylesheet" type="text/css">
+<link href="../webroot/docs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menú-estilo.css" rel="stylesheet" type="text/css">
+<link href="../webroot/style.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menurapido.css" rel="stylesheet" type="text/css">
+<link href="../webroot/ghs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu_centro.css" rel="stylesheet" type="text/css">
  
 </head>
 <body> 
@@ -205,7 +205,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 
-<script src="webroot/parsley.js" type="text/javascript"></script>      
+<script src="../webroot/parsley.js" type="text/javascript"></script>      
 
 
     <div id="contenedor_formulario" class="well">
@@ -257,7 +257,7 @@ check in">
             <div align="right" id="datos_usuario" class="span5">
 			<div class="span4">
           
-           <img src="imagenes/crenesoft/bienvenidos.gif">
+           <img src="../imagenes/crenesoft/bienvenidos.gif">
            </div>
            </div>
           <input type="hidden" name="activo" value="1">
@@ -305,13 +305,12 @@ check in">
     </div>
      
     <div id="pun-foot"><div id="shitpe" style="display: block;"><img src="http://i.imgur.com/0LsMnPJ.png" onclick="javascript:history.back(-1);" title="Regresa uno pagina antes"></div><div id="pun-about" class="clearfix"><div class="logobottom"></div><div class="info-foot">
-      <h2>SOBRE VIgtech | GHS</h2>
-         
-          Esta plataforma web está desarrollada única y exclusivamente con fines de emprendimiento y busca brindar al usuario la posibilidad de realizar vigilancia tecnologica con los datos de la plataforma GitHub
+      <p></p>
+    
+
           
            </div>
-        <h6 align="center">
-				Este sitio está optimizado para <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" target="_blank"><img src="imagenes/crenesoft/icon_google.png"> Google Chrome </h6></div></div></div></div>
+        </div></div></div></div>
 </body>
 <!-- InstanceEnd --></html>
 <?php

@@ -365,9 +365,9 @@ $totalRows_imageness = mysql_num_rows($imageness);
 <html ng-app="githubSearcher">
 <!-- InstanceBegin template="/Templates/default1.dwt.php" codeOutsideHTMLIsLocked="false" --><head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="search/content/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="search/content/bootstrap-superhero.min.css">
-    <link rel="stylesheet" type="text/css" href="search/content/site.css">
+    <link rel="stylesheet" type="text/css" href="../search/content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../search/content/bootstrap-superhero.min.css">
+    <link rel="stylesheet" type="text/css" href="../search/content/site.css">
     <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -379,32 +379,32 @@ $totalRows_imageness = mysql_num_rows($imageness);
 <meta charset="utf-8">
 <!-- InstanceBeginEditable name="doctitle" -->
   
-  <script src="search/scripts/libs/angular.min.js"></script>
-  <script src="search/scripts/libs/angular-route.min.js"></script>
-  <script src="search/scripts/libs/angular-animate.min.js"></script>
-  <script src="webroot/jquery.js"></script>
-  <script src="search/scripts/app.js"></script>
+  <script src="../search/scripts/libs/angular.min.js"></script>
+  <script src="../search/scripts/libs/angular-route.min.js"></script>
+  <script src="../search/scripts/libs/angular-animate.min.js"></script>
+  <script src="../webroot/jquery.js"></script>
+  <script src="../search/scripts/app.js"></script>
 
 
 
-    <script src="search/scripts/Controllers/githubController.js"></script>
-    <script src="search/scripts/Controllers/githubUserController.js"></script>
-    <script src="search/scripts/Services/githubService.js"></script>
+    <script src="../search/scripts/Controllers/githubController.js"></script>
+    <script src="../search/scripts/Controllers/githubUserController.js"></script>
+    <script src="../search/scripts/Services/githubService.js"></script>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable --> 
-<link href="webroot/crenesoft.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-<link href="webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-<link href="webroot/css.css" rel="stylesheet" type="text/css">
-<link href="webroot/docs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menú-estilo.css" rel="stylesheet" type="text/css">
-<link href="webroot/style.css" rel="stylesheet" type="text/css">
-<link href="webroot/menurapido.css" rel="stylesheet" type="text/css">
-<link href="webroot/ghs.css" rel="stylesheet" type="text/css">
-<link href="webroot/menu_centro.css" rel="stylesheet" type="text/css">
+<link href="../webroot/crenesoft.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="../webroot/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="../webroot/css.css" rel="stylesheet" type="text/css">
+<link href="../webroot/docs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menú-estilo.css" rel="stylesheet" type="text/css">
+<link href="../webroot/style.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menurapido.css" rel="stylesheet" type="text/css">
+<link href="../webroot/ghs.css" rel="stylesheet" type="text/css">
+<link href="../webroot/menu_centro.css" rel="stylesheet" type="text/css">
  
 </head>
 <body> 
@@ -417,7 +417,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
 	      
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
-          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -425,11 +425,11 @@ $totalRows_imageness = mysql_num_rows($imageness);
             
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -437,7 +437,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
             
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="Copia_seguridad.php">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
         <?php } ?>
           
           
@@ -562,6 +562,10 @@ $totalRows_imageness = mysql_num_rows($imageness);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     width: 246px !important;
     font-weight: bold;
+  }
+  
+
+
 
 /*.fade {
     opacity: 0 !important;
@@ -664,6 +668,8 @@ bootstrap.min.css:5*/
 .table>tbody>tr>td {
     text-align: justify !important;
     vertical-align: bottom !important;
+    }
+   
  
 </style>
  <div class="container">
@@ -678,17 +684,17 @@ bootstrap.min.css:5*/
         </thead>
          <tbody>
             <tr>
-                <td><input type="text" placeholder="e.i: c++" id="lenguaje" value="php"></td>
-                <td><input type="text" placeholder="e.i: 365" id="duracion" value="2000"></td>
+                <td><input type="text" placeholder="e.i: c++" id="lenguaje" ></td>
+                <td><input type="text" placeholder="e.i: 365" id="duracion" ></td>
                 <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
             </tr>
             <tr>
                 <td colspan="4"><p id="resultado_cla"></p></td>
             </tr>
             <tr>
-            <td>
-            <div id="imagenc" ></div>
-            </td>
+                <td>
+                 <div id="imagenc" ></div>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -753,13 +759,11 @@ bootstrap.min.css:5*/
     </div>
      
     <div id="pun-foot"><div id="shitpe" style="display: block;"><img src="http://i.imgur.com/0LsMnPJ.png" onclick="javascript:history.back(-1);" title="Regresa uno pagina antes"></div><div id="pun-about" class="clearfix"><div class="logobottom"></div><div class="info-foot">
-      <h2>SOBRE VigHub | GHS</h2>
-         
-          Esta plataforma web está desarrollada única y exclusivamente con fines de emprendimiento y busca brindar al usuario la posibilidad de realizar vigilancia tecnologica con los datos de la plataforma GitHub
-          
+      <p></p>
+      <p></p>
+        
            </div>
-        <h6 align="center">
-				Este sitio está optimizado para <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" target="_blank"><img src="imagenes/crenesoft/icon_google.png"> Google Chrome </h6></div></div></div></div>
+        </div></div></div></div>
 
 
 </div>  
@@ -835,6 +839,9 @@ stroke: #333;
 stroke-opacity: 0.5;
 pointer-events: none;
 }
+.theImg{
+    margin-left: 400px;
+  }
 </style>
 <script type="text/javascript">
     <?php 
@@ -855,7 +862,7 @@ mysql_free_result($Recordset1);
 }
      ?>
 </script>
-<script src="search/scripts/libs/d3/d3.min.js"></script>
+<script src="../search/scripts/libs/d3/d3.min.js"></script>
 <script type="text/javascript"> 
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
@@ -2329,13 +2336,11 @@ function esExitoso(){
     var duracionU = $("#duracion").val();
     var resultado_cla = $("#resultado_cla");
     
-    console.log(lenguajeU, "lenguajeU", arr)
     var fn = arr[lenguajeU].length; 
     console.log(fn, "fn")
     var vp = arr[lenguajeU].filter(function(e){
       return e[2] > resultados[lenguajeU].promedio_value;
     }).length;
-    console.log(vp,"vp")
     var fp = fn - vp;
 
   function esBueno(resultados, lenguaje, valor ,duracion){
@@ -2348,7 +2353,7 @@ function esExitoso(){
 
 $.ajax({
     type: 'POST',
-    url: 'search/prueba.php',
+    url: '../search/prueba.php',
     data: {tabla: JSON.stringify (tabla)},
     success: function(data) { 
     $('#imagenc').prepend('<img id="theImg" src="http://localhost/vighubjson/search/'+data+'.csv.jpg" />')
