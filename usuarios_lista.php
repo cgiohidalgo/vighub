@@ -175,7 +175,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
     <td align="center"><img src="imagenes/logos/<?php echo $row_Recordset1['imagen']; ?>" width="50" height="50"></td>
     <td align="center"><?php echo $row_Recordset1['admin_priv']; ?></td>
     <td align="center"><?php echo $row_Recordset1['activo']; ?></td>
-    <td align="center"><a href="grupos_edit.php?recordID=<?php echo $row_Recordset1['idusuario']; ?>"><img src="imagenes/crenesoft/editar.png" width="38" height="38"></a>  <a href="grupos_borrar.php?recordID=<?php echo $row_Recordset1['idusuario']; ?>"><img src="imagenes/crenesoft/eliminar.png" width="38" height="38"></a></td>
+    <td align="center"> <a href="grupos_borrar.php?recordID=<?php echo $row_Recordset1['idusuario']; ?>"><img src="imagenes/crenesoft/eliminar.png" width="38" height="38"></a></td>
   </tr>
   <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
 </table>

@@ -378,20 +378,12 @@ $totalRows_imageness = mysql_num_rows($imageness);
 <head>
 <meta charset="utf-8">
 <!-- InstanceBeginEditable name="doctitle" -->
-
-
-
- 
- 
- 
-  
   
   <script src="search/scripts/libs/angular.min.js"></script>
   <script src="search/scripts/libs/angular-route.min.js"></script>
   <script src="search/scripts/libs/angular-animate.min.js"></script>
   <script src="webroot/jquery.js"></script>
-
-<script src="search/scripts/app.js"></script>
+  <script src="search/scripts/app.js"></script>
 
 
 
@@ -512,30 +504,102 @@ $totalRows_imageness = mysql_num_rows($imageness);
         <fieldset class="well well-small">
                    
   
-  
 
 
 
 
     
 
-    <title>VigHub</title>
+   <style type="text/css">
+     .modal {
+    position: fixed !important;
+    top: 10% !important;
+    left: 50% !important;
+    z-index: 1050 !important;
+    width: 600px !important;
+    height: 371px !important;
+    margin-left: -19% !important;
+    background-color: #fff !important;
+    border: 1px solid #999 !important;
+    border: 1px solid rgba(0,0,0,0.3) !important;
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    border-radius: 6px !important;
+    outline: 0 !important;
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3) !important;
+    -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3) !important;
+    -webkit-background-clip: padding-box !important;
+    -moz-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0 !important;
+    filter: alpha(opacity=80) !important;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0 !important;
+    background-color: #333;
+}
+  .probailitiy {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #49afcd;
+    background-image: -moz-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#2f96b4));
+    background-image: -webkit-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -o-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: linear-gradient(to bottom,#5bc0de,#2f96b4);
+    background-repeat: repeat-x;
+    border-color: #2f96b4 #2f96b4 #1f6377;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de',endColorstr='#ff2f96b4',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    width: 246px !important;
+    font-weight: bold;
+
+/*.fade {
+    opacity: 0 !important;
+    -webkit-transition: opacity .15s linear !important;
+    -moz-transition: opacity .15s linear !important;
+    -o-transition: opacity .15s linear !important;
+    transition: opacity .15s linear !important;
+}
+.modal.fade.in {
+    top: 10% !important; 
+}
+.modal.fade {
+    top: -25% !important;
+    -webkit-transition: opacity .3s linear,top .3s ease-out !important;
+    -moz-transition: opacity .3s linear,top .3s ease-out !important;
+    -o-transition: opacity .3s linear,top .3s ease-out !important;
+    transition: opacity .3s linear,top .3s ease-out !important;
+}
+.modal-open .modal {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+.fade.in {
+    opacity: 1 !important;
+}
+
+bootstrap.min.css:5*/
+
+   </style>
 </head>
+<!--
+<div>
+      
+<button type="button" class="probailitiy" data-toggle="modal" data-target="#myModal">Classifier by language and years</button>
 
-    <div class="container">   
-          <h1 align="center">browser</h1>
-            <div class="page" ng-view></div> 
-    </div>
-
-    <div>
-      <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-<!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -543,10 +607,12 @@ $totalRows_imageness = mysql_num_rows($imageness);
       </div>
       <div class="modal-body">
           <p>Some text in the modal.</p>
-          <input type="text" id="lenguaje">
-          <input type="text" id="duracion">
+          <input type="text" id="lenguaje" value="php">
+          <input type="text" id="duracion" value="2000">
           <p id="resultado_cla"></p>
-          <button type="button" class="btn btn-default" onclick="esExitoso()">¿es exitoso?</button>
+          <div id="imagenc">
+          </div>
+          <button type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button>
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -555,7 +621,14 @@ $totalRows_imageness = mysql_num_rows($imageness);
 
   </div>
 </div>
+    </div>-->
+
+    <div class="container">   
+          <h1 align="center">browser</h1>
+            <div class="page" ng-view></div> 
     </div>
+
+    
        
     <div class="container">
         <div class="row">
@@ -583,8 +656,45 @@ $totalRows_imageness = mysql_num_rows($imageness);
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-6"  style="width: 100%;"></div>
     </div>
-    </div>
-    
+    <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aaa;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:15px;font-weight:bold;padding:8px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:rgba(0, 0, 0, 0);color:#fff;background-color:#5783db;}
+.tg .tg-baqh{text-align:center;vertical-align:bottom}
+.table>tbody>tr>td {
+    text-align: justify !important;
+    vertical-align: bottom !important;
+ 
+</style>
+ <div class="container">
+   <div class="row">
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr class="success">
+            <th>Type your languaje</th>
+            <th>Type your time (in days)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" placeholder="e.i: c++" id="lenguaje" value="php"></td>
+            <td><input type="text" placeholder="e.i: 365" id="duracion" value="2000"></td>
+            <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="resultado_cla"></p></td>
+        </tr>
+        <tr>
+        <td >
+        <div id="imagenc" ></div>
+        </td>
+        </tr>
+    </tbody>
+</table>
+  
+  </div></div>
 
 
       <!--<div  class="col-md-6">
@@ -2166,11 +2276,13 @@ function getFrequency(items) {
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
-        var character = items[i][1];
-        if (freq[character]) {
-           freq[character].push(items[i]);
-        } else {
-           freq[character] = [items[i]];
+        if(items[i][1]){
+          var character = items[i][1].toLowerCase();
+          if (freq[character]) {
+             freq[character].push(items[i]);
+          } else {
+             freq[character] = [items[i]];
+          }
         }
     }
   return freq;
@@ -2181,12 +2293,16 @@ function promedio(args){
 }
 
 function esExitoso(){
-   var arr = getFrequency(datos.items.map(function(item){
+  var vn = datos.items.length;
+  console.log(vn, "vn")
+   var tabla = datos.items.map(function(item){
            var a = moment(new Date());
            var b = moment(new Date(item.created_at));
             return [item.name, item.language,promedio([item.stargazers_count,
-                    item.forks_count, item.score]), a.diff(b, 'days')];
-           }));
+                    item.forks_count, item.score]), a.diff(b, 'days'),item.stargazers_count,
+                    item.forks_count, item.score];
+           });
+   var arr = getFrequency(tabla);
 
     var resultados = {};
     for (var lenguaje in arr) {
@@ -2198,23 +2314,53 @@ function esExitoso(){
               return e[3];
             }))
        }
-        
     }
+
+    tabla = tabla.filter(function(e){
+        return e[1];
+    });
+    
+    tabla.map(function(e){
+      var etiqueta = esBueno(resultados, e[1].toLowerCase(), e[2], e[3]);
+      
+      return e.push(etiqueta?"true":"false");
+    })
 
     var lenguajeU = $("#lenguaje").val().trim().toLowerCase();
     var duracionU = $("#duracion").val();
     var resultado_cla = $("#resultado_cla");
     
-    
+    console.log(lenguajeU, "lenguajeU", arr)
+    var fn = arr[lenguajeU].length; 
+    console.log(fn, "fn")
+    var vp = arr[lenguajeU].filter(function(e){
+      return e[2] > resultados[lenguajeU].promedio_value;
+    }).length;
+    console.log(vp,"vp")
+    var fp = fn - vp;
 
   function esBueno(resultados, lenguaje, valor ,duracion){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
 
   var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
-  resultado_cla.text(esb);
+
+  resultado_cla.text(esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
+
+$.ajax({
+    type: 'POST',
+    url: 'search/prueba.php',
+    data: {tabla: JSON.stringify (tabla)},
+    success: function(data) { 
+    $('#imagenc').prepend('<img id="theImg" src="http://localhost/vighubjson/search/'+data+'.csv.jpg" />')
+
+    
+  },
+});
+
  }
  </script>
     
 </body>
 <!-- InstanceEnd --></html>
+

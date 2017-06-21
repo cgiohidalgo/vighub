@@ -8,7 +8,6 @@
 
         var onSearchComplete = function(data)
         {
-            
             scope.list = data.items;
             if(data.total_count > 1000)
                 scope.totalResults = 1000;
