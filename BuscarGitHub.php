@@ -652,13 +652,13 @@ bootstrap.min.css:5*/
       </br>
       </br>
       <div class="row">
-          <div id="frec_lang" align="center" class="col-md-8" style="width: 50%;"></div>
-          <div id="frec_type" align="center" class="col-md-8" style="width: 48%;"></div>
+          <div id="frec_lang" align="center" class="col-md-6" style="width: 50%;"></div>
+          <div id="frec_type" align="center" class="col-md-6" style="width: 48%;"></div>
       </div>
       </br>
       </br>
       <div class="row">
-          <div id="series_chart_div" align="center" class="col-md-6"  style="width: 100%;"></div>
+          <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
     <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#aaa;}
@@ -689,15 +689,12 @@ bootstrap.min.css:5*/
                 <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
             </tr>
             <tr>
-                <td colspan="4"><p id="resultado_cla"></p></td>
-            </tr>
-            <tr>
-                <td>
-                 <div id="imagenc" ></div>
-                </td>
+                <td colspan="4"><h3 id="resultado_cla"></p></td>
             </tr>
         </tbody>
     </table>
+
+                 <div   style="margin-left: 335px;" id="imagenc" ></div>
   </div>
 </div>
 
@@ -2329,7 +2326,7 @@ function esExitoso(){
     tabla.map(function(e){
       var etiqueta = esBueno(resultados, e[1].toLowerCase(), e[2], e[3]);
       
-      return e.push(etiqueta?"true":"false");
+      return e.push(etiqueta?"feasible":"Not feasible");
     })
 
     var lenguajeU = $("#lenguaje").val().trim().toLowerCase();
@@ -2337,7 +2334,7 @@ function esExitoso(){
     var resultado_cla = $("#resultado_cla");
     
     var fn = arr[lenguajeU].length; 
-    console.log(fn, "fn")
+    //console.log(fn, "fn")
     var vp = arr[lenguajeU].filter(function(e){
       return e[2] > resultados[lenguajeU].promedio_value;
     }).length;
@@ -2349,7 +2346,7 @@ function esExitoso(){
 
   var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
 
-  resultado_cla.text(esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
+  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
 
 $.ajax({
     type: 'POST',
