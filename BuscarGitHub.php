@@ -6,9 +6,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
-
   $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
@@ -30,20 +28,16 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   return $theValue;
 }
 }
-
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   $updateSQL = sprintf("UPDATE planes SET resumen=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['resumen'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -51,15 +45,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
   $updateSQL = sprintf("UPDATE planes SET descripcion=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['descripcion'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -67,15 +58,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form3")) {
   $updateSQL = sprintf("UPDATE planes SET analisis=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['analisis'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -83,15 +71,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form3")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form4")) {
   $updateSQL = sprintf("UPDATE planes SET cuerpo=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['cuerpo'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -99,15 +84,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form4")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form5")) {
   $updateSQL = sprintf("UPDATE planes SET operaciones=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['operaciones'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -115,15 +97,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form5")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form6")) {
   $updateSQL = sprintf("UPDATE planes SET ficha=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['ficha'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -131,15 +110,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form6")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form7")) {
   $updateSQL = sprintf("UPDATE planes SET desarrollo=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['desarrollo'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -147,15 +123,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form7")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form8")) {
   $updateSQL = sprintf("UPDATE planes SET des_proceso=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['des_proceso'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -163,15 +136,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form8")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form9")) {
   $updateSQL = sprintf("UPDATE planes SET nece_reque=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['nece_reque'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -179,15 +149,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form9")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form10")) {
   $updateSQL = sprintf("UPDATE planes SET plan_produ=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['plan_produ'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -195,15 +162,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form10")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form11")) {
   $updateSQL = sprintf("UPDATE planes SET riesgos=%s WHERE idplan=%s",
                        GetSQLValueString($_POST['riesgos'], "text"),
                        GetSQLValueString($_POST['idplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -211,16 +175,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form11")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form13")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen1=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen1'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -228,15 +188,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form13")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form14")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen2=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen2'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -244,15 +201,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form14")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form15")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen3=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen3'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -260,15 +214,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form15")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form16")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen4=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen4'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -276,15 +227,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form16")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form17")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen5=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen5'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -292,15 +240,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form17")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form18")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen6=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen6'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -308,15 +253,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form18")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form19")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen7=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen7'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -324,15 +266,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form19")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form20")) {
   $updateSQL = sprintf("UPDATE imagenes_plan_normal SET imagen8=%s WHERE idimagenplan=%s",
                        GetSQLValueString($_POST['imagen8'], "text"),
                        GetSQLValueString($_POST['idimagenplan'], "int"));
-
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($updateSQL, $crenesoft) or die(mysql_error());
-
   $updateGoTo = "modelo_normal.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -340,7 +279,6 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form20")) {
   }
   header(sprintf("Location: %s", $updateGoTo));
 }
-
 $varUsuario_Recordset1 = "0";
 if (isset($_SESSION["MM_idusuario"])) {
   $varUsuario_Recordset1 = $_SESSION["MM_idusuario"];
@@ -350,7 +288,6 @@ $query_Recordset1 = sprintf("SELECT * FROM planes WHERE planes.idplan = %s", Get
 $Recordset1 = mysql_query($query_Recordset1, $crenesoft) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
-
 $varUsuario_imageness = "0";
 if (isset($_SESSION["MM_idusuario"])) {
   $varUsuario_imageness = $_SESSION["MM_idusuario"];
@@ -408,13 +345,13 @@ $totalRows_imageness = mysql_num_rows($imageness);
  
 </head>
 <body> 
-	<header>  
+  <header>  
   
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
-		<div id="pun-intro" class="clearfix">
-		  <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
-	      
+    <div id="pun-intro" class="clearfix">
+      <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
+        
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
           <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
@@ -429,7 +366,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -445,52 +382,52 @@ $totalRows_imageness = mysql_num_rows($imageness);
 
  <?php if($_SESSION['MM_UserGroup']=='Admin'){?> 
 <div class="navbar navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">Panel de administración</a>
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				<ul id="menu"> 
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Panel de administración</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul id="menu"> 
 
-					<li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
-					
-				<li><a href="usuarios_lista.php">Lista de usuarios</a></li>
-				<li><a href="categorias_ver.php">Categorias de Software</a></li>
-				<li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
-				<li><a href="#">Contacto</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
-						<ul class="dropdown-menu">
-					
-							<li class="container">¡Hola!</li>
-							<li>
-								 
-							</li>
-						</ul>
-				</li>
-				</ul>
-				<ul class="nav pull-right">								
-								
-									</a>
-								</li>
-								<li>
-								 
-							</ul>
-			</div>
-		</div>
-	</div>
+          <li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
+          
+        <li><a href="usuarios_lista.php">Lista de usuarios</a></li>
+        <li><a href="categorias_ver.php">Categorias de Software</a></li>
+        <li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
+        <li><a href="#">Contacto</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
+            <ul class="dropdown-menu">
+          
+              <li class="container">¡Hola!</li>
+              <li>
+                 
+              </li>
+            </ul>
+        </li>
+        </ul>
+        <ul class="nav pull-right">               
+                
+                  </a>
+                </li>
+                <li>
+                 
+              </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <?php } else{?>
-		
+    
         <?php } ?>
  
-	</header>
+  </header>
     <nav>
-    	<p> 
+      <p> 
          
         </p>
     </nav>
     <section id="principal">
-    	<article> 
-		<!-- InstanceBeginEditable name="Contenido" -->      
+      <article> 
+    <!-- InstanceBeginEditable name="Contenido" -->      
  
   
  <div id="contenedor_formulario" class="well">
@@ -498,9 +435,9 @@ $totalRows_imageness = mysql_num_rows($imageness);
        
 
 
-			<!--<legend align="center">Utiliza las ayudas y/o utiliza el boton <span class="label label-info"> <a  class="linkeos"  title="Esta es una prueba">Ver mas</a></span> pasando el cursor sobre el para guiarte</legend>-->			
-		
-        		 
+      <!--<legend align="center">Utiliza las ayudas y/o utiliza el boton <span class="label label-info"> <a  class="linkeos"  title="Esta es una prueba">Ver mas</a></span> pasando el cursor sobre el para guiarte</legend>-->     
+    
+             
         <fieldset class="well well-small">
                    
   
@@ -564,9 +501,6 @@ $totalRows_imageness = mysql_num_rows($imageness);
     font-weight: bold;
   }
   
-
-
-
 /*.fade {
     opacity: 0 !important;
     -webkit-transition: opacity .15s linear !important;
@@ -591,19 +525,15 @@ $totalRows_imageness = mysql_num_rows($imageness);
 .fade.in {
     opacity: 1 !important;
 }
-
 bootstrap.min.css:5*/
-
    </style>
 </head>
 <!--
 <div>
       
 <button type="button" class="probailitiy" data-toggle="modal" data-target="#myModal">Classifier by language and years</button>
-
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -622,7 +552,6 @@ bootstrap.min.css:5*/
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>
     </div>-->
@@ -635,6 +564,9 @@ bootstrap.min.css:5*/
     
        
     <div class="container">
+        <div class="row">
+          <div id="chart_div1" align="center" class="col-md-10" style="width: 100%;"></div>
+    </div>
         <div class="row">
               <div id="container1" align="center" class="col-md-6"></div>
               <div id="container2" align="center" class="col-md-6"></div>
@@ -717,8 +649,8 @@ bootstrap.min.css:5*/
           
                 </fieldset>
           
- 		<!-- InstanceEndEditable -->
-        </article>    	
+    <!-- InstanceEndEditable -->
+        </article>      
     </section>
     <p>&nbsp;</p>
    
@@ -781,7 +713,6 @@ bootstrap.min.css:5*/
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
   margin-left: -73%;*/
-
 }
 #container2 {
   background: none repeat scroll 0 0 rgba rgba(0,0,0,1);
@@ -1010,7 +941,6 @@ hullg = vis.append("g");
 linkg = vis.append("g");
 nodeg = vis.append("g");
 init(); 
-
 vis.attr("opacity", 1e-6)
 .transition()
 .duration(1000)
@@ -1018,7 +948,6 @@ vis.attr("opacity", 1e-6)
 //});
 function init() {
 if (force) force.stop();
-
 net = network(data, net, getGroup, expand);
 force = d3.layout.force()
 .nodes(net.nodes)
@@ -1071,7 +1000,6 @@ link.enter().append("line")
 .attr("x2", function(d) { return d.target.x; })
 .attr("y2", function(d) { return d.target.y; })
 .style("stroke-width", function(d) { return d.size || 1; });
-
 node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
 node.exit().remove();
 var onEnter = node.enter();
@@ -1081,8 +1009,6 @@ var onEnter = node.enter();
       .attr("transform", function(d) { 
           return "translate(" + d.x + "," + d.y + ")"; 
       }); 
-
-
   
   g.append("circle")
       // if (d.size) -- d.size > 0 when d is a group node.      
@@ -1101,14 +1027,12 @@ init();
 g.append("text")
       .attr("fill","black")
   
-
   .text(function(d,i){
       if (d['name']){          
           //return d['name']+ "["+ d['language']+"]"; //importante
           return d['name'];
       }
   });
-
 node.call(force.drag);
 force.on("tick", function() {
 if (!hull.empty()) {
@@ -1119,13 +1043,11 @@ link.attr("x1", function(d) { return d.source.x; })
   .attr("y1", function(d) { return d.source.y; })
   .attr("x2", function(d) { return d.target.x; })
   .attr("y2", function(d) { return d.target.y; });
-
 node.attr("transform", function(d){
     return "translate("+d.x+","+d.y+")"});
 });
 }
     }
-
     </script>
     
     <script type="text/javascript"> 
@@ -1270,7 +1192,6 @@ hullg = vis.append("g");
 linkg = vis.append("g");
 nodeg = vis.append("g");
 init(); 
-
 vis.attr("opacity", 1e-6)
 .transition()
 .duration(1000)
@@ -1278,7 +1199,6 @@ vis.attr("opacity", 1e-6)
 //});
 function init() {
 if (force) force.stop();
-
 net = network(data, net, getGroup, expand);
 force = d3.layout.force()
 .nodes(net.nodes)
@@ -1331,7 +1251,6 @@ link.enter().append("line")
 .attr("x2", function(d) { return d.target.x; })
 .attr("y2", function(d) { return d.target.y; })
 .style("stroke-width", function(d) { return d.size || 1; });
-
 node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
 node.exit().remove();
 var onEnter = node.enter();
@@ -1341,7 +1260,6 @@ var onEnter = node.enter();
       .attr("transform", function(d) { 
           return "translate(" + d.x + "," + d.y + ")"; 
       }); 
-
   
   g.append("circle")
       // if (d.size) -- d.size > 0 when d is a group node.      
@@ -1359,13 +1277,11 @@ init();
 g.append("text")
       .attr("fill","black")
   
-
   .text(function(d,i){
       if (d['name']){          
           return d['language']; //importante
       }
   });
-
 node.call(force.drag);
 force.on("tick", function() {
 if (!hull.empty()) {
@@ -1376,12 +1292,10 @@ link.attr("x1", function(d) { return d.source.x; })
   .attr("y1", function(d) { return d.source.y; })
   .attr("x2", function(d) { return d.target.x; })
   .attr("y2", function(d) { return d.target.y; });
-
 node.attr("transform", function(d){
     return "translate("+d.x+","+d.y+")"});
 });
 }
-
     }
     </script>
     <script type="text/javascript"> 
@@ -1530,7 +1444,6 @@ hullg = vis.append("g");
 linkg = vis.append("g");
 nodeg = vis.append("g");
 init(); 
-
 vis.attr("opacity", 1e-6)
 .transition()
 .duration(1000)
@@ -1538,7 +1451,6 @@ vis.attr("opacity", 1e-6)
 //});
 function init() {
 if (force) force.stop();
-
 net = network(data, net, getGroup, expand);
 force = d3.layout.force()
 .nodes(net.nodes)
@@ -1591,7 +1503,6 @@ link.enter().append("line")
 .attr("x2", function(d) { return d.target.x; })
 .attr("y2", function(d) { return d.target.y; })
 .style("stroke-width", function(d) { return d.size || 1; });
-
 node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
 node.exit().remove();
 var onEnter = node.enter();
@@ -1601,7 +1512,6 @@ var onEnter = node.enter();
       .attr("transform", function(d) { 
           return "translate(" + d.x + "," + d.y + ")"; 
       }); 
-
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
@@ -1624,14 +1534,12 @@ init();
 g.append("text")
       .attr("fill","black")
   
-
   .text(function(d,i){
       if (d['name']){          
           //return d['name']+ "["+ d['language']+"]"; //importante
           return d['full_name'];
       }
   });
-
 node.call(force.drag);
 force.on("tick", function() {
 if (!hull.empty()) {
@@ -1642,7 +1550,6 @@ link.attr("x1", function(d) { return d.source.x; })
   .attr("y1", function(d) { return d.source.y; })
   .attr("x2", function(d) { return d.target.x; })
   .attr("y2", function(d) { return d.target.y; });
-
 node.attr("transform", function(d){
     return "translate("+d.x+","+d.y+")"});
 });
@@ -1795,7 +1702,6 @@ hullg = vis.append("g");
 linkg = vis.append("g");
 nodeg = vis.append("g");
 init(); 
-
 vis.attr("opacity", 1e-6)
 .transition()
 .duration(1000)
@@ -1803,7 +1709,6 @@ vis.attr("opacity", 1e-6)
 //});
 function init() {
 if (force) force.stop();
-
 net = network(data, net, getGroup, expand);
 force = d3.layout.force()
 .nodes(net.nodes)
@@ -1856,7 +1761,6 @@ link.enter().append("line")
 .attr("x2", function(d) { return d.target.x; })
 .attr("y2", function(d) { return d.target.y; })
 .style("stroke-width", function(d) { return d.size || 1; });
-
 node = nodeg.selectAll("g.node").data(net.nodes, nodeid);
 node.exit().remove();
 var onEnter = node.enter();
@@ -1866,7 +1770,6 @@ var onEnter = node.enter();
       .attr("transform", function(d) { 
           return "translate(" + d.x + "," + d.y + ")"; 
       }); 
-
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
@@ -1889,14 +1792,12 @@ init();
 g.append("text")
       .attr("fill","black")
   
-
   .text(function(d,i){
       if (d['name']){          
           //return d['name']+ "["+ d['language']+"]"; //importante
           return d['updated_at'];
       }
   });
-
 node.call(force.drag);
 force.on("tick", function() {
 if (!hull.empty()) {
@@ -1907,7 +1808,6 @@ link.attr("x1", function(d) { return d.source.x; })
   .attr("y1", function(d) { return d.source.y; })
   .attr("x2", function(d) { return d.target.x; })
   .attr("y2", function(d) { return d.target.y; });
-
 node.attr("transform", function(d){
     return "translate("+d.x+","+d.y+")"});
 });
@@ -1917,6 +1817,7 @@ reporte2();
 reporte3();
 reporte4();
 reporte5();
+reporte6();
     }
     </script>
 
@@ -1932,9 +1833,7 @@ reporte5();
            }));
         var data = google.visualization.arrayToDataTable(
            arr);
-
         var options = {
-
         title: 'Size of authors by score in topic',
         hAxis: {
           title: 'Score',
@@ -1974,9 +1873,7 @@ reporte5();
         $("#chart_div").height(560)
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
         chart.draw(data, options);
-
         google.visualization.events.addListener(chart, 'select', selectHandler); 
-
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -1991,7 +1888,6 @@ reporte5();
     <script type="text/javascript">
     function reporte2(){
       var criterio = "stargazers_count";
-
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -1999,16 +1895,13 @@ reporte5();
             return [item.name, item[criterio]];
            }));
         var data = google.visualization.arrayToDataTable(arr);
-
         var options = {
           title: 'Star repositories by users'
         };
         $("#piechart").height(560)
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
-
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2024,9 +1917,7 @@ reporte5();
     function reporte3() {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
-
     function drawSeriesChart() {
-
       var arr = [["name","forks_count","stargazers_count","language","Score"]].concat(datos.items.map(function(item){
             return [item.name, item.forks_count, item.stargazers_count, item.language, item.score];
            }));
@@ -2036,7 +1927,6 @@ reporte5();
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
-
         title: 'Correlation between name, fork, stargazers_count, language, score',
         hAxis: {
           title: 'Size of fork(copies) per repository',
@@ -2080,13 +1970,10 @@ reporte5();
         },
         bubble: {textStyle: {fontSize: 11}}
       };
-
       $("#series_chart_div").height(560)
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
       chart.draw(data, options);
-
       google.visualization.events.addListener(chart, 'select', selectHandler); 
-
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2100,12 +1987,10 @@ reporte5();
     function reporte4 (){
       google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawAxisTickColors);
-
 function drawAxisTickColors() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'frecuency');
       data.addColumn('number', 'Repos ');
-
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
@@ -2120,7 +2005,6 @@ function getFrequency(items) {
     for (var prop in freq) {
         obj.push([prop, freq[prop]]);
     }
-
     return obj;
 };
    var arr = getFrequency(datos.items.map(function(item){
@@ -2128,9 +2012,7 @@ function getFrequency(items) {
             //return [item.name, item.owner.type];
             return [item.name, item.language];
            }));
-
       data.addRows(arr);
-
       var options = {
         title: 'Frequency of language by topic',
         hAxis: {
@@ -2171,9 +2053,7 @@ function getFrequency(items) {
       $("#frec_lang").height(560)
       var chart = new google.visualization.ColumnChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
-
       google.visualization.events.addListener(chart, 'select ', selectHandler); 
-
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2188,12 +2068,10 @@ function getFrequency(items) {
     function reporte5 (){
       google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawAxisTickColors);
-
 function drawAxisTickColors() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'frecuency');
       data.addColumn('number', 'Repos ');
-
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
@@ -2208,7 +2086,6 @@ function getFrequency(items) {
     for (var prop in freq) {
         obj.push([prop, freq[prop]]);
     }
-
     return obj;
 };
    var arr = getFrequency(datos.items.map(function(item){
@@ -2216,9 +2093,7 @@ function getFrequency(items) {
             return [item.name, item.owner.type];
             //return [item.name, item.language];
            }));
-
       data.addRows(arr);
-
       var options = {
         title: 'Frequency of users or organizations worked on topic',
         hAxis: {
@@ -2262,9 +2137,7 @@ function getFrequency(items) {
       $("#frec_type").height(560)
       var chart = new google.visualization.ColumnChart(document.getElementById('frec_type'));
       chart.draw(data, options);
-
       google.visualization.events.addListener(chart, 'select ', selectHandler); 
-
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2275,6 +2148,35 @@ function getFrequency(items) {
     }
   }
     </script>
+    <script type="text/javascript">
+      function reporte6(){
+      google.charts.load('current', {packages:["orgchart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'name');
+        data.addColumn('string', 'language');
+        data.addColumn('string', 'stargazers_count');
+        
+  
+
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+        var arr = [["name","language","stargazers_count"]].concat(datos.items.map(function(item){
+            return [
+            item.name, item.language, item.stargazers_count];
+           }));
+        var data = google.visualization.arrayToDataTable(arr);
+
+        // Create the chart.
+        $("#chart_div1")
+     
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
+        // Draw the chart, setting the allowHtml option to true for the tooltips.
+        chart.draw(data, {allowHtml:true});
+      }}
+   </script>
     <script>
 function getFrequency(items) {
     var freq = {};
@@ -2290,11 +2192,9 @@ function getFrequency(items) {
     }
   return freq;
 };
-
 function promedio(args){
   return args.reduce(function(acc, e){return acc+e;}, 0)/args.length;
 }
-
 function esExitoso(){
   var vn = datos.items.length;
   console.log(vn, "vn")
@@ -2306,7 +2206,6 @@ function esExitoso(){
                     item.forks_count, item.score];
            });
    var arr = getFrequency(tabla);
-
     var resultados = {};
     for (var lenguaje in arr) {
         resultados[lenguaje.toLowerCase()] = {
@@ -2318,7 +2217,6 @@ function esExitoso(){
             }))
        }
     }
-
     tabla = tabla.filter(function(e){
         return e[1];
     });
@@ -2328,7 +2226,6 @@ function esExitoso(){
       
       return e.push(etiqueta?"feasible":"Not feasible");
     })
-
     var lenguajeU = $("#lenguaje").val().trim().toLowerCase();
     var duracionU = $("#duracion").val();
     var resultado_cla = $("#resultado_cla");
@@ -2339,29 +2236,22 @@ function esExitoso(){
       return e[2] > resultados[lenguajeU].promedio_value;
     }).length;
     var fp = fn - vp;
-
   function esBueno(resultados, lenguaje, valor ,duracion){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
-
   var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
-
   resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
-
 $.ajax({
     type: 'POST',
     url: '../search/prueba.php',
     data: {tabla: JSON.stringify (tabla)},
     success: function(data) { 
     $('#imagenc').prepend('<img id="theImg" src="http://localhost/vighubjson/search/'+data+'.csv.jpg" />')
-
     
   },
 });
-
  }
  </script>
     
 </body>
 <!-- InstanceEnd --></html>
-
