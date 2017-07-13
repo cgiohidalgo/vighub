@@ -567,6 +567,7 @@ bootstrap.min.css:5*/
         <div class="row">
           <div id="chart_div1" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
+    <!--
         <div class="row">
               <div id="container1" align="center" class="col-md-6"></div>
               <div id="container2" align="center" class="col-md-6"></div>
@@ -574,8 +575,11 @@ bootstrap.min.css:5*/
         <div class="row">
               <div id="container3" class="col-md-6"></div>
               <div id="container4" class="col-md-6"></div>
+    
         </div>
+    -->
     </div> 
+
     <div class="container">
       <div class="row">
           <div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>
@@ -586,6 +590,11 @@ bootstrap.min.css:5*/
       <div class="row">
           <div id="frec_lang" align="center" class="col-md-6" style="width: 50%;"></div>
           <div id="frec_type" align="center" class="col-md-6" style="width: 48%;"></div>
+      </div>
+      </br>
+      </br>
+      <div class="row">
+          <div id="frec_word" align="center" class="col-md-6" style="width: 50%;"></div>
       </div>
       </br>
       </br>
@@ -696,6 +705,7 @@ bootstrap.min.css:5*/
 
 
 </div>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.0/moment.min.js"></script>
@@ -1818,6 +1828,7 @@ reporte3();
 reporte4();
 reporte5();
 reporte6();
+reporte7();
     }
     </script>
 
@@ -2051,7 +2062,7 @@ function getFrequency(items) {
         }
       };
       $("#frec_lang").height(560)
-      var chart = new google.visualization.ColumnChart(document.getElementById('frec_lang'));
+      var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
       google.visualization.events.addListener(chart, 'select ', selectHandler); 
       function selectHandler(e) {
@@ -2067,15 +2078,47 @@ function getFrequency(items) {
     <script type="text/javascript">
     function reporte5 (){
       google.charts.load('current', {packages: ['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawAxisTickColors);
+      function drawAxisTickColors() {
+      var m = datos.items.map(function(item){
+            return [item.name, item.stargazers_count, item.owner.type === 'Organization' ? 'gold': 'silver'];
+           });
+      var data = google.visualization.arrayToDataTable( 
+         [['Nombre', 'Estrellas', { role: 'style' }]].concat(m));
+      
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      $("#frec_type").height(560)
+      var chart = new google.visualization.BarChart(document.getElementById('frec_type'));
+
+      chart.draw(data, options);
+      
+    }
+  }
+    </script>
+
+    <script type="text/javascript">
+    function reporte7 (){
+      google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawAxisTickColors);
 function drawAxisTickColors() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'frecuency');
       data.addColumn('number', 'Repos ');
+
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
-        var character = items[i][1];
+        var character = items[i].toLowerCase().replace(/\W/g, '');
         if (freq[character]) {
            freq[character]++;
         } else {
@@ -2084,26 +2127,25 @@ function getFrequency(items) {
     }
     var obj = []
     for (var prop in freq) {
+      if(freq[prop] > 1 && ! _.contains(["","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
         obj.push([prop, freq[prop]]);
-    }
+    } 
     return obj;
 };
-   var arr = getFrequency(datos.items.map(function(item){
-            //return [item.name, item.created_at];
-            return [item.name, item.owner.type];
-            //return [item.name, item.language];
-           }));
+      var texto = datos.items.reduce(function(acc,item){  
+            return acc+" "+item.description;
+},"");
+
+   var arr = getFrequency(texto.split(" "));
+   
       data.addRows(arr);
       var options = {
-        title: 'Frequency of users or organizations worked on topic',
+        title: 'Frequency of language by topic',
         hAxis: {
-          title: 'type(users or organizations)',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-        
+          title: 'Language',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
           },
           textStyle: {
             fontSize: 14,
@@ -2134,17 +2176,9 @@ function getFrequency(items) {
           }
         }
       };
-      $("#frec_type").height(560)
-      var chart = new google.visualization.ColumnChart(document.getElementById('frec_type'));
+      $("#frec_word").height(560)
+      var chart = new google.visualization.BarChart(document.getElementById('frec_word'));
       chart.draw(data, options);
-      google.visualization.events.addListener(chart, 'select ', selectHandler); 
-      function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
-        var elemento = datos.items.filter(function(e){
-          return e.name == name;
-        })[0];
-        openInNewTab(elemento.clone_url) 
-      }
     }
   }
     </script>
@@ -2159,22 +2193,37 @@ function getFrequency(items) {
         data.addColumn('string', 'name');
         data.addColumn('string', 'language');
         data.addColumn('string', 'stargazers_count');
-        
-  
+        datos.items = datos.items.filter(function(e){
+          return e.language;
+        })
+        var titulo = "click";
+        var lenguajes = _.uniq([titulo].concat(datos.items.map(function(item){
+            return  item.language;
+          })));
+        var jefes = lenguajes.map(function(item){
+            return  [item, titulo, ""];
+          });
 
-        // For each orgchart box, provide the name, manager, and tooltip to show.
-        var arr = [["name","language","stargazers_count"]].concat(datos.items.map(function(item){
+        jefes = jefes.concat(datos.items.map(function(item){
+          var padre = new Date(item.created_at).getFullYear()+"_"+_.indexOf(lenguajes,item.language);
             return [
-            item.name, item.language, item.stargazers_count];
-           }));
-        var data = google.visualization.arrayToDataTable(arr);
+            padre, item.language, ""];
+        }));
 
-        // Create the chart.
-        $("#chart_div1")
-     
+        var arr = jefes.concat(datos.items.map(function(item){
+          var padre = new Date(item.created_at).getFullYear()+"_"+_.indexOf(lenguajes,item.language);
+            return [
+            item.name, padre, item.stargazers_count+""];
+           }));
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+        data.addRows(arr);
+        
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
         // Draw the chart, setting the allowHtml option to true for the tooltips.
-        chart.draw(data, {allowHtml:true});
+        chart.draw(data, {allowHtml:true,allowCollapse:true/*, size:'small'*/});
+        for(var i=0; i<arr.length; i++)
+          chart.collapse(i, true);
+        //chart.draw(data, {allowHtml:true});
       }}
    </script>
     <script>
