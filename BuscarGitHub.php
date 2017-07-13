@@ -582,7 +582,8 @@ bootstrap.min.css:5*/
 
     <div class="container">
       <div class="row">
-          <div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>
+          <!--<div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>-->
+          <div id="frec_word" align="center" class="col-md-6" style="width: 50%;"></div>
           <div id="piechart" align="center" class="col-md-8" style="width: 48%;"></div>
       </div>
       </br>
@@ -593,11 +594,7 @@ bootstrap.min.css:5*/
       </div>
       </br>
       </br>
-      <div class="row">
-          <div id="frec_word" align="center" class="col-md-6" style="width: 50%;"></div>
-      </div>
-      </br>
-      </br>
+    
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
