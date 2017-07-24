@@ -567,11 +567,6 @@ bootstrap.min.css:5*/
         <div class="row">
           <div id="chart_div1" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
-     </br>
-    
-      <div class="row">
-          <div id="wordtree_basic" align="center" class="col-md-10" style="width: 100%;"></div>
-    </div>
     <!--
         <div class="row">
               <div id="container1" align="center" class="col-md-6"></div>
@@ -588,26 +583,21 @@ bootstrap.min.css:5*/
     <div class="container">
       <div class="row">
           <!--<div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>-->
-          <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
-          <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="frec_word" align="center" class="col-md-6" style="width: 50%;"></div>
+          <div id="piechart" align="center" class="col-md-8" style="width: 48%;"></div>
       </div>
       </br>
       </br>
       <div class="row">
-          <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
-          <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
+          <div id="frec_lang" align="center" class="col-md-6" style="width: 50%;"></div>
+          <div id="frec_type" align="center" class="col-md-6" style="width: 48%;"></div>
       </div>
       </br>
-      <div class="row">
-          <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
-    </div>
       </br>
     
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
-   
-    
     <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#aaa;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;}
@@ -789,7 +779,7 @@ pointer-events: none;
   }
 .google-visualization-orgchart-table * {
   padding: 0px !important;
-}  
+}
 </style>
 <script type="text/javascript">
     <?php 
@@ -1839,8 +1829,6 @@ reporte4();
 reporte5();
 reporte6();
 reporte7();
-reporte8();
-reporte9();
     }
     </script>
 
@@ -1914,8 +1902,8 @@ reporte9();
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-        var arr = [["full_name","stargazers_count"]].concat(datos.items.map(function(item){
-            return [item.full_name, item[criterio]];
+        var arr = [["name","stargazers_count"]].concat(datos.items.map(function(item){
+            return [item.name, item[criterio]];
            }));
         var data = google.visualization.arrayToDataTable(arr);
         var options = {
@@ -1928,7 +1916,7 @@ reporte9();
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
-          return e.full_name == name;
+          return e.name == name;
         })[0];
         openInNewTab(elemento.clone_url) 
       }
@@ -1941,8 +1929,8 @@ reporte9();
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
-      var arr = [["name","forks_count","stargazers_count","language","watchers"]].concat(datos.items.map(function(item){
-            return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
+      var arr = [["name","forks_count","stargazers_count","language","Score"]].concat(datos.items.map(function(item){
+            return [item.name, item.forks_count, item.stargazers_count, item.language, item.score];
            }));
       var data = google.visualization.arrayToDataTable(arr);
       var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
@@ -1996,7 +1984,7 @@ reporte9();
       $("#series_chart_div").height(560)
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
       chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
+      google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2012,9 +2000,8 @@ reporte9();
 google.charts.setOnLoadCallback(drawAxisTickColors);
 function drawAxisTickColors() {
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'frecuency  ');
-      data.addColumn('number', 'frecuency  ');
-
+      data.addColumn('string', 'frecuency');
+      data.addColumn('number', 'Repos ');
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
@@ -2077,7 +2064,7 @@ function getFrequency(items) {
       $("#frec_lang").height(560)
       var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
+      google.visualization.events.addListener(chart, 'select ', selectHandler); 
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2097,115 +2084,29 @@ function getFrequency(items) {
             return [item.name, item.stargazers_count, item.owner.type === 'Organization' ? 'gold': 'silver'];
            });
       var data = google.visualization.arrayToDataTable( 
-         [['Nombre', 'Frequency', 'type', { role: 'style' }]].concat(m));
+         [['Nombre', 'Estrellas', { role: 'style' }]].concat(m));
       
       var options = {
-        title: 'Total User and Organizations',
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
         hAxis: {
-          title: 'Frequency in topic',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          },
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
+          title: 'Total Population',
+          minValue: 0
         },
         vAxis: {
-          title: 'User and Organizations',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
+          title: 'City'
         }
       };
       $("#frec_type").height(560)
       var chart = new google.visualization.BarChart(document.getElementById('frec_type'));
+
       chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
-      function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
-        var elemento = datos.items.filter(function(e){
-          return e.name == name;
-        })[0];
-        openInNewTab(elemento.clone_url) 
-      }
+      
     }
   }
     </script>
+
     <script type="text/javascript">
-      function reporte6(){
-      google.charts.load('current', {packages:["orgchart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      
-
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'name');
-        data.addColumn('string', 'language');
-        data.addColumn('string', 'stargazers_count');
-        datos.items = datos.items.filter(function(e){
-          return e.language;
-        })
-        var titulo = "click";
-        var lenguajes = _.uniq([titulo].concat(datos.items.map(function(item){
-            return  new Date(item.created_at).getFullYear()+""//language;
-          })));
-        var jefes = lenguajes.map(function(item){
-            return  [item, titulo, ""];
-          });
-
-        jefes = jefes.concat(datos.items.map(function(item){
-          var padre = new Date(item.created_at).getFullYear()+"";
-          var hijo = item.language+"_"+_.indexOf(lenguajes,padre);
-            return [
-            hijo,padre, ""];
-        }));
-
-        var arr = jefes.concat(datos.items.map(function(item){
-          var abuelo = new Date(item.created_at).getFullYear()+""; /*vovler unico padre hijo*/
-          var padre = item.language+"_"+_.indexOf(lenguajes,abuelo);
-          return [
-            item.name, padre, item.stargazers_count+""];
-           }));
-        // For each orgchart box, provide the name, manager, and tooltip to show.
-        data.addRows(arr);
-        
-        var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
-
-        // Draw the chart, setting the allowHtml option to true for the tooltips.
-        chart.draw(data, {allowHtml:true,allowCollapse:true/*, size:'small'*/});
-        for(var i=0; i<arr.length; i++)
-          chart.collapse(i, true);
-        function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
-        var elemento = datos.items.filter(function(e){
-          return e.name == name;
-        })[0];
-        openInNewTab(elemento.clone_url) 
-      }
-        //chart.draw(data, {allowHtml:true});
-      }}
-   </script>
-   <script type="text/javascript">
     function reporte7 (){
       google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawAxisTickColors);
@@ -2226,7 +2127,7 @@ function getFrequency(items) {
     }
     var obj = []
     for (var prop in freq) {
-      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
+      if(freq[prop] > 1 && ! _.contains(["","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
         obj.push([prop, freq[prop]]);
     } 
     return obj;
@@ -2241,7 +2142,7 @@ function getFrequency(items) {
       var options = {
         title: 'Frequency of language by topic',
         hAxis: {
-          title: 'Frequency',
+          title: 'Language',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -2260,7 +2161,7 @@ function getFrequency(items) {
           }
         },
         vAxis: {
-          title: 'keyword',
+          title: 'Frequency',
           textStyle: {
             fontSize: 18,
             color: '#67001f',
@@ -2282,153 +2183,49 @@ function getFrequency(items) {
   }
     </script>
     <script type="text/javascript">
-    function reporte8() {
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawSeriesChart);
-    function drawSeriesChart() {
-      var arr = [["name","stargazers_count","forks_count","language","Score"]].concat(datos.items.map(function(item){
-            return [item.name, item.stargazers_count, item.forks_count, item.language, item.score ];
-           }));
-      var data = google.visualization.arrayToDataTable(arr);
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.7;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
-      var options =  {
-        title: 'Correlation between name, fork, stargazers_count, language, score',
-        hAxis: {
-          title: 'Size of fork(copies) per repository',
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
-          ticks: [minimoh, maximoh],
-          scaleType: 'log',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          },
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
-        },
-        vAxis: {
-          title: 'Size of stars per repository',
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
-          ticks: [minimo, maximo],
-          scaleType: 'log',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
-        },
-        bubble: {textStyle: {fontSize: 11}}
-      };
-      $("#series_chart_div3").height(560)
-      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div3'));
-      chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
-      function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
-        var elemento = datos.items.filter(function(e){
-          return e.name == name;
-        })[0];
-        openInNewTab(elemento.clone_url) 
-      }
-    }}
-    </script>
-    <script type="text/javascript">
-    function reporte9() {
-      google.charts.load('current', {packages:['wordtree']});
+      function reporte6(){
+      google.charts.load('current', {packages:["orgchart"]});
       google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-             var data = google.visualization.arrayToDataTable();
       
 
-function getFrequency(items) {
-    var freq = {};
-    for (var i=0; i<items.length;i++) {
-        var character = items[i].toLowerCase().replace(/\W/g, '');
-        if (freq[character]) {
-           freq[character]++;
-        } else {
-           freq[character] = 1;
-        }
-    }
-    var obj = []
-    for (var prop in freq) {
-      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
-        obj.push([prop, freq[prop]]);
-    } 
-    return obj;
-};
-      var texto = datos.items.reduce(function(acc,item){  
-            return acc+" "+item.description;
-},"");
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'name');
+        data.addColumn('string', 'language');
+        data.addColumn('string', 'stargazers_count');
+        datos.items = datos.items.filter(function(e){
+          return e.language;
+        })
+        var titulo = "click";
+        var lenguajes = _.uniq([titulo].concat(datos.items.map(function(item){
+            return  item.language;
+          })));
+        var jefes = lenguajes.map(function(item){
+            return  [item, titulo, ""];
+          });
 
-   var arr = getFrequency(texto.split(" "));
-   
-      data.addRows(arr);
-      var options = {
-        title: 'Frequency of language by topic',
-        hAxis: {
-          title: 'Frequency',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          },
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
-        },
-        vAxis: {
-          title: 'keyword',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
-        }
-      };
-      $("#wordtree_basic").height(560)
-       var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
-        chart.draw(data, options);
-      }
-  }
-       
-    </script>
-    
+        jefes = jefes.concat(datos.items.map(function(item){
+          var padre = new Date(item.created_at).getFullYear()+"_"+_.indexOf(lenguajes,item.language);
+            return [
+            padre, item.language, ""];
+        }));
+
+        var arr = jefes.concat(datos.items.map(function(item){
+          var padre = new Date(item.created_at).getFullYear()+"_"+_.indexOf(lenguajes,item.language);
+            return [
+            item.name, padre, item.stargazers_count+""];
+           }));
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+        data.addRows(arr);
+        
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
+        // Draw the chart, setting the allowHtml option to true for the tooltips.
+        chart.draw(data, {allowHtml:true,allowCollapse:true/*, size:'small'*/});
+        for(var i=0; i<arr.length; i++)
+          chart.collapse(i, true);
+        //chart.draw(data, {allowHtml:true});
+      }}
+   </script>
     <script>
 function getFrequency(items) {
     var freq = {};
@@ -2495,7 +2292,7 @@ function esExitoso(){
   resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
 $.ajax({
     type: 'POST',
-    url: '../search/prueba.php',
+    url: '/vighubjson/search/prueba.php',
     data: {tabla: JSON.stringify (tabla)},
     success: function(data) { 
     $('#imagenc').prepend('<img id="theImg" src="http://localhost/vighubjson/search/'+data+'.csv.jpg" />')
