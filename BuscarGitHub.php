@@ -587,7 +587,7 @@ bootstrap.min.css:5*/
 
     <div class="container">
       <div class="row">
-          <!--<div id="chart_div" align="center" class="col-md-8" style="width: 50%;"></div>-->
+          <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
           <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
       </div>
@@ -1848,54 +1848,24 @@ reporte9();
     <script type="text/javascript">
     function reporte(){
       var criterio = "score"
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var arr = [["name","score"]].concat(datos.items.map(function(item){
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+      function drawVisualization() {
+        var arr = [["full_name","stargazers_count"]].concat(datos.items.map(function(item){
             return [item.name, item[criterio]];
            }));
         var data = google.visualization.arrayToDataTable(
            arr);
         var options = {
-        title: 'Size of authors by score in topic',
-        hAxis: {
-          title: 'Score',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          },
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
-        },
-        vAxis: {
-          title: 'Frequency',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
-        }
-      };
+      title : 'Topic most searched subject by users',
+      vAxis: {title: 'Average users (per day)'},
+      hAxis: {title: 'Query'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
         $("#chart_div").height(560)
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
@@ -1919,7 +1889,7 @@ reporte9();
            }));
         var data = google.visualization.arrayToDataTable(arr);
         var options = {
-          title: 'Star repositories by users'
+          title: 'Repositories stars according to users'
         };
         $("#piechart").height(560)
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -2097,7 +2067,7 @@ function getFrequency(items) {
             return [item.name, item.stargazers_count, item.owner.type === 'Organization' ? 'gold': 'silver'];
            });
       var data = google.visualization.arrayToDataTable( 
-         [['Nombre', 'Frequency', 'type', { role: 'style' }]].concat(m));
+         [['Nombre', 'Frequency', { role: 'style' }]].concat(m));
       
       var options = {
         title: 'Total User and Organizations',
@@ -2239,7 +2209,7 @@ function getFrequency(items) {
    
       data.addRows(arr);
       var options = {
-        title: 'Frequency of language by topic',
+        title: 'Frequency of words by topic',
         hAxis: {
           title: 'Frequency',
           viewWindow: {
@@ -2295,9 +2265,9 @@ function getFrequency(items) {
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
-        title: 'Correlation between name, fork, stargazers_count, language, score',
+        title: 'Correlation between score and stargazers_count by users',
         hAxis: {
-          title: 'Size of fork(copies) per repository',
+          title: 'Stargazers  by users',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           ticks: [minimoh, maximoh],
           scaleType: 'log',
@@ -2319,7 +2289,7 @@ function getFrequency(items) {
           }
         },
         vAxis: {
-          title: 'Size of stars per repository',
+          title: 'User size',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
           ticks: [minimo, maximo],
           scaleType: 'log',
