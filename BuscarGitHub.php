@@ -587,22 +587,22 @@ bootstrap.min.css:5*/
 
     <div class="container">
       <div class="row">
-          <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
-          <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
-      </div>
-      </br>
-      </br>
-      <div class="row">
           <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
+          <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
+          
       </div>
       </br>
+      
+      <div class="row">
+          <div id="chart_divnew" align="center" class="col-md-10" style="width: 100%;"></div>
+    </div>
       <div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
       </br>
-    
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
@@ -1841,6 +1841,7 @@ reporte6();
 reporte7();
 reporte8();
 reporte9();
+reporte10();
     }
     </script>
 
@@ -2134,7 +2135,7 @@ function getFrequency(items) {
         datos.items = datos.items.filter(function(e){
           return e.language;
         })
-        var titulo = "click";
+        var titulo = "Hierarchical tree (clustering)";
         var lenguajes = _.uniq([titulo].concat(datos.items.map(function(item){
             return  new Date(item.created_at).getFullYear()+""//language;
           })));
@@ -2398,6 +2399,29 @@ function getFrequency(items) {
   }
        
     </script>
+    <script type="text/javascript">
+    function reporte10() {
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var arr = [["name","language","forks_count","stargazers_count","watchers"]].concat(datos.items.map(function(item){
+            return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
+           }));
+        var data = google.visualization.arrayToDataTable(arr);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_divnew'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }}
+    </script>
     
     <script>
 function getFrequency(items) {
@@ -2419,7 +2443,7 @@ function promedio(args){
 }
 function esExitoso(){
   var vn = datos.items.length;
-  console.log(vn, "vn")
+  //console.log(vn, "vn")
    var tabla = datos.items.map(function(item){
            var a = moment(new Date());
            var b = moment(new Date(item.created_at));
@@ -2468,7 +2492,7 @@ $.ajax({
     url: '../search/prueba.php',
     data: {tabla: JSON.stringify (tabla)},
     success: function(data) { 
-    $('#imagenc').prepend('<img id="theImg" src="http://localhost/vighubjson/search/'+data+'.csv.jpg" />')
+    $('#imagenc').prepend('<img id="theImg" src="localhost/vighubjson/search/'+data+'.csv.jpg" />')
     
   },
 });
