@@ -599,6 +599,9 @@ bootstrap.min.css:5*/
       <div class="row">
           <div id="chart_divnew" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
+    <div class="row">
+          <div id="chart_divnew1" align="center" class="col-md-10" style="width: 100%;"></div>
+    </div>
       <div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
@@ -812,6 +815,7 @@ mysql_free_result($Recordset1);
 </script>
 <script src="../search/scripts/libs/d3/d3.min.js"></script>
 <script type="text/javascript"> 
+palabrasFrec = []
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
@@ -1842,6 +1846,7 @@ reporte7();
 reporte8();
 reporte9();
 reporte10();
+reporte11();
     }
     </script>
 
@@ -1857,6 +1862,8 @@ reporte10();
            }));
         var data = google.visualization.arrayToDataTable(
            arr);
+        data.sort([{column: 1, desc: true}]);
+
         var options = {
       title : 'Topic most searched subject by users',
       vAxis: {title: 'Average users (per day)'},
@@ -1882,8 +1889,8 @@ reporte10();
     <script type="text/javascript">
     function reporte2(){
       var criterio = "stargazers_count";
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var arr = [["full_name","stargazers_count"]].concat(datos.items.map(function(item){
             return [item.full_name, item[criterio]];
@@ -2007,8 +2014,12 @@ function getFrequency(items) {
             //return [item.name, item.owner.type];
             return [item.name, item.language];
            }));
+
       data.addRows(arr);
+data.sort([{column: 1, desc: true}]);
+
       var options = {
+
         title: 'Frequency of language by topic',
         hAxis: {
           title: 'Language',
@@ -2028,6 +2039,7 @@ function getFrequency(items) {
             bold: true,
             italic: false
           }
+
         },
         vAxis: {
           title: 'Frequency',
@@ -2072,6 +2084,10 @@ function getFrequency(items) {
       
       var options = {
         title: 'Total User and Organizations',
+        chart : {
+          subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        },
+        legend: { position: "none" },
         hAxis: {
           title: 'Frequency in topic',
           viewWindow: {
@@ -2132,25 +2148,25 @@ function getFrequency(items) {
         data.addColumn('string', 'name');
         data.addColumn('string', 'language');
         data.addColumn('string', 'stargazers_count');
-        datos.items = datos.items.filter(function(e){
+        var datositems = datos.items.filter(function(e){
           return e.language;
         })
         var titulo = "Hierarchical tree (clustering)";
-        var lenguajes = _.uniq([titulo].concat(datos.items.map(function(item){
+        var lenguajes = _.uniq([titulo].concat(datositems.map(function(item){
             return  new Date(item.created_at).getFullYear()+""//language;
           })));
         var jefes = lenguajes.map(function(item){
             return  [item, titulo, ""];
           });
 
-        jefes = jefes.concat(datos.items.map(function(item){
+        jefes = jefes.concat(datositems.map(function(item){
           var padre = new Date(item.created_at).getFullYear()+"";
           var hijo = item.language+"_"+_.indexOf(lenguajes,padre);
             return [
             hijo,padre, ""];
         }));
 
-        var arr = jefes.concat(datos.items.map(function(item){
+        var arr = jefes.concat(datositems.map(function(item){
           var abuelo = new Date(item.created_at).getFullYear()+""; /*vovler unico padre hijo*/
           var padre = item.language+"_"+_.indexOf(lenguajes,abuelo);
           return [
@@ -2168,7 +2184,7 @@ function getFrequency(items) {
           chart.collapse(i, true);
         function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
-        var elemento = datos.items.filter(function(e){
+        var elemento = datositems.filter(function(e){
           return e.name == name;
         })[0];
         openInNewTab(elemento.clone_url) 
@@ -2207,8 +2223,10 @@ function getFrequency(items) {
 },"");
 
    var arr = getFrequency(texto.split(" "));
-   
+
       data.addRows(arr);
+      data.sort([{column: 1, desc: true}]);
+
       var options = {
         title: 'Frequency of words by topic',
         hAxis: {
@@ -2326,7 +2344,6 @@ function getFrequency(items) {
     function reporte9() {
       google.charts.load('current', {packages:['wordtree']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
              var data = google.visualization.arrayToDataTable();
       
@@ -2352,8 +2369,8 @@ function getFrequency(items) {
             return acc+" "+item.description;
 },"");
 
-   var arr = getFrequency(texto.split(" "));
-   
+   var arr = getFrequency(texto.split(" ")); 
+   //hola.push(")")
       data.addRows(arr);
       var options = {
         title: 'Frequency of language by topic',
@@ -2398,26 +2415,115 @@ function getFrequency(items) {
       }
   }
        
-    </script>
+    </script> 
     <script type="text/javascript">
     function reporte10() {
       google.charts.load('current', {'packages':['treemap']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-        var arr = [["name","language","forks_count","stargazers_count","watchers"]].concat(datos.items.map(function(item){
-            return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
+
+function getFrequency(items) {
+    var freq = {};
+    for (var i=0; i<items.length;i++) {
+        var character = items[i][1];
+        if (freq[character]) {
+           freq[character].frecuency = freq[character].frecuency + 1;
+           freq[character].score = freq[character].score + items[i][2];
+        } else {
+           freq[character] = {
+            frecuency : 1,
+            score : items[i][2]
+          };
+        }
+    }
+    var obj = []
+    for (var prop in freq) {
+        obj.push([prop, 'Global', null,null/*freq[prop].frecuency, freq[prop].score / freq[prop].frecuency*/]);
+    }
+    return obj;
+};
+   var arr = getFrequency(datos.items.map(function(item){
+            //return [item.name, item.created_at];
+            //return [item.name, item.owner.type];
+            return [item.name, item.language, item.score ];
            }));
-        var data = google.visualization.arrayToDataTable(arr);
+
+        var data = google.visualization.arrayToDataTable(
+          [
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Global',    null,                 0,                               0],
+        ].concat(arr).concat(datos.items.map(function(item){
+            return [item.name, item.language+"", item.score , item.stargazers_count ];
+           })));
+
 
         tree = new google.visualization.TreeMap(document.getElementById('chart_divnew'));
+        $("#chart_divnew").height(560)
+        tree.draw(data,{
+          highlightOnMouseOver: true,
+          maxDepth: 1,
+          maxPostDepth: 2,
+          minHighlightColor: '#8c6bb1',
+          midHighlightColor: '#9ebcda',
+          maxHighlightColor: '#edf8fb',
+          minColor: '#009688',
+          midColor: '#f7f7f7',
+          maxColor: '#ee8100',
+          headerHeight: 15,
+          showScale: true,
+          height: 500,
+          useWeightedAverageForAggregation: true
+      });
 
+      }}
+    </script>
+    <script type="text/javascript">
+    function reporte11() {
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+function getFrequency(items) {
+    var freq = {};
+    for (var i=0; i<items.length;i++) {
+        var character = items[i].toLowerCase().replace(/\W/g, '');
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+    var obj = []
+    for (var prop in freq) {
+      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
+        obj.push([prop, 'Global', freq[prop], freq[prop]]);
+    } 
+    return obj;
+};
+
+      var texto = datos.items.reduce(function(acc,item){  
+            return acc+" "+item.description;
+},"");
+
+   var arr = getFrequency(texto.split(" "));
+
+        var data = google.visualization.arrayToDataTable(
+          [
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Global',    null,                 0,                               0],
+        ].concat(arr));
+
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_divnew1'));
+        $("#chart_divnew1").height(560)
         tree.draw(data, {
           minColor: '#f00',
           midColor: '#ddd',
           maxColor: '#0d0',
           headerHeight: 15,
           fontColor: 'black',
-          showScale: true
+          showScale: true,
+          title: "GGG"
         });
 
       }}
@@ -2443,7 +2549,6 @@ function promedio(args){
 }
 function esExitoso(){
   var vn = datos.items.length;
-  //console.log(vn, "vn")
    var tabla = datos.items.map(function(item){
            var a = moment(new Date());
            var b = moment(new Date(item.created_at));
@@ -2477,7 +2582,6 @@ function esExitoso(){
     var resultado_cla = $("#resultado_cla");
     
     var fn = arr[lenguajeU].length; 
-    //console.log(fn, "fn")
     var vp = arr[lenguajeU].filter(function(e){
       return e[2] > resultados[lenguajeU].promedio_value;
     }).length;
@@ -2492,8 +2596,8 @@ $.ajax({
     url: '../search/prueba.php',
     data: {tabla: JSON.stringify (tabla)},
     success: function(data) { 
-    $('#imagenc').prepend('<img id="theImg" src="localhost/vighubjson/search/'+data+'.csv.jpg" />')
-    
+    $('#imagenc').empty();
+    $('#imagenc').prepend('<img id="theImg" src="../search/'+data+'.csv.jpg" />')
   },
 });
  }
