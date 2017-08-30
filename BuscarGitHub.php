@@ -587,7 +587,10 @@ bootstrap.min.css:5*/
 
     <div class="container">
       <div class="row">
+          <p>esta es una prueba</p>
+          <p id="susano"></p>
           <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
+          <p>esta es una prueba</p>
           <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
@@ -1852,6 +1855,9 @@ reporte11();
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+    escribir = getElementById("susano");
+escribir.backgroundColor="red";
+escribir.border="3px black solid";
     function reporte(){
       var criterio = "score"
       google.charts.load('current', {'packages':['corechart']});
@@ -1866,11 +1872,15 @@ reporte11();
 
         var options = {
       title : 'Topic most searched subject by users',
+      legend: { position: "none" },
       vAxis: {title: 'Average users (per day)'},
       hAxis: {title: 'Query'},
       seriesType: 'bars',
       series: {5: {type: 'line'}}
     };
+    
+
+
         $("#chart_div").height(560)
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
     chart.draw(data, options);
@@ -1882,6 +1892,7 @@ reporte11();
         })[0];
         openInNewTab(elemento.clone_url) 
       }
+
       }
       
     }
@@ -2021,6 +2032,11 @@ data.sort([{column: 1, desc: true}]);
       var options = {
 
         title: 'Frequency of language by topic',
+        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        legend: { position: "none" },
+        chart: { title: 'Cheese',
+                    subtitle: 'pieces' },
+
         hAxis: {
           title: 'Language',
           viewWindow: {
@@ -2060,7 +2076,8 @@ data.sort([{column: 1, desc: true}]);
       $("#frec_lang").height(560)
       var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
+        google.visualization.events.addListener(chart, 'ready', selectHandler); 
+
       function selectHandler(e) {
         var name =data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
@@ -2229,6 +2246,7 @@ function getFrequency(items) {
 
       var options = {
         title: 'Frequency of words by topic',
+        legend: { position: "none" },
         hAxis: {
           title: 'Frequency',
           viewWindow: {
@@ -2285,6 +2303,7 @@ function getFrequency(items) {
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
         title: 'Correlation between score and stargazers_count by users',
+
         hAxis: {
           title: 'Stargazers  by users',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
@@ -2373,7 +2392,9 @@ function getFrequency(items) {
    //hola.push(")")
       data.addRows(arr);
       var options = {
-        title: 'Frequency of language by topic',
+        title: 'Frequency of language by topic1',
+        legend: { position: "none" },
+        
         hAxis: {
           title: 'Frequency',
           viewWindow: {
