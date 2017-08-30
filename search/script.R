@@ -38,10 +38,10 @@ for (i in 1:Folds)
 jpeg(paste("./", args[1],".jpg", sep=""))
 promedio <- format(mean(Iter$acierto, na.rm=TRUE)*100,digits = 4)
 plot(Iter,type = "b", main = "% Prediccion en Cada Iteracion",
-     cex.axis = .7,cex.lab = .7,cex.main = .8, 
+     cex.axis = 2,cex.lab = 1.5,cex.main = 2, CexSub = 2, 
      xlab ="No. de Iteraciones", ylab="% Prediccion")
-abline(h = mean(Iter$acierto), col = "blue", lty = 2)
+abline(h = mean(Iter$acierto), col = "blue", lty = 5)
 legend("topright", legend = paste("Eficiencia de Prediccion =", promedio, "%"),
-       col = "blue", lty = 2, lwd = 1, cex=.7, bg=NULL)
+       col = "blue", lty = 4, lwd = 1.5, cex=1.5, bg=NULL)
 dev.off()
 print(promedio)

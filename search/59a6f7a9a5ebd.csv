@@ -1,0 +1,28 @@
+d3,JavaScript,27865.662873,2529,66260,17329,7.988619,"Not feasible"
+tensorflow,C++,31732.427705,662,64026,31161,10.283115,feasible
+redis,C,11189.202714,3083,24325,9238,4.608142,feasible
+big-list-of-naughty-strings,Python,7377.8684016667,752,21292,837,4.605205,feasible
+select2,JavaScript,8446.3765436667,2004,20708,4625,6.129631,"Not feasible"
+immutable-js,JavaScript,6915.4202725,1155,19643,1097,6.2608175,"Not feasible"
+protobuf,C++,8121.196254,1100,18782,5571,10.588762,"Not feasible"
+SwiftyJSON,Swift,5888.1234226667,1169,15000,2656,8.370268,"Not feasible"
+incubator-superset,Python,5720.8543383333,770,14987,2126,49.563015,feasible
+etcd,Go,5624.5656404333,1515,14137,2730,6.6969213,feasible
+swift-algorithm-club,Swift,5106.71325,581,13363,1949,8.13975,"Not feasible"
+Faker,PHP,4339.1177759333,2146,11279,1732,6.3533278,feasible
+realm-cocoa,Objective-C,4142.4189535667,1961,11022,1399,6.2568607,feasible
+faker.js,JavaScript,3881.0015521,2664,10776,861,6.0046563,"Not feasible"
+interactive-coding-challenges,Python,3977.0816126,854,10647,1278,6.2448378,"Not feasible"
+MagicalRecord,Objective-C,4095.0002246667,2590,10423,1854,8.000674,"Not feasible"
+pandas,Python,4791.6052936667,2563,10288,4078,8.815881,"Not feasible"
+history.js,JavaScript,3753.7064963333,2414,9839,1419,3.119489,"Not feasible"
+data-science-ipython-notebooks,Python,4038.322457,949,9644,2452,18.967371,"Not feasible"
+iCarousel,Objective-C,3944.8168553333,2337,9576,2252,6.450566,"Not feasible"
+relay,JavaScript,3333.9799446667,750,9203,793,5.939834,"Not feasible"
+deep-photo-styletransfer,Matlab,3307.2913074333,161,9179,737,5.8739223,feasible
+DZNEmptyDataSet,Objective-C,3395.3294213333,1184,8899,1269,17.988264,"Not feasible"
+algorithms,Python,3328.8811841,285,8842,1137,7.6435523,"Not feasible"
+coreclr,C#,3306.3349463333,942,7918,1997,4.004839,feasible
+falcor,JavaScript,2712.3816166667,929,7799,330,8.14485,"Not feasible"
+logstash,Ruby,3321.3307471333,2477,7747,2209,7.9922414,feasible
+TTTAttributedLabel,Objective-C,3041.7359628667,2307,7628,1491,6.2078886,"Not feasible"

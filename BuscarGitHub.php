@@ -587,10 +587,10 @@ bootstrap.min.css:5*/
 
     <div class="container">
       <div class="row">
-          <p>esta es una prueba</p>
+         
           <p id="susano"></p>
           <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
-          <p>esta es una prueba</p>
+  
           <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
@@ -1871,7 +1871,7 @@ escribir.border="3px black solid";
         data.sort([{column: 1, desc: true}]);
 
         var options = {
-      title : 'Topic most searched subject by users',
+      title : 'Most relevant keywords in repositories',
       legend: { position: "none" },
       vAxis: {title: 'Average users (per day)'},
       hAxis: {title: 'Query'},
@@ -1908,7 +1908,7 @@ escribir.border="3px black solid";
            }));
         var data = google.visualization.arrayToDataTable(arr);
         var options = {
-          title: 'Repositories stars according to users'
+          title: 'Repositories best evaluated by the users (according number of stars, number of copies and score)'
         };
         $("#piechart").height(560)
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -1939,9 +1939,13 @@ escribir.border="3px black solid";
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
-        title: 'Correlation between name, fork, stargazers_count, language, score',
+        title: '1- shows the best evaluated repositories (the bigger the ball the better the evaluation).\n'+
+        '2- the similar color makes them belong to the same programming language.\n3- in the X and Y axis shows the average number of users using the best evaluated repositories.',
+         is3D: true,
+
         hAxis: {
           title: 'Size of fork(copies) per repository',
+
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           ticks: [minimoh, maximoh],
           scaleType: 'log',
@@ -2031,8 +2035,7 @@ data.sort([{column: 1, desc: true}]);
 
       var options = {
 
-        title: 'Frequency of language by topic',
-        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        title: 'Frequency of language programming by topic',
         legend: { position: "none" },
         chart: { title: 'Cheese',
                     subtitle: 'pieces' },
@@ -2100,7 +2103,7 @@ data.sort([{column: 1, desc: true}]);
          [['Nombre', 'Frequency', { role: 'style' }]].concat(m));
       
       var options = {
-        title: 'Total User and Organizations',
+        title: 'Organizations and Users trend by topic',
         chart : {
           subtitle: 'Sales, Expenses, and Profit: 2014-2017',
         },
@@ -2478,9 +2481,15 @@ function getFrequency(items) {
            })));
 
 
+
+
         tree = new google.visualization.TreeMap(document.getElementById('chart_divnew'));
         $("#chart_divnew").height(560)
+
+
+
         tree.draw(data,{
+          title: "Shows by languages (the bigger the picture, the greater development) and by color (more orange color more important).\n\n\n",
           highlightOnMouseOver: true,
           maxDepth: 1,
           maxPostDepth: 2,
@@ -2490,11 +2499,21 @@ function getFrequency(items) {
           minColor: '#009688',
           midColor: '#f7f7f7',
           maxColor: '#ee8100',
-          headerHeight: 15,
+          headerHeight: 20,
+          titleHeight: 20,
           showScale: true,
           height: 500,
           useWeightedAverageForAggregation: true
+          
       });
+        google.visualization.events.addListener(tree, 'select', selectHandler); 
+      function selectHandler(e) {
+        var name =data.getValue(tree.getSelection()[0].row, null)   
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url) 
+      }
 
       }}
     </script>
@@ -2544,7 +2563,8 @@ function getFrequency(items) {
           headerHeight: 15,
           fontColor: 'black',
           showScale: true,
-          title: "GGG"
+          title: "In this chart it shows the relevance of the words starting from an orginen (between more green color, greater frequency of the word in the subject). The horizontal and vertical positions indicate the relationship between words.\n\n\n\n\n\n\n\naaaa",
+          subtitle :"holaaaaaaa"
         });
 
       }}
