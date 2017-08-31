@@ -598,10 +598,27 @@ bootstrap.min.css:5*/
           
       </div>
       </br>
-      
+       <p style="text-anchor: start;
+    font-family: Arial;
+    font-size: 17.2px;
+    font-weight: bold;
+    stroke: none;
+    stroke-width: 0;
+    fill: rgb(0, 0, 0);
+    color: black;
+    text-align: justify;">Shows by languages (the bigger the picture, the greater development) and by color (more orange color more important).</p>
       <div class="row">
           <div id="chart_divnew" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
+    <p style="text-anchor: start;
+    font-family: Arial;
+    font-size: 17.2px;
+    font-weight: bold;
+    stroke: none;
+    stroke-width: 0;
+    fill: rgb(0, 0, 0);
+    color: black;
+    text-align: justify;">In this chart it shows the relevance of the words starting from an orginen (between more green color, greater frequency of the word in the subject). The horizontal and vertical positions indicate the relationship between words.</p>
     <div class="row">
           <div id="chart_divnew1" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
@@ -1939,8 +1956,7 @@ escribir.border="3px black solid";
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
-        title: '1- shows the best evaluated repositories (the bigger the ball the better the evaluation).\n'+
-        '2- the similar color makes them belong to the same programming language.\n3- in the X and Y axis shows the average number of users using the best evaluated repositories.',
+        title: '',
          is3D: true,
 
         hAxis: {
@@ -2305,7 +2321,8 @@ function getFrequency(items) {
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
       var options =  {
-        title: 'Correlation between score and stargazers_count by users',
+        title: '1- shows the best evaluated repositories (the bigger the ball the better the evaluation).\n'+
+        '2- the similar color makes them belong to the same programming language.\n3- in the X and Y axis shows the average number of users using the best evaluated repositories.',
 
         hAxis: {
           title: 'Stargazers  by users',
@@ -2488,8 +2505,7 @@ function getFrequency(items) {
 
 
 
-        tree.draw(data,{
-          title: "Shows by languages (the bigger the picture, the greater development) and by color (more orange color more important).\n\n\n",
+        tree.draw(data,oprions = {
           highlightOnMouseOver: true,
           maxDepth: 1,
           maxPostDepth: 2,
@@ -2562,9 +2578,7 @@ function getFrequency(items) {
           maxColor: '#0d0',
           headerHeight: 15,
           fontColor: 'black',
-          showScale: true,
-          title: "In this chart it shows the relevance of the words starting from an orginen (between more green color, greater frequency of the word in the subject). The horizontal and vertical positions indicate the relationship between words.\n\n\n\n\n\n\n\naaaa",
-          subtitle :"holaaaaaaa"
+          showScale: true
         });
 
       }}
