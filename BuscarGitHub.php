@@ -619,11 +619,13 @@ bootstrap.min.css:5*/
     </div>
       <div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
-          <div id="series_chart_legend"></div>
+          <div id="series_chart_div3_legend"></div>
+          
     </div>
       </br>
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
+          <div id="series_chart_legend"></div>
     </div>
    
     
@@ -1985,7 +1987,7 @@ escribir.border="3px black solid";
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-1); //pa taco 
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x
          var options =  {
-        title: 'Bubble chart in 4-dimensional repositories evaluation',
+        title: 'Bubble chart in 4-dimensional repositories greater success',
         hAxis: {
           title: 'Size of fork(copies) per repository',
 
@@ -2031,7 +2033,7 @@ escribir.border="3px black solid";
       };
       $("#series_chart_div").height(560)
       $('#series_chart_legend').empty();
-      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> 1- entre más grande el globo, mayor evaluación  evaluación de repositorios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación.\n Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- Score (segun la actividad GitHub le da puntos para que sea tendencia un usuario). </p>').appendTo('#frec_type_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> 1- entre más grande el globo, mayor exito de repositorios entre los usuarios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación.\n Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- watchers (con que frecuencia visitian el respositorio). </p>').appendTo('#series_chart_legend');
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2168,7 +2170,7 @@ data.sort([{column: 1, desc: true}]);
             italic: false
           },
           titleTextStyle: {
-            fontSize: 18,
+            fontSize: 25,
             color: '#67001f',
             bold: true,
             italic: false
@@ -2177,7 +2179,7 @@ data.sort([{column: 1, desc: true}]);
         vAxis: {
           title: 'Frequency',
           textStyle: {
-            fontSize: 18,
+            fontSize: 12,
             color: '#333',
             bold: false,
             italic: false
@@ -2374,8 +2376,7 @@ function getFrequency(items) {
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*(-1); //pa taco 
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+10000; //este es para mover de izquierda a derecha en eje x
       var options =  {
-        title: '1- shows the best evaluated repositories (the bigger the ball the better the evaluation).\n'+
-        '2- the similar color makes them belong to the same programming language.\n3- in the X and Y axis shows the average number of users using the best evaluated repositories.',
+        title: 'Bubble chart in 4-dimensional repositories evaluation',
 
 
 
@@ -2424,6 +2425,9 @@ function getFrequency(items) {
 
       };
       $("#series_chart_div3").height(560)
+      $('#series_chart_div3_legend').empty();
+       
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Entre más grande el globo, mayor evaluación de repositorios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación. Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- Score (segun la actividad GitHub le da puntos para que sea tendencia un usuario).</p>').appendTo('#series_chart_div3_legend');
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div3'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2551,7 +2555,7 @@ function getFrequency(items) {
           ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
           ['Global',    null,                 0,                               0],
         ].concat(arr).concat(datos.items.map(function(item){
-            return [item.name, item.language+"", item.score , item.stargazers_count ];
+            return [item.full_name, item.language+"", item.score , item.stargazers_count ];
            })));
 
 
@@ -2639,7 +2643,7 @@ function getFrequency(items) {
         $("#chart_divnew1").height(560)
         $('#chart_divnew12_legend').empty();
         $('#chart_divnew11_legend').empty();
-        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by languages and respositories.</p>').appendTo('#chart_divnew12_legend');
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by similarity of words.</p>').appendTo('#chart_divnew12_legend');
         $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra cantidad de desarrollos e importancia del repositorio en el tema.   (entre mayor sea el cuadro que contiene un lenguaje = mayor cantidad de desarrollos), (el color agua marina identifica el desarrollo más relevante y el color naranja el menos relevante para la consulta)  .</p>').appendTo('#chart_divnew11_legend');
 
         var options = {   
