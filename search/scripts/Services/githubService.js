@@ -1,5 +1,5 @@
 /**
- * Created by NinjaDev
+ * Created by GHS
  */
 (function(){
 

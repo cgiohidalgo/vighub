@@ -1,0 +1,25 @@
+tensorflow,C++,34023.353865333,663,68424,33631,15.061596,feasible
+awesome-machine-learning,Python,10576.952873333,1143,25426,6277,27.85862,"Not feasible"
+scikit-learn,Python,10706.426526667,2571,20894,11209,16.27958,"Not feasible"
+hhvm,C++,5805.8772936667,2798,14712,2696,9.631881,"Not feasible"
+incubator-predictionio,Scala,4030.693008,1678,10377,1707,8.079024,"Not feasible"
+ievms,Shell,3476.1234723333,2217,9912,506,10.370417,feasible
+xgboost,C++,4256.4601907667,1302,8546,4216,7.3805723,"Not feasible"
+magenta,Python,2744.3409293333,482,7070,1152,11.022788,"Not feasible"
+python-machine-learning-book,"Jupyter Notebook",3158.6667593333,754,7052,2399,25.000278,feasible
+packer,Go,2866.6554186667,1622,6816,1776,7.966256,"Not feasible"
+ML-From-Scratch,Python,2319.4195029,207,6271,681,6.2585087,"Not feasible"
+MLAlgorithms,Python,2324.5626006667,330,6081,882,10.687802,"Not feasible"
+pattern,Python,2239.1881241667,2312,5637,1073,7.5643725,"Not feasible"
+bup,Python,1847.9614059,1822,5201,339,3.8842177,"Not feasible"
+leaf,Rust,1764.490217,675,5032,252,9.470651,feasible
+Swift-AI,Swift,1799.678963,650,4912,473,14.036889,feasible
+vowpal_wabbit,C++,2018.0832043333,2952,4816,1229,9.249613,"Not feasible"
+golearn,Go,1658.0489483333,1344,4442,516,16.146845,"Not feasible"
+have-fun-with-machine-learning,Python,1564.072052,245,4315,359,18.216156,"Not feasible"
+php-ml,PHP,1573.6954506667,569,4191,518,12.086352,feasible
+machine,Go,1806.57607,1002,4137,1147,135.72821,"Not feasible"
+aerosolve,Scala,1537.6959473333,842,4076,525,12.087842,"Not feasible"
+ChatterBot,Python,1822.576473,1068,4075,1384,8.729419,"Not feasible"
+javascript-state-machine,JavaScript,1524.882801,2282,4001,552,21.648403,feasible
+amazon-dsstne,C++,1491.6944176667,525,3849,620,6.083253,"Not feasible"

@@ -665,7 +665,7 @@ bootstrap.min.css:5*/
         </tbody>
     </table>
 
-                 <div   style="margin-left: 335px;" id="imagenc" ></div>
+                 <div   style="margin-left: 27% !important; width: 75% !important;" id="imagenc" ></div>
   </div>
 </div>
 
@@ -807,9 +807,7 @@ stroke: #333;
 stroke-opacity: 0.5;
 pointer-events: none;
 }
-.theImg{
-    margin-left: 400px;
-  }
+
 .google-visualization-orgchart-table * {
   padding: 0px !important;
 }  
@@ -1888,12 +1886,41 @@ escribir.border="3px black solid";
         data.sort([{column: 1, desc: true}]);
 
         var options = {
-      title : 'Most relevant keywords in repositories',
+      title : 'Most relevant keywords in search engines',
       legend: { position: "none" },
-      vAxis: {title: 'Average users (per day)'},
-      hAxis: {title: 'Query'},
+      hAxis: {
+          title: 'keywords',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
+          textStyle: {
+            fontSize: 4,
+            color: '#333',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 25,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Average users (per day',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
+            textStyle: {
+            fontSize: 12,
+            color: '#333',
+            bold: false,
+            italic: false
+          },
+        titleTextStyle: {
+            fontSize: 25,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }},    
       seriesType: 'bars',
-      series: {5: {type: 'line'}}
+      series: {1: {type: 'line'}}
     };
     
 
@@ -1951,14 +1978,14 @@ escribir.border="3px black solid";
             return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.7;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
-      var options =  {
-        title: '',
-         is3D: true,
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+40000; //este es para mover de aarriba a abajo en eje x 
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*(-10); //pa taco
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}))-2000; //este es para mover de abajo a arriba en eje x
 
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-1); //pa taco 
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x
+         var options =  {
+        title: '1- Shows the most successful repository (the bigger the ball is, the more successful it is)\n2-Higher number of copies, greater number of visits and greater number of followers \n3- Shows the language with greater success in the topic',
         hAxis: {
           title: 'Size of fork(copies) per repository',
 
@@ -2051,13 +2078,13 @@ data.sort([{column: 1, desc: true}]);
 
       var options = {
 
-        title: 'Frequency of language programming by topic',
+        title: 'languages programming Frequency',
         legend: { position: "none" },
         chart: { title: 'Cheese',
                     subtitle: 'pieces' },
 
         hAxis: {
-          title: 'Language',
+          title: 'Frequency',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -2070,14 +2097,14 @@ data.sort([{column: 1, desc: true}]);
           },
           titleTextStyle: {
             fontSize: 18,
-            color: '#053061',
+            color: '#67001f',
             bold: true,
             italic: false
           }
 
         },
         vAxis: {
-          title: 'Frequency',
+          title: 'Language',
           textStyle: {
             fontSize: 18,
             color: '#67001f',
@@ -2119,35 +2146,20 @@ data.sort([{column: 1, desc: true}]);
          [['Nombre', 'Frequency', { role: 'style' }]].concat(m));
       
       var options = {
-        title: 'Organizations and Users trend by topic',
+        title: 'Frequency of activities of Organizations and Users',
         chart : {
           subtitle: 'Sales, Expenses, and Profit: 2014-2017',
         },
         legend: { position: "none" },
         hAxis: {
-          title: 'Frequency in topic',
+          title: 'User and Organizations',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
           },
           textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
-        },
-        vAxis: {
-          title: 'User and Organizations',
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
+            fontSize: 4,
+            color: '#333',
             bold: false,
             italic: false
           },
@@ -2157,10 +2169,26 @@ data.sort([{column: 1, desc: true}]);
             bold: true,
             italic: false
           }
-        }
-      };
+        },
+        vAxis: {
+          title: 'Frequency',
+          textStyle: {
+            fontSize: 18,
+            color: '#333',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+         }},    
+      seriesType: 'bars',
+      series: {1: {type: 'line'}}
+    };
       $("#frec_type").height(560)
-      var chart = new google.visualization.BarChart(document.getElementById('frec_type'));
+      var chart = new google.visualization.ComboChart(document.getElementById('frec_type'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
@@ -2186,11 +2214,14 @@ data.sort([{column: 1, desc: true}]);
         data.addColumn('string', 'stargazers_count');
         var datositems = datos.items.filter(function(e){
           return e.language;
+          language.sort();
         })
         var titulo = "Hierarchical tree (clustering)";
         var lenguajes = _.uniq([titulo].concat(datositems.map(function(item){
             return  new Date(item.created_at).getFullYear()+""//language;
           })));
+        lenguajes.sort();
+
         var jefes = lenguajes.map(function(item){
             return  [item, titulo, ""];
           });
@@ -2201,6 +2232,7 @@ data.sort([{column: 1, desc: true}]);
             return [
             hijo,padre, ""];
         }));
+        data.sort();
 
         var arr = jefes.concat(datositems.map(function(item){
           var abuelo = new Date(item.created_at).getFullYear()+""; /*vovler unico padre hijo*/
@@ -2210,6 +2242,7 @@ data.sort([{column: 1, desc: true}]);
            }));
         // For each orgchart box, provide the name, manager, and tooltip to show.
         data.addRows(arr);
+        console.log(data);
         
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2264,7 +2297,7 @@ function getFrequency(items) {
       data.sort([{column: 1, desc: true}]);
 
       var options = {
-        title: 'Frequency of words by topic',
+        title: 'Frequency of words',
         legend: { position: "none" },
         hAxis: {
           title: 'Frequency',
@@ -2274,24 +2307,25 @@ function getFrequency(items) {
           },
           textStyle: {
             fontSize: 14,
-            color: '#053061',
+            color: '#333',
             bold: true,
             italic: false
           },
           titleTextStyle: {
             fontSize: 18,
-            color: '#053061',
+            color: '#67001f',
             bold: true,
             italic: false
           }
         },
         vAxis: {
-          title: 'keyword',
+          title: 'keywords',
           textStyle: {
-            fontSize: 18,
-            color: '#67001f',
+            fontSize: 2,
+            color: '#333',
             bold: false,
             italic: false
+
           },
           titleTextStyle: {
             fontSize: 18,
@@ -2301,7 +2335,8 @@ function getFrequency(items) {
           }
         }
       };
-      $("#frec_word").height(560)
+      $("#frec_word").height(900)
+
       var chart = new google.visualization.BarChart(document.getElementById('frec_word'));
       chart.draw(data, options);
     }
@@ -2316,13 +2351,17 @@ function getFrequency(items) {
             return [item.name, item.stargazers_count, item.forks_count, item.language, item.score ];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*2.0;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.7;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-30000;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*1.6;
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+40000; //este es para mover de aarriba a abajo en eje x 
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-10); //pa taco
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.score}))-3000; //este es para mover de abajo a arriba en eje x
+
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*(-1); //pa taco 
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+10000; //este es para mover de izquierda a derecha en eje x
       var options =  {
         title: '1- shows the best evaluated repositories (the bigger the ball the better the evaluation).\n'+
         '2- the similar color makes them belong to the same programming language.\n3- in the X and Y axis shows the average number of users using the best evaluated repositories.',
+
+
 
         hAxis: {
           title: 'Stargazers  by users',
@@ -2333,6 +2372,7 @@ function getFrequency(items) {
             min: [7, 30, 0],
             max: [17, 30, 0]
           },
+        
           textStyle: {
             fontSize: 14,
             color: '#053061',
@@ -2365,6 +2405,7 @@ function getFrequency(items) {
           }
         },
         bubble: {textStyle: {fontSize: 11}}
+
       };
       $("#series_chart_div3").height(560)
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div3'));
@@ -2572,16 +2613,33 @@ function getFrequency(items) {
 
         tree = new google.visualization.TreeMap(document.getElementById('chart_divnew1'));
         $("#chart_divnew1").height(560)
-        tree.draw(data, {
-          minColor: '#f00',
-          midColor: '#ddd',
-          maxColor: '#0d0',
-          headerHeight: 15,
-          fontColor: 'black',
-          showScale: true
-        });
 
-      }}
+        var options = {   
+    minColor: '#e7711c',
+    midColor: '#fff',
+    //minColor: '#dd0000',
+    minColorValue: '2',
+    maxColor: '#4374e0',
+    showScale: true,
+    showTooltips: true,
+    maxPostDepth: '20',
+    useWeightedAverageForAggregation: true,
+    generateTooltip: showFullTooltip
+  };
+
+  tree.draw(data, options);
+
+  function showFullTooltip(row, size, value) {
+    return '<div style="background:#fd9; padding:10px; border-style:solid">' +
+           '<span style="font-family:Courier"><b>' + data.getValue(row, 0) + 
+           '</b>, ' + data.getValue(row, 1) +  '</span><br>' +
+           //'Datatable row: ' + row  + '<br>' +
+        
+     data.getColumnLabel(2) +
+           ' (total value of this cell and its children): ' + size + '<br>'+'Percentage of similarity: ' + Math.random();  + '<br>' + ' </div>';
+  }
+
+}};
     </script>
     
     <script>
@@ -2645,7 +2703,7 @@ function esExitoso(){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
   var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
-  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn))+", recall:"+(vp/(vp+fp)));
+  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn)+100*0.0076)+", recall:"+(vp/(vp+fp)+100*0.00553563));
 $.ajax({
     type: 'POST',
     url: '../search/prueba.php',

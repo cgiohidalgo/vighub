@@ -1,4 +1,4 @@
-
+<!--este es el bueno -->
 
 <form class="form-horizontal" role="form">
     <div class="form-group">
@@ -47,6 +47,8 @@
         </tr>
     </thead>
     <tbody>
+    <tr>
+    <a ng-click="crearJSON()" ng-href="{{ url }}">backup your query in JSON format (click here)</a>
         <tr ng-repeat="item in list | orderBy:order">
             <td>{{$index + 1}}</td>
             <td><a title="View details of {{item.owner.login}}" ng-click="userDetails(item.owner.login)">{{item.owner.login}}</a></td>
