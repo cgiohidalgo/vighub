@@ -568,7 +568,7 @@ bootstrap.min.css:5*/
           <div id="chart_div1" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
      </br>
-    
+  
       <div class="row">
           <div id="wordtree_basic" align="center" class="col-md-10" style="width: 100%;"></div>
     </div>
@@ -590,40 +590,36 @@ bootstrap.min.css:5*/
          
           <p id="susano"></p>
           <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="piechart_legend"></div>
   
           <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
+          <div id="frec_lang_legend"></div>
+
           <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
+          <div id="frec_type_legend"></div>
+
           <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="chart_div_legend"></div>
+
           <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
-          
+          <div id="frec_word_legend"></div>
+
       </div>
       </br>
-       <p style="text-anchor: start;
-    font-family: Arial;
-    font-size: 17.2px;
-    font-weight: bold;
-    stroke: none;
-    stroke-width: 0;
-    fill: rgb(0, 0, 0);
-    color: black;
-    text-align: justify;">Shows by languages (the bigger the picture, the greater development) and by color (more orange color more important).</p>
       <div class="row">
+      <div id="chart_divnew_legend"></div>
           <div id="chart_divnew" align="center" class="col-md-10" style="width: 100%;"></div>
+      <div id="chart_divnew1_legend"></div>
     </div>
-    <p style="text-anchor: start;
-    font-family: Arial;
-    font-size: 17.2px;
-    font-weight: bold;
-    stroke: none;
-    stroke-width: 0;
-    fill: rgb(0, 0, 0);
-    color: black;
-    text-align: justify;">In this chart it shows the relevance of the words starting from an orginen (between more green color, greater frequency of the word in the subject). The horizontal and vertical positions indicate the relationship between words.</p>
+   
     <div class="row">
+    <div id="chart_divnew12_legend"></div>
           <div id="chart_divnew1" align="center" class="col-md-10" style="width: 100%;"></div>
+    <div id="chart_divnew11_legend"></div>
     </div>
       <div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
+          <div id="series_chart_legend"></div>
     </div>
       </br>
       <div class="row">
@@ -1925,8 +1921,10 @@ escribir.border="3px black solid";
     
 
 
-        $("#chart_div").height(560)
-        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        $("#chart_div").height(900)
+        $('#chart_div_legend').empty();
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Palabras claves más relevantes del tema que se encuntran en los datos de los repositorios encontrados.</p>').appendTo('#chart_div_legend');
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
     chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
@@ -1952,9 +1950,11 @@ escribir.border="3px black solid";
            }));
         var data = google.visualization.arrayToDataTable(arr);
         var options = {
-          title: 'Repositories best evaluated by the users (according number of stars, number of copies and score)'
+          title: 'Repositories best evaluated by the users'
         };
         $("#piechart").height(560)
+         $('#piechart_legend').empty();
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: justify; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Evaluación de repositorios según características de GitHub: número de estrellas (puntuacion de 1 a 5 que da el usuario), número de copias (cantidad copias que se han realizado al repositorio) y puntuación (segun la actividad GitHub le da puntos para que sea tendencia un usuario).</p>').appendTo('#piechart_legend');
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -1985,7 +1985,7 @@ escribir.border="3px black solid";
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-1); //pa taco 
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x
          var options =  {
-        title: '1- Shows the most successful repository (the bigger the ball is, the more successful it is)\n2-Higher number of copies, greater number of visits and greater number of followers \n3- Shows the language with greater success in the topic',
+        title: 'Bubble chart in 4-dimensional repositories evaluation',
         hAxis: {
           title: 'Size of fork(copies) per repository',
 
@@ -2030,6 +2030,8 @@ escribir.border="3px black solid";
         bubble: {textStyle: {fontSize: 11}}
       };
       $("#series_chart_div").height(560)
+      $('#series_chart_legend').empty();
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> 1- entre más grande el globo, mayor evaluación  evaluación de repositorios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación.\n Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- Score (segun la actividad GitHub le da puntos para que sea tendencia un usuario). </p>').appendTo('#frec_type_legend');
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2120,6 +2122,8 @@ data.sort([{column: 1, desc: true}]);
         }
       };
       $("#frec_lang").height(560)
+      $('#frec_lang_legend').empty();
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0;text-align: center; background: cornsilk; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Frecuencia de lenguaje de programación con la que aparece en el total de repositorios encontrados.</p>').appendTo('#frec_lang_legend');
       var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'ready', selectHandler); 
@@ -2187,8 +2191,10 @@ data.sort([{column: 1, desc: true}]);
       seriesType: 'bars',
       series: {1: {type: 'line'}}
     };
-      $("#frec_type").height(560)
-      var chart = new google.visualization.ComboChart(document.getElementById('frec_type'));
+      $("#frec_type").height(900)
+      $('#frec_type_legend').empty();
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Frecuencia con la que un usuario y/o empresa está realizando cambios o subiendo repositorios.</p>').appendTo('#frec_type_legend');
+      var chart = new google.visualization.BarChart(document.getElementById('frec_type'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
@@ -2335,7 +2341,17 @@ function getFrequency(items) {
           }
         }
       };
-      $("#frec_word").height(900)
+
+      function placeMarker(dataTable) {
+        var cli = this.getChartLayoutInterface();
+        var chartArea = cli.getChartAreaBoundingBox();
+        // "Zombies" is element #5.
+        document.querySelector('.overlay-marker').style.top = Math.floor(cli.getYLocation(dataTable.getValue(5, 1))) - 50 + "px";
+        document.querySelector('.overlay-marker').style.left = Math.floor(cli.getXLocation(5)) - 10 + "px";
+      };
+      $("#frec_word").height(800)
+      $('#frec_word_legend').empty();
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se extrae las palabras con mayor frecuencia de todos los repositorios que se encuentran en la consulta generada.</p>').appendTo('#frec_word_legend');
 
       var chart = new google.visualization.BarChart(document.getElementById('frec_word'));
       chart.draw(data, options);
@@ -2542,11 +2558,17 @@ function getFrequency(items) {
 
 
         tree = new google.visualization.TreeMap(document.getElementById('chart_divnew'));
-        $("#chart_divnew").height(560)
+        $("#chart_divnew").height(508)
+        $('#chart_divnew_legend').empty();
+        $('#chart_divnew1_legend').empty();
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by languages and respositories.</p>').appendTo('#chart_divnew_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra la relevancia de palabras clave y su similitud dependiendo de su posición (horizontal o vertical), además de  indicar la palabra más importante según el color (azul, más relevante. Naranja, menos relevante).</p>').appendTo('#chart_divnew1_legend');
+
 
 
 
         tree.draw(data,oprions = {
+
           highlightOnMouseOver: true,
           maxDepth: 1,
           maxPostDepth: 2,
@@ -2563,7 +2585,9 @@ function getFrequency(items) {
           useWeightedAverageForAggregation: true
           
       });
+
         google.visualization.events.addListener(tree, 'select', selectHandler); 
+
       function selectHandler(e) {
         var name =data.getValue(tree.getSelection()[0].row, null)   
         var elemento = datos.items.filter(function(e){
@@ -2613,6 +2637,10 @@ function getFrequency(items) {
 
         tree = new google.visualization.TreeMap(document.getElementById('chart_divnew1'));
         $("#chart_divnew1").height(560)
+        $('#chart_divnew12_legend').empty();
+        $('#chart_divnew11_legend').empty();
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by languages and respositories.</p>').appendTo('#chart_divnew12_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra cantidad de desarrollos e importancia del repositorio en el tema.   (entre mayor sea el cuadro que contiene un lenguaje = mayor cantidad de desarrollos), (el color agua marina identifica el desarrollo más relevante y el color naranja el menos relevante para la consulta)  .</p>').appendTo('#chart_divnew11_legend');
 
         var options = {   
     minColor: '#e7711c',
