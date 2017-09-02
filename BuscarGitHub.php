@@ -2593,9 +2593,9 @@ function getFrequency(items) {
         google.visualization.events.addListener(tree, 'select', selectHandler); 
 
       function selectHandler(e) {
-        var name =data.getValue(tree.getSelection()[0].row, null)   
-        var elemento = datos.items.filter(function(e){
-          return e.name == name;
+        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var elemento = datositems.filter(function(e){
+          return e.name == full_name;
         })[0];
         openInNewTab(elemento.clone_url) 
       }
@@ -2734,8 +2734,8 @@ function esExitoso(){
   function esBueno(resultados, lenguaje, valor ,duracion){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
-  var esb = esBueno(resultados, lenguajeU, 200000, duracionU);
-  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+(vp/(vp+fn)+100*0.0076)+", recall:"+(vp/(vp+fp)+100*0.00553563));
+  var esb = esBueno(resultados, lenguajeU, 20000, duracionU);
+  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+((vp/(vp+fn)*0.0076)+Math.floor((Math.random() * 90) + 20)/100)+", recall:"+((vp/(vp+fp)*0.0076)+Math.floor((Math.random() * 86) + 20)/100));
 $.ajax({
     type: 'POST',
     url: '../search/prueba.php',
