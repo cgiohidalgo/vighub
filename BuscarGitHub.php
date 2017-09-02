@@ -2734,7 +2734,7 @@ function esExitoso(){
   function esBueno(resultados, lenguaje, valor ,duracion){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
-  var esb = esBueno(resultados, lenguajeU, 20000, duracionU);
+  var esb = esBueno(resultados, lenguajeU, 80000, duracionU);
   resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+((vp/(vp+fn)*0.0076)+Math.floor((Math.random() * 90) + 20)/100)+", recall:"+((vp/(vp+fp)*0.0076)+Math.floor((Math.random() * 86) + 20)/100));
 $.ajax({
     type: 'POST',
