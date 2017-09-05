@@ -565,7 +565,7 @@ bootstrap.min.css:5*/
        
     <div class="container">
         <div class="row">
-          <div id="chart_div1.1_legend" style="background: #fff; width: 99% !important; margin-left: 1%;"></div>
+          <div id="chart_div13_legend" style="background: #fff; width: 99% !important; margin-left: 1%;"></div>
           <div id="chart_div1" style="background: #fff; width: 99% !important; margin-left: 1%;" align="center" class="col-md-10"></div>
           <div id="chart_div1_legend"></div>
     </div>
@@ -591,8 +591,9 @@ bootstrap.min.css:5*/
       <div class="row">
          
           <p id="susano"></p>
-          <div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
-          <div id="piechart_legend"></div>
+
+          <!--<div id="piechart" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="piechart_legend"></div>-->
   
           <div id="frec_lang" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="frec_lang_legend"></div>
@@ -611,13 +612,13 @@ bootstrap.min.css:5*/
       <div class="row">
       <div id="chart_divnew_legend"></div>
           <div id="chart_divnew" align="center" class="col-md-10" style="width: 100%;"></div>
-      <div id="chart_divnew1_legend"></div>
+      <div id="chart_divnew11_legend"></div>
     </div>
    
     <div class="row">
     <div id="chart_divnew12_legend"></div>
           <div id="chart_divnew1" align="center" class="col-md-10" style="width: 100%;"></div>
-    <div id="chart_divnew11_legend"></div>
+    <div id="chart_divnew1_legend"></div>
     </div>
       <div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
@@ -628,6 +629,11 @@ bootstrap.min.css:5*/
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
           <div id="series_chart_legend"></div>
+    </div>
+    </br>
+      <div class="row">
+          <div id="series_new" align="center" class="col-md-10" style="width: 100%;"></div>
+          <div id="series_new_legend"></div>
     </div>
    
     
@@ -1943,7 +1949,93 @@ escribir.border="3px black solid";
       
     }
     </script>
+    <<script type="text/javascript">
+    function reporte2() {
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+    function drawSeriesChart() {
+    
+    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.score}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*0.1; //arriba a abajo eje y
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))-1.3;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*14; //izq a der eje x
+    
+      var arr = [["name","Estrellas","Copias","Lenguaje","Puntuación"]].concat(datos.items.map(function(item){
+            return [item.name, item.stargazers_count, item.forks_count, item.language, item.score];
+           }));
+      var data = google.visualization.arrayToDataTable(arr);
+      
+      
+      // A partir de aquí, todo sigue igual
+      //--------------------------------------------------------------------------------------------------
+      var options =  {
+        title: 'Evaluación de mejores repositorios segun los usuarios',
+ 
+ 
+ 
+        hAxis: {
+          title: 'Número de estrellas  por repositorio',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
+          ticks: [minimoh, maximoh],
+          scaleType: 'log',
+           
+          viewWindow: {
+            min: [118, 130, 0],
+            max: [17, 30, 0]
+          },
+       
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Número de copias por respositorio',
+          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
+          ticks: [minimo, maximo],
+          scaleType: 'log',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        },
+        bubble: {textStyle: {fontSize: 11}}
+ 
+      };
+      $("#series_new").height(1000)
+      $('#series_new_legend').empty();
+       
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Entre más grande el globo, mayor evaluación de repositorios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación. Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- Score (segun la actividad GitHub le da puntos para que sea tendencia un usuario).</p>').appendTo('#series_new_legend');
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_new'));
+      chart.draw(data, options);
+        google.visualization.events.addListener(chart, 'select', selectHandler);
+      function selectHandler(e) {
+        var name =data.getValue(chart.getSelection()[0].row, 0)  
+        var elemento = datos.items.filter(function(e){
+          return e.name == name;
+        })[0];
+        openInNewTab(elemento.clone_url)
+      }
+    }}
+    </script>
     <script type="text/javascript">
+    /* GRafico de pastel
     function reporte2(){
       var criterio = "stargazers_count";
       google.charts.load("current", {packages:['corechart']});
@@ -1970,7 +2062,7 @@ escribir.border="3px black solid";
         openInNewTab(elemento.clone_url) 
       }
       }
-    }
+    }*/
     </script>
 
     <script type="text/javascript">
@@ -1978,7 +2070,7 @@ escribir.border="3px black solid";
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
-      var arr = [["name","forks_count","stargazers_count","language","watchers"]].concat(datos.items.map(function(item){
+      var arr = [["Nombre","Copias","Estrellas","lenguaje","Visitas"]].concat(datos.items.map(function(item){
             return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
            }));
       var data = google.visualization.arrayToDataTable(arr);
@@ -2088,7 +2180,7 @@ data.sort([{column: 1, desc: true}]);
 
       var options = {
 
-        title: 'Frecuencia de lenguajes de programación ',
+        title: 'Frecuencia de lenguajes de programación',
         legend: { position: "none" },
         chart: { title: 'Cheese',
                     subtitle: 'pieces' },
@@ -2131,7 +2223,7 @@ data.sort([{column: 1, desc: true}]);
       };
       $("#frec_lang").height(560)
       $('#frec_lang_legend').empty();
-      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0;text-align: center; background: cornsilk; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Frecuencia de lenguaje de programación con la que aparece en el total de repositorios encontrados.</p>').appendTo('#frec_lang_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0;text-align: center; background: cornsilk; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se obtiene la frecuencia haciendo uso de extracción de características, donde se toma cada repositorio generado en la consulta, se extrae el lenguaje en el que se desarrolló y se hace un conteo de las veces se repite.</p>').appendTo('#frec_lang_legend');
       var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'ready', selectHandler); 
@@ -2201,7 +2293,7 @@ data.sort([{column: 1, desc: true}]);
     };
       $("#frec_type").height(900)
       $('#frec_type_legend').empty();
-      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Frecuencia con la que un usuario y/o empresa está realizando cambios o subiendo repositorios.</p>').appendTo('#frec_type_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> Haciendo uso de extracción de características, se obtiene por cada repositorio generado en la consulta, si pertenece a una organización o a un usuario, posterior a ello se verifica si una organización o usuario ha participado o tiene más repositorios para obtener la frecuencia de actividad en un tema específico.</p>').appendTo('#frec_type_legend');
       var chart = new google.visualization.BarChart(document.getElementById('frec_type'));
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2259,8 +2351,8 @@ data.sort([{column: 1, desc: true}]);
         //console.log(data);
         
         $('#chart_div1_legend').empty();
-        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Organigrama jerárquico por año -> lenguaje -> autor</p>').appendTo('#chart_div1.1_legend');
-      $('<p style="font-size: 16px;line-height: 1.6em; margin: 8px 0; width: 98%; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se muestra la línea de tiempo de cada repositorio encontrado en la consulta por año, lenguaje y autor</p>').appendTo('#chart_div1_legend');
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Organigrama jerárquico por año -> lenguaje -> autor</p>').appendTo('#chart_div13_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 8px 0; width: 98%; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>En la línea de tiempo se identifican los repositorios generados en la consulta, se obtiene el año de creación, y a partir de este se obtienen los desarrollos con su respectivo lenguaje de programación  y por cada uno se muestra los repositorios.</p>').appendTo('#chart_div1_legend');
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
         google.visualization.events.addListener(chart, 'select', selectHandler); 
 
@@ -2317,7 +2409,7 @@ function getFrequency(items) {
         title: 'Frecuencia de palabras más importantes en el tema',
         legend: { position: "none" },
         hAxis: {
-          title: 'Frequency',
+          title: 'Frecuencia',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -2336,7 +2428,7 @@ function getFrequency(items) {
           }
         },
         vAxis: {
-          title: 'keywords',
+          title: 'Palabras relevantes',
           textStyle: {
             fontSize: 2,
             color: '#333',
@@ -2389,7 +2481,7 @@ function getFrequency(items) {
       // A partir de aquí, todo sigue igual
       //--------------------------------------------------------------------------------------------------
       var options =  {
-        title: 'Gráfico de burbujas en evaluación de mejores repositorios',
+        title: 'Evaluación de mejores repositorios segun GitHub',
  
  
  
@@ -2581,7 +2673,7 @@ function getFrequency(items) {
         $('#chart_divnew_legend').empty();
         $('#chart_divnew1_legend').empty();
         $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Mapa de árbol por lenguajes y repositorios</p>').appendTo('#chart_divnew_legend');
-        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra la relevancia de palabras clave y su similitud dependiendo de su posición (horizontal o vertical), además de  indicar la palabra más importante según el color (azul, más relevante. Naranja, menos relevante).</p>').appendTo('#chart_divnew1_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra la relevancia de palabras clave y su similitud dependiendo de su posición (horizontal o vertical), además de  indicar la palabra más importante según el color (azul, más relevante. Naranja, menos relevante), cada palabra tiene un antecesor o antecesores que seran las palabras que está en color azul, y cuenta con un número de predecesores que estarán en forma de U a su alrededor.</p>').appendTo('#chart_divnew1_legend');
 
 
 
