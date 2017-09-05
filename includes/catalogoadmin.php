@@ -4,13 +4,13 @@
 	echo "EMPRESA: "; echo ObtenerNombreUsuario($_SESSION['MM_idusuario']);
 	?> 
     ......
-<a id="fa_welcome" href="../cerrar_sesion.php"> Log Out</a>
+<a id="fa_welcome" href="../cerrar_sesion.php"> Salir</a>
 
 <?php }
 else
 {
 ?>	
-	<a id="fa_welcome" href="../index.php">Sing In </a>
+	<a id="fa_welcome" href="../index.php">Entrar</a>
     ......
-    <a class="acceder" href="admin/index.php"> Administration</a>
+    <a class="acceder" href="admin/index.php"> Administracion</a>
 <?php }?>

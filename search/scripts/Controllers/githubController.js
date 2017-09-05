@@ -89,7 +89,7 @@
         scope.historial=historial;
         
         
-
+        scope.searchFish = "";
         scope.topic = "";
         scope.username = "";
         scope.order = "+owner.login";

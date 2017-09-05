@@ -1,15 +1,15 @@
 <?php require_once('Connections/crenesoft.php'); ?>
 <?php 
- 	$_SESSION['MM_Username'] = "";
-    $_SESSION['MM_UserGroup'] = "";	 
-	$_SESSION['MM_idusuario'] = "";
+  $_SESSION['MM_Username'] = "";
+    $_SESSION['MM_UserGroup'] = "";  
+  $_SESSION['MM_idusuario'] = "";
 ?>
 <!doctype html>
 <html><!-- InstanceBegin template="/Templates/default1.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta charset="utf-8">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Documento sin título</title>
+<title>Adios</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable --> 
@@ -28,7 +28,7 @@
  
 </head>
 <body> 
-	<header>  
+  <header>  
   
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
@@ -65,41 +65,41 @@
 
  <?php if($_SESSION['MM_UserGroup']=='Admin'){?> 
 <div class="navbar navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">Panel de administración</a>
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				<ul id="menu"> 
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Panel de administración</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul id="menu"> 
 
-					<li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
-					
-				<li><a href="usuarios_lista.php">Lista de usuarios</a></li>
-				<li><a href="categorias_ver.php">Categorias de Software</a></li>
-				<li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
-				<li><a href="#">Contacto</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
-						<ul class="dropdown-menu">
-					
-							<li class="container">¡Hola!</li>
-							<li>
-								 
-							</li>
-						</ul>
-				</li>
-				</ul>
-				<ul class="nav pull-right">								
-								
-									</a>
-								</li>
-								<li>
-								 
-							</ul>
-			</div>
-		</div>
-	</div>
+          <li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
+          
+        <li><a href="usuarios_lista.php">Lista de usuarios</a></li>
+        <li><a href="categorias_ver.php">Categorias de Software</a></li>
+        <li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
+        <li><a href="#">Contacto</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
+            <ul class="dropdown-menu">
+          
+              <li class="container">¡Hola!</li>
+              <li>
+                 
+              </li>
+            </ul>
+        </li>
+        </ul>
+        <ul class="nav pull-right">               
+                
+                  </a>
+                </li>
+                <li>
+                 
+              </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <?php } else{?>
-		
+    
         <?php } ?>
         <style type="text/css">
           .cerrarses{
@@ -107,7 +107,7 @@
     padding: 144px;
           }
         </style>
-	</header>
+  </header>
    <p></p>
    <p></p>
    <p></p>
@@ -115,7 +115,7 @@
    <p></p>
    <p></p>
     <section id="principal">
-    	<article> 
+      <article> 
       <p></p>
       <p></p>
       <p></p>
@@ -125,10 +125,10 @@
       <p></p>
       <p></p>
       <p></p>
-		<!-- InstanceBeginEditable name="Contenido" -->
-        <h1 class="cerrarses">Bye, come back soon!</h1>
-		<!-- InstanceEndEditable -->
-        </article>    	
+    <!-- InstanceBeginEditable name="Contenido" -->
+        <h1 class="cerrarses">¡Chao,regresa pronto!</h1>
+    <!-- InstanceEndEditable -->
+        </article>      
     </section>
     <p>&nbsp;</p>
    

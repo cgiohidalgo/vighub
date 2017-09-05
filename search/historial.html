@@ -1,14 +1,19 @@
  <table class="table table-hover table-striped">
     <thead>
         <tr class="success">
-            <th></th>
+            <th>Identificador </th>
             <th>Consulta</th>
         </tr>
     </thead>
     <tbody>
+    <ul>
         <tr ng-repeat="item in historial">
             <td>{{$index + 1}}</td>
             <td><a  ng-click="searchistory(item.id)">{{item.consulta}}</a></td>
         </tr>
+    </ul>
+    <div data-pagination="" data-num-pages="numPages()" 
+      data-current-page="currentPage" data-max-size="maxSize"  
+      data-boundary-links="true"></div>
     </tbody>
 </table>

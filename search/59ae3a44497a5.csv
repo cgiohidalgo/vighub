@@ -1,0 +1,29 @@
+QuantumComputing,Python,117.65166933333,483,281,43,28.955008,feasible
+PQCrypto-SIDH,C,14.251265033333,140,33,6,3.7537951,feasible
+quantum,Rust,24.740996666667,413,31,6,37.22299,feasible
+black-stone,"Common Lisp",13.667541666667,1394,29,4,8.002625,"Not feasible"
+QuantumVirtualMachine,Java,14.175753,1025,20,7,15.527259,"Not feasible"
+Telerik.Sitefinity.Samples.Quantum,C#,16.877208333333,1214,20,16,14.631625,feasible
+qubiter,Python,12.527067333333,533,20,8,9.581202,"Not feasible"
+QuSimPy,Python,7.255353,381,15,1,5.766059,"Not feasible"
+qgame,"Common Lisp",6.231557,1348,11,2,5.694671,"Not feasible"
+quantum,Python,15.39558,731,10,4,32.18674,"Not feasible"
+qcl,C++,5.9424786666667,2513,9,3,5.827436,feasible
+lamport_signatures,Python,4.4731796666667,1790,9,1,3.419539,"Not feasible"
+quantum.js,JavaScript,7.765172,2100,7,4,12.295516,"Not feasible"
+quantum-computing,Python,7.243626,1177,6,3,12.730878,"Not feasible"
+silver-sword,"Common Lisp",3.6990552666667,1412,6,2,3.0971658,"Not feasible"
+quantum,Python,12.883615333333,975,5,4,29.650846,"Not feasible"
+qgame,JavaScript,3.750706,1399,5,1,5.252118,"Not feasible"
+QuantumComputer,Haskell,4.464977,581,4,0,9.394931,feasible
+quantum-computing,Python,5.2094436666667,421,4,3,8.628331,"Not feasible"
+QuCmp.jl,Julia,5.8234926666667,496,4,6,7.470478,feasible
+QuiCkS,Scheme,3.0683112,1436,4,1,4.2049336,feasible
+Quantum-Computer-Simulator,C,5.7832158333333,1175,3,3,11.3496475,"Not feasible"
+aubree,"Common Lisp",3.957484,149,3,1,7.872452,"Not feasible"
+Quantum-Computing-Collection,TeX,3.1585846666667,412,3,2,4.475754,feasible
+QCSimulator,R,2.3005761333333,440,3,0,3.9017284,feasible
+Quantum-Computer-Simulation,Java,2.5776086,224,2,0,5.7328258,"Not feasible"
+Quantum-Computer-Simulator,Python,2.5528066666667,275,2,0,5.65842,"Not feasible"
+jsquil,JavaScript,1.8049396666667,182,2,0,3.414819,"Not feasible"
+Quacpy,Python,2.1330603666667,790,2,1,3.3991811,"Not feasible"

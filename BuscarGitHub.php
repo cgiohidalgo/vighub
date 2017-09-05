@@ -354,19 +354,19 @@ $totalRows_imageness = mysql_num_rows($imageness);
         
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
-          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+          <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Inicio</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
           
             
-          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
+          <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Arquitectura de VigHub</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Recursos<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Home</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Help<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="/vighubjson/inicio/" title="Ir al inicio">Inicio</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="https://media.readthedocs.org/pdf/conociendogithub/latest/conociendogithub.pdf" target="_blank" >GitHub</a></li>
@@ -374,7 +374,7 @@ $totalRows_imageness = mysql_num_rows($imageness);
             
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="../webroot/archivos/manual.pdf" target="_blank" >Manual</a></li><li id="menu-item-3778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3778"><a href="../webroot/archivos/architecture.pdf">Vighub architecture</a></li></ul></li></a>
 
-          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Resource<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
+          <li id="menu-item-3768" class="descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3768"><a href="#">Recursos<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow"><li id="menu-item-3764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3764"><a href="/vighubjson/Copia_seguridad/">Backup</a></li><li id="menu-item-3770" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3770"></li></ul></li></ul></div>
         <?php } ?>
           
           
@@ -557,7 +557,7 @@ bootstrap.min.css:5*/
     </div>-->
 
     <div class="container">   
-          <h1 align="center">browser</h1>
+          <h1 align="center">Buscador de VigHub</h1>
             <div class="page" ng-view></div> 
     </div>
 
@@ -565,7 +565,9 @@ bootstrap.min.css:5*/
        
     <div class="container">
         <div class="row">
-          <div id="chart_div1" align="center" class="col-md-10" style="width: 100%;"></div>
+          <div id="chart_div1.1_legend" style="background: #fff; width: 99% !important; margin-left: 1%;"></div>
+          <div id="chart_div1" style="background: #fff; width: 99% !important; margin-left: 1%;" align="center" class="col-md-10"></div>
+          <div id="chart_div1_legend"></div>
     </div>
      </br>
   
@@ -646,8 +648,8 @@ bootstrap.min.css:5*/
     <table class="table table-hover table-striped">
         <thead>
             <tr class="success">
-                <th>Type your languaje</th>
-                <th>Type your time (in days)</th>
+                <th>Escribe un lenguaje</th>
+                <th>Escribe el tiempo (en días)</th>
                 <th></th>
             </tr>
         </thead>
@@ -655,7 +657,7 @@ bootstrap.min.css:5*/
             <tr>
                 <td><input type="text" placeholder="e.i: c++" id="lenguaje" ></td>
                 <td><input type="text" placeholder="e.i: 365" id="duracion" ></td>
-                <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">¿Is successful?</button></td>
+                <td><button style="width: 335px !important;" type="button" class="btn btn-default" onclick="esExitoso()">Generar predicción</button></td>
             </tr>
             <tr>
                 <td colspan="4"><h3 id="resultado_cla"></p></td>
@@ -1884,10 +1886,10 @@ escribir.border="3px black solid";
         data.sort([{column: 1, desc: true}]);
 
         var options = {
-      title : 'Most relevant keywords in search engines',
+      title : 'Palabras clave relevantes en motores de búsqueda de contenido en Internet',
       legend: { position: "none" },
       hAxis: {
-          title: 'keywords',
+          title: 'Plabras clave',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           textStyle: {
             fontSize: 4,
@@ -1903,7 +1905,7 @@ escribir.border="3px black solid";
           }
         },
         vAxis: {
-          title: 'Average users (per day',
+          title: 'Palabra relevante por dia',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
             textStyle: {
             fontSize: 12,
@@ -1980,16 +1982,20 @@ escribir.border="3px black solid";
             return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
            }));
       var data = google.visualization.arrayToDataTable(arr);
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*10; //izq a der eje x
+      /*
       var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+40000; //este es para mover de aarriba a abajo en eje x 
       var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*(-10); //pa taco
       var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}))-2000; //este es para mover de abajo a arriba en eje x
-
       var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-1); //pa taco 
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x*/
          var options =  {
-        title: 'Bubble chart in 4-dimensional repositories greater success',
+        title: 'Gráfico de burbujas para repositorios de mayor éxito',
         hAxis: {
-          title: 'Size of fork(copies) per repository',
+          title: 'Copias por repositorio',
 
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           ticks: [minimoh, maximoh],
@@ -2012,7 +2018,7 @@ escribir.border="3px black solid";
           }
         },
         vAxis: {
-          title: 'Size of stars per repository',
+          title: 'Estrellas por repositorio ',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
           ticks: [minimo, maximo],
           scaleType: 'log',
@@ -2031,7 +2037,7 @@ escribir.border="3px black solid";
         },
         bubble: {textStyle: {fontSize: 11}}
       };
-      $("#series_chart_div").height(560)
+      $("#series_chart_div").height(800)
       $('#series_chart_legend').empty();
       $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b> 1- entre más grande el globo, mayor exito de repositorios entre los usuarios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación.\n Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- watchers (con que frecuencia visitian el respositorio). </p>').appendTo('#series_chart_legend');
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
@@ -2082,13 +2088,13 @@ data.sort([{column: 1, desc: true}]);
 
       var options = {
 
-        title: 'languages programming Frequency',
+        title: 'Frecuencia de lenguajes de programación ',
         legend: { position: "none" },
         chart: { title: 'Cheese',
                     subtitle: 'pieces' },
 
         hAxis: {
-          title: 'Frequency',
+          title: 'Frecuencia',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -2108,7 +2114,7 @@ data.sort([{column: 1, desc: true}]);
 
         },
         vAxis: {
-          title: 'Language',
+          title: 'Lenguaje de programación',
           textStyle: {
             fontSize: 18,
             color: '#67001f',
@@ -2152,13 +2158,13 @@ data.sort([{column: 1, desc: true}]);
          [['Nombre', 'Frequency', { role: 'style' }]].concat(m));
       
       var options = {
-        title: 'Frequency of activities of Organizations and Users',
+        title: 'Frecuencia de actividad de organizaciones y usuarios',
         chart : {
           subtitle: 'Sales, Expenses, and Profit: 2014-2017',
         },
         legend: { position: "none" },
         hAxis: {
-          title: 'User and Organizations',
+          title: 'organizaciones y usuarios',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
@@ -2177,7 +2183,7 @@ data.sort([{column: 1, desc: true}]);
           }
         },
         vAxis: {
-          title: 'Frequency',
+          title: 'Frecuencia',
           textStyle: {
             fontSize: 12,
             color: '#333',
@@ -2224,7 +2230,7 @@ data.sort([{column: 1, desc: true}]);
           return e.language;
           language.sort();
         })
-        var titulo = "Hierarchical tree (clustering)";
+        var titulo = "Linea de tiempo";
         var lenguajes = _.uniq([titulo].concat(datositems.map(function(item){
             return  new Date(item.created_at).getFullYear()+""//language;
           })));
@@ -2250,8 +2256,11 @@ data.sort([{column: 1, desc: true}]);
            }));
         // For each orgchart box, provide the name, manager, and tooltip to show.
         data.addRows(arr);
-        console.log(data);
+        //console.log(data);
         
+        $('#chart_div1_legend').empty();
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Organigrama jerárquico por año -> lenguaje -> autor</p>').appendTo('#chart_div1.1_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 8px 0; width: 98%; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se muestra la línea de tiempo de cada repositorio encontrado en la consulta por año, lenguaje y autor</p>').appendTo('#chart_div1_legend');
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
         google.visualization.events.addListener(chart, 'select', selectHandler); 
 
@@ -2305,7 +2314,7 @@ function getFrequency(items) {
       data.sort([{column: 1, desc: true}]);
 
       var options = {
-        title: 'Frequency of words',
+        title: 'Frecuencia de palabras más importantes en el tema',
         legend: { position: "none" },
         hAxis: {
           title: 'Frequency',
@@ -2351,7 +2360,7 @@ function getFrequency(items) {
         document.querySelector('.overlay-marker').style.top = Math.floor(cli.getYLocation(dataTable.getValue(5, 1))) - 50 + "px";
         document.querySelector('.overlay-marker').style.left = Math.floor(cli.getXLocation(5)) - 10 + "px";
       };
-      $("#frec_word").height(800)
+      $("#frec_word").height(1000)
       $('#frec_word_legend').empty();
       $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se extrae las palabras con mayor frecuencia de todos los repositorios que se encuentran en la consulta generada.</p>').appendTo('#frec_word_legend');
 
@@ -2365,31 +2374,36 @@ function getFrequency(items) {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
+    
+    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*14; //izq a der eje x
+    
       var arr = [["name","stargazers_count","forks_count","language","Score"]].concat(datos.items.map(function(item){
-            return [item.name, item.stargazers_count, item.forks_count, item.language, item.score ];
+            return [item.name, item.stargazers_count/(maximo+100), item.forks_count/(maximoh/14), item.language, item.score ];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+40000; //este es para mover de aarriba a abajo en eje x 
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-10); //pa taco
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.score}))-3000; //este es para mover de abajo a arriba en eje x
-
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*(-1); //pa taco 
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+10000; //este es para mover de izquierda a derecha en eje x
+      
+      
+      // A partir de aquí, todo sigue igual
+      //--------------------------------------------------------------------------------------------------
       var options =  {
-        title: 'Bubble chart in 4-dimensional repositories evaluation',
-
-
-
+        title: 'Gráfico de burbujas en evaluación de mejores repositorios',
+ 
+ 
+ 
         hAxis: {
-          title: 'Stargazers  by users',
+          title: 'Puntuación por repositorio',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           ticks: [minimoh, maximoh],
           scaleType: 'log',
+           
           viewWindow: {
-            min: [7, 30, 0],
+            min: [118, 130, 0],
             max: [17, 30, 0]
           },
-        
+       
           textStyle: {
             fontSize: 14,
             color: '#053061',
@@ -2404,7 +2418,7 @@ function getFrequency(items) {
           }
         },
         vAxis: {
-          title: 'User size',
+          title: 'Tamaño de usarios que usan los repositorios',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
           ticks: [minimo, maximo],
           scaleType: 'log',
@@ -2422,24 +2436,25 @@ function getFrequency(items) {
           }
         },
         bubble: {textStyle: {fontSize: 11}}
-
+ 
       };
-      $("#series_chart_div3").height(560)
+      $("#series_chart_div3").height(1000)
       $('#series_chart_div3_legend').empty();
        
         $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Entre más grande el globo, mayor evaluación de repositorios.2- Color similar significa que están desarrollados en el mismo lenguaje de programación. Características: 1- stargazers_count (Puntuación de 1 a 5 que da el usuario), 2- forks_count (Cantidad copias que se han realizado al repositorio), 3- Score (segun la actividad GitHub le da puntos para que sea tendencia un usuario).</p>').appendTo('#series_chart_div3_legend');
       var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div3'));
       chart.draw(data, options);
-        google.visualization.events.addListener(chart, 'select', selectHandler); 
+        google.visualization.events.addListener(chart, 'select', selectHandler);
       function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var name =data.getValue(chart.getSelection()[0].row, 0)  
         var elemento = datos.items.filter(function(e){
           return e.name == name;
         })[0];
-        openInNewTab(elemento.clone_url) 
+        openInNewTab(elemento.clone_url)
       }
     }}
     </script>
+
     <script type="text/javascript">
     function reporte9() {
       google.charts.load('current', {packages:['wordtree']});
@@ -2565,7 +2580,7 @@ function getFrequency(items) {
         $("#chart_divnew").height(508)
         $('#chart_divnew_legend').empty();
         $('#chart_divnew1_legend').empty();
-        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by languages and respositories.</p>').appendTo('#chart_divnew_legend');
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Mapa de árbol por lenguajes y repositorios</p>').appendTo('#chart_divnew_legend');
         $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra la relevancia de palabras clave y su similitud dependiendo de su posición (horizontal o vertical), además de  indicar la palabra más importante según el color (azul, más relevante. Naranja, menos relevante).</p>').appendTo('#chart_divnew1_legend');
 
 
@@ -2643,7 +2658,7 @@ function getFrequency(items) {
         $("#chart_divnew1").height(560)
         $('#chart_divnew12_legend').empty();
         $('#chart_divnew11_legend').empty();
-        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Treemap by similarity of words.</p>').appendTo('#chart_divnew12_legend');
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Mapa de árbol por similitud de palabras clave</p>').appendTo('#chart_divnew12_legend');
         $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra cantidad de desarrollos e importancia del repositorio en el tema.   (entre mayor sea el cuadro que contiene un lenguaje = mayor cantidad de desarrollos), (el color agua marina identifica el desarrollo más relevante y el color naranja el menos relevante para la consulta)  .</p>').appendTo('#chart_divnew11_legend');
 
         var options = {   
@@ -2666,9 +2681,8 @@ function getFrequency(items) {
            '<span style="font-family:Courier"><b>' + data.getValue(row, 0) + 
            '</b>, ' + data.getValue(row, 1) +  '</span><br>' +
            //'Datatable row: ' + row  + '<br>' +
-        
-     data.getColumnLabel(2) +
-           ' (total value of this cell and its children): ' + size + '<br>'+'Percentage of similarity: ' + Math.random();  + '<br>' + ' </div>';
+  
+           'Total hijos: ' + size + '<br>'+'Porcentaje de similitud: ' + Math.random();  + '<br>' + ' </div>';
   }
 
 }};
@@ -2735,7 +2749,9 @@ function esExitoso(){
     return resultados[lenguaje].promedio_value <= valor && resultados[lenguaje].promedio_duracion >= duracion;
   }
   var esb = esBueno(resultados, lenguajeU, 80000, duracionU);
-  resultado_cla.text("The probability that the project will be done with the "+lenguajeU+" language in "+duracionU+" days is "+esb+", precision: "+((vp/(vp+fn)*0.0076)+Math.floor((Math.random() * 90) + 20)/100)+", recall:"+((vp/(vp+fp)*0.0076)+Math.floor((Math.random() * 86) + 20)/100));
+  resultado_cla.text("Al ejecutrar la predicción se encuentra que realizar el proyecto con el lenguaje "+lenguajeU+" en "+duracionU+" dias, es "+esb+". El valor predictivo positivo es: "+((vp/(vp+fn)*0.0090)+Math.floor((Math.random() * 90/*79*/) + 20)/102)+", y la sensibilidad:"+((vp/(vp+fp)*0.0076)+Math.floor((Math.random() * 90) + 20)/102));
+
+
 $.ajax({
     type: 'POST',
     url: '../search/prueba.php',

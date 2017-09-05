@@ -61,14 +61,14 @@ if (isset($_POST['email'])) {
   if ($loginFoundUser) {
      $loginStrGroup = "";
     
-	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+  if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;	 
-	$_SESSION['MM_idusuario'] = $row_LoginRS["idusuario"];
+    $_SESSION['MM_UserGroup'] = $loginStrGroup;  
+  $_SESSION['MM_idusuario'] = $row_LoginRS["idusuario"];
 
     if (isset($_SESSION['PrevUrl']) && false) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];  
     }
     header("Location: " . $MM_redirectLoginSuccess );
   }
@@ -96,7 +96,7 @@ if (isset($_POST['email'])) {
   $MM_redirectLoginFailed = "/vighubjson/acceso_error/";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_crenesoft, $crenesoft);
-  	
+    
   $LoginRS__query=sprintf("SELECT idusuario, email, idusuario FROM usuarios WHERE idusuario=%s AND email=%s",
   GetSQLValueString($loginUsername, "int"), GetSQLValueString($password, "text")); 
    
@@ -106,13 +106,13 @@ if (isset($_POST['email'])) {
     
     $loginStrGroup  = mysql_result($LoginRS,0,'idusuario');
     
-	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+  if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;	      
+    $_SESSION['MM_UserGroup'] = $loginStrGroup;       
 
     if (isset($_SESSION['PrevUrl']) && false) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];  
     }
     header("Location: " . $MM_redirectLoginSuccess );
   }
@@ -140,7 +140,7 @@ if (isset($_POST['email'])) {
   $MM_redirectLoginFailed = "/vighubjson/acceso_error/";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_crenesoft, $crenesoft);
-  	
+    
   $LoginRS__query=sprintf("SELECT email, password, admin_priv FROM usuarios WHERE email=%s AND password=%s",
   GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
@@ -150,13 +150,13 @@ if (isset($_POST['email'])) {
     
     $loginStrGroup  = mysql_result($LoginRS,0,'admin_priv');
     
-	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+  if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;	      
+    $_SESSION['MM_UserGroup'] = $loginStrGroup;       
 
     if (isset($_SESSION['PrevUrl']) && false) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];  
     }
     header("Location: " . $MM_redirectLoginSuccess );
   }
@@ -189,13 +189,13 @@ if (isset($_POST['email'])) {
  
 </head>
 <body> 
-	<header>  
+  <header>  
   
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
-		<div id="pun-intro" class="clearfix">
-	
-	      
+    <div id="pun-intro" class="clearfix">
+  
+        
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
           <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
@@ -226,54 +226,54 @@ if (isset($_POST['email'])) {
 
  <?php if($_SESSION['MM_UserGroup']=='Admin'){?> 
 <div class="navbar navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">Panel de administración</a>
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				<ul id="menu"> 
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Panel de administración</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul id="menu"> 
 
-					<li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
-					
-				<li><a href="usuarios_lista.php">Lista de usuarios</a></li>
-				<li><a href="categorias_ver.php">Categorias de Software</a></li>
-				<li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
-				<li><a href="#">Contacto</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
-						<ul class="dropdown-menu">
-					
-							<li class="container">¡Hola!</li>
-							<li>
-								 
-							</li>
-						</ul>
-				</li>
-				</ul>
-				<ul class="nav pull-right">								
-								
-									</a>
-								</li>
-								<li>
-								 
-							</ul>
-			</div>
-		</div>
-	</div>
+          <li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
+          
+        <li><a href="usuarios_lista.php">Lista de usuarios</a></li>
+        <li><a href="categorias_ver.php">Categorias de Software</a></li>
+        <li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
+        <li><a href="#">Contacto</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
+            <ul class="dropdown-menu">
+          
+              <li class="container">¡Hola!</li>
+              <li>
+                 
+              </li>
+            </ul>
+        </li>
+        </ul>
+        <ul class="nav pull-right">               
+                
+                  </a>
+                </li>
+                <li>
+                 
+              </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <?php } else{?>
-		
+    
         <?php } ?>
       
-	</header>
+  </header>
     <nav>
-    	<p> 
+      <p> 
          
         </p>
     </nav>
      <p>&nbsp;</p>
    
     <section id="principal">
-    	<article> 
-		<!-- InstanceBeginEditable name="Contenido" -->      
+      <article> 
+    <!-- InstanceBeginEditable name="Contenido" -->      
         
         <article id="inicio_sesion">
        
@@ -281,19 +281,19 @@ if (isset($_POST['email'])) {
         
         <fieldset class="well">
         <br></br>
-		<legend>Credentials</legend>
-			
-		      <input align="absbottom" placeholder="Correo Electronico" required type="text" name="email" id="email">
-		      <input type="password" placeholder="Contraseña" required name="password" id="password">
+    <legend>credenciales</legend>
+      
+          <input align="absbottom" placeholder="Correo Electronico" required type="text" name="email" id="email">
+          <input type="password" placeholder="Contraseña" required name="password" id="password">
              
-		      <br></br>
-		      <input type="submit" class="btn btn-primary"  value="Sing in"> 
-              <a class="btn btn-success" href="/vighubjson/registrar/">check in</a>
+          <br></br>
+          <input type="submit" class="btn btn-primary"  value="Ingresar"> 
+              <a class="btn btn-success" href="/vighubjson/registrar/">Registrar</a>
         </fieldset></form>
         <img class="logotipovighub" src="imagenes/logo.png">
         </article>
-		<!-- InstanceEndEditable -->
-        </article>    	
+    <!-- InstanceEndEditable -->
+        </article>      
     </section>
     </br>
    

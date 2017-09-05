@@ -66,7 +66,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['password'], "text"),
                        GetSQLValueString($_POST['imagen'], "text"),
                        GetSQLValueString($_POST['categoria'], "text"),
-					   GetSQLValueString($_POST['activo'], "int"));
+             GetSQLValueString($_POST['activo'], "int"));
 
   mysql_select_db($database_crenesoft, $crenesoft);
   $Result1 = mysql_query($insertSQL, $crenesoft) or die(mysql_error());
@@ -110,13 +110,13 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
  
 </head>
 <body> 
-	<header>  
+  <header>  
   
  <div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized"><div id="fa_right" class="fa_tbMainElement"></div><span id="fa_left" class="fa_tbMainElement"><a class="menu-login"><?php include("includes/catalogo.php"); ?></a></span></span></div>
  
-		<div id="pun-intro" class="clearfix">
-		  <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
-	      
+    <div id="pun-intro" class="clearfix">
+      <div class="sun-intro"><h1 id="VigHub">VigHub</h1>
+        
           
           <?php if($_SESSION['MM_UserGroup']=='Admin'){?>
           <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
@@ -131,7 +131,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
           
           <?php }?>
            <?php if($_SESSION['MM_UserGroup']=='Usuario'){?>
-		<div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
+    <div id="itemnavtop"><ul id="menu-topnav" class="menu sf-js-enabled sf-shadow"><li class="principal"><a href="inicio.php" title="Ir al inicio">Principal</a></li><li id="menu-item-3772" class="tutoriales menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-3772"><a href="#" class="sf-with-ul">Ayuda<span class="sf-sub-indicator"> »</span></a><ul class="sub-menu sf-js-enabled sf-shadow">
             
           
           <li id="menu-item-3774" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3774"><a href="http://www.monografias.com/trabajos6/isof/isof.shtml" target="_blank" >Descargar Software</a></li>
@@ -147,59 +147,59 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
  <?php if($_SESSION['MM_UserGroup']=='Admin'){?> 
 <div class="navbar navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">Panel de administración</a>
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				<ul id="menu"> 
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Panel de administración</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul id="menu"> 
 
-					<li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
-					
-				<li><a href="usuarios_lista.php">Lista de usuarios</a></li>
-				<li><a href="categorias_ver.php">Categorias de Software</a></li>
-				<li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
-				<li><a href="#">Contacto</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
-						<ul class="dropdown-menu">
-					
-							<li class="container">¡Hola!</li>
-							<li>
-								 
-							</li>
-						</ul>
-				</li>
-				</ul>
-				<ul class="nav pull-right">								
-								
-									</a>
-								</li>
-								<li>
-								 
-							</ul>
-			</div>
-		</div>
-	</div>
+          <li ><a href="admin_agregar.php">Agregar Usuarios</a></li> 
+          
+        <li><a href="usuarios_lista.php">Lista de usuarios</a></li>
+        <li><a href="categorias_ver.php">Categorias de Software</a></li>
+        <li><a href="categorias_extras_ver.php">Categorias Extras</a></li>
+        <li><a href="#">Contacto</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" target="_black" href="preguntas_admin.php">Preguntas y Respuestas</a>
+            <ul class="dropdown-menu">
+          
+              <li class="container">¡Hola!</li>
+              <li>
+                 
+              </li>
+            </ul>
+        </li>
+        </ul>
+        <ul class="nav pull-right">               
+                
+                  </a>
+                </li>
+                <li>
+                 
+              </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <?php } else{?>
-		
+    
         <?php } ?>
-	</header>
+  </header>
     <nav>
-    	<p> 
+      <p> 
          
         </p>
     </nav>
     <section id="principal">
-    	<article> 
-		<!-- InstanceBeginEditable name="Contenido" -->
+      <article> 
+    <!-- InstanceBeginEditable name="Contenido" -->
        
 <script> 
-  	function cargarimagen()
-  	{
-	  self.name = 'opener'; //degfine com ose llama esta ventana
-	  remote = open('gestionimagen.php', 'remote', 	'width=400, height=150, location=no, scrollbars=yes, menubars=no, resizable=yes, fullscreen=no, status=yes'); //propieades de las imagenes
-	  remote.focus(); // esta ventanda que se abio pase a primer plano
-	  }
+    function cargarimagen()
+    {
+    self.name = 'opener'; //degfine com ose llama esta ventana
+    remote = open('gestionimagen.php', 'remote',  'width=400, height=150, location=no, scrollbars=yes, menubars=no, resizable=yes, fullscreen=no, status=yes'); //propieades de las imagenes
+    remote.focus(); // esta ventanda que se abio pase a primer plano
+    }
   
   </script>  
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -211,28 +211,28 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <div id="contenedor_formulario" class="well">
 
        <fieldset class="well">
-      <legend align="center">¡It's time to sign up!</legend>
+      <legend align="center">¡Registro!</legend>
 
            <div id="datos_usuario" class="span5">
-		<!--==============================================================-->
-		<!-- Datos de usuario -->
-		<!--==============================================================-->
-		<fieldset class="well">
-			<!--==============================================================-->
-			<!-- Titulo para el formulario -->
-			<!--==============================================================-->
-			<legend align="center">Personal information</legend>
-			<div align="center" class="span4">
+    <!--==============================================================-->
+    <!-- Datos de usuario -->
+    <!--==============================================================-->
+    <fieldset class="well">
+      <!--==============================================================-->
+      <!-- Titulo para el formulario -->
+      <!--==============================================================-->
+      <legend align="center">Información personal</legend>
+      <div align="center" class="span4">
           <form  method="post" data-validate="parsley" name="form1" id="form1" action="<?php echo $editFormAction; ?>">
-          <input name="grupo" type="text" required id="grupo" placeholder="Name*" value="" size="32" data-rangelength="[5,100]">
-          <input type="email" name="email" placeholder="email*" required  value="" size="32">
+          <input name="grupo" type="text" required id="grupo" placeholder="Nombre*" value="" size="32" data-rangelength="[5,100]">
+          <input type="email" name="email" placeholder="Correo*" required  value="" size="32">
           
           <input name="imagen" type="text" id="imagen" value="null" placeholder="Avatar. PNG O JPG"  size="32">
           
-          <input type="button" name="button" onClick="javascript:cargarimagen();" id="button" class="btn btn-success" value="load">
+          <input type="button" name="button" onClick="javascript:cargarimagen();" id="button" class="btn btn-success" value="Subir">
           
-          <input type="password" placeholder="password*" name="password" id="password" data-required="true"  data-rangelength="[5,15]" value="" size="32">
-          <input type="password" name="password2" id="password3" placeholder="Re-type your password" required data-equalTo="#password" data-error-message="password wrong" />
+          <input type="password" placeholder="Contraseña*" name="password" id="password" data-required="true"  data-rangelength="[5,15]" value="" size="32">
+          <input type="password" name="password2" id="password3" placeholder="Repite contraseña" required data-equalTo="#password" data-error-message="password wrong" />
           <select name="categoria" id="categoria">
             <?php
 do {  
@@ -243,19 +243,19 @@ do {
   $rows = mysql_num_rows($Recordset1);
   if($rows > 0) {
       mysql_data_seek($Recordset1, 0);
-	  $row_Recordset1 = mysql_fetch_assoc($Recordset1);
+    $row_Recordset1 = mysql_fetch_assoc($Recordset1);
   }
 ?>
           </select>
           
           <br></br>
            <input type="submit" class="btn btn-primary"   value="
-check in">
+Registrarse">
            </div>
            </fieldset>
            </div>
             <div align="right" id="datos_usuario" class="span5">
-			<div class="span4">
+      <div class="span4">
           
            <img src="../imagenes/crenesoft/bienvenidos.gif">
            </div>
@@ -267,7 +267,7 @@ check in">
       </fieldset>
       </div> 
   <!-- InstanceEndEditable -->
-        </article>    	
+        </article>      
     </section>
     <p>&nbsp;</p>
    

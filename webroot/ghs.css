@@ -32,7 +32,7 @@ background-color: rgba(0, 0, 0, 0.2);
   background-image:url(/vighubjson/imagenes/search.png);
   background-repeat:no-repeat;
   height: 384px;
-  width: 50% !important;
+  width: 100% !important;
   background-position:center;
   box-shadow: 0 12px 30px rgba(0,0,0,0.7);
   cursor: pointer;
