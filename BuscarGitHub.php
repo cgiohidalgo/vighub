@@ -566,7 +566,7 @@ bootstrap.min.css:5*/
     <div class="container">
         <div class="row">
           <div id="chart_div13_legend" style="background: #fff; width: 99% !important; margin-left: 1%;"></div>
-          <div id="chart_div1" style="background: #fff; width: 99% !important; margin-left: 1%;" align="center" class="col-md-10"></div>
+          <div id="chart_div1" style="background: #fff; font-size: 13px !important;  width: 99% !important; margin-left: 1%;" align="center" class="col-md-10"></div>
           <div id="chart_div1_legend"></div>
     </div>
      </br>
@@ -620,11 +620,11 @@ bootstrap.min.css:5*/
           <div id="chart_divnew1" align="center" class="col-md-10" style="width: 100%;"></div>
     <div id="chart_divnew1_legend"></div>
     </div>
-      <div class="row">
+      <!--<div class="row">
           <div id="series_chart_div3" align="center" class="col-md-10" style="width: 100%;"></div>
           <div id="series_chart_div3_legend"></div>
           
-    </div>
+    </div>-->
       </br>
       <div class="row">
           <div id="series_chart_div" align="center" class="col-md-10" style="width: 100%;"></div>
@@ -1867,7 +1867,7 @@ reporte4();
 reporte5();
 reporte6();
 reporte7();
-reporte8();
+//reporte8();
 reporte9();
 reporte10();
 reporte11();
@@ -1884,7 +1884,7 @@ escribir.border="3px black solid";
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawVisualization);
       function drawVisualization() {
-        var arr = [["full_name","stargazers_count"]].concat(datos.items.map(function(item){
+        var arr = [["full_name","Frecuencia"]].concat(datos.items.map(function(item){
             return [item.name, item[criterio]];
            }));
         var data = google.visualization.arrayToDataTable(
@@ -1933,7 +1933,7 @@ escribir.border="3px black solid";
 
         $("#chart_div").height(900)
         $('#chart_div_legend').empty();
-        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Palabras claves más relevantes del tema que se encuntran en los datos de los repositorios encontrados.</p>').appendTo('#chart_div_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Haciendo uso de extracción de características, después de realizar la consulta se obtiene un json con todos los datos de la consulta, se aplica un proceso de etiquetado donde la palabra de mayor frecuencia será la más relevante, a partir de esta palabra se realiza un segundo etiquetado pero ya no se evalúa la frecuencia, sino que se evalúa la similitud con la primera palabra.</p>').appendTo('#chart_div_legend');
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
     chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -1955,13 +1955,13 @@ escribir.border="3px black solid";
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
     
-    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.score}))-100;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*0.1; //arriba a abajo eje y
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))-1.3;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*14; //izq a der eje x
+    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*100; //arriba a abajo eje y
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-1.3;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*10; //izq a der eje x
     
-      var arr = [["name","Estrellas","Copias","Lenguaje","Puntuación"]].concat(datos.items.map(function(item){
-            return [item.name, item.stargazers_count, item.forks_count, item.language, item.score];
+      var arr = [["name","Puntuación","Estrellas","Lenguaje","Copias"]].concat(datos.items.map(function(item){
+            return [item.name, item.score, item.stargazers_count, item.language, item.forks_count];
            }));
       var data = google.visualization.arrayToDataTable(arr);
       
@@ -1969,12 +1969,12 @@ escribir.border="3px black solid";
       // A partir de aquí, todo sigue igual
       //--------------------------------------------------------------------------------------------------
       var options =  {
-        title: 'Evaluación de mejores repositorios segun los usuarios',
+        title: 'Evaluación de mejores repositorios segun GitHub',
  
  
  
         hAxis: {
-          title: 'Número de estrellas  por repositorio',
+          title: 'Número de copias  por repositorio',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           ticks: [minimoh, maximoh],
           scaleType: 'log',
@@ -1998,7 +1998,7 @@ escribir.border="3px black solid";
           }
         },
         vAxis: {
-          title: 'Número de copias por respositorio',
+          title: 'Número de estrellas por respositorio',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
           ticks: [minimo, maximo],
           scaleType: 'log',
@@ -2070,14 +2070,15 @@ escribir.border="3px black solid";
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
-      var arr = [["Nombre","Copias","Estrellas","lenguaje","Visitas"]].concat(datos.items.map(function(item){
-            return [item.name, item.forks_count, item.stargazers_count, item.language, item.watchers];
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count})); //izq a der eje x
+    
+      var arr = [["name","stargazers_count","forks_count","language","Score"]].concat(datos.items.map(function(item){
+            return [item.name, item.stargazers_count/(maximo*100), item.forks_count/(maximoh), item.language, item.score];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*10; //izq a der eje x
       /*
       var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+40000; //este es para mover de aarriba a abajo en eje x 
       var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*(-10); //pa taco
@@ -2090,7 +2091,7 @@ escribir.border="3px black solid";
           title: 'Copias por repositorio',
 
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
-          ticks: [minimoh, maximoh],
+          ticks: [0, 1],
           scaleType: 'log',
           viewWindow: {
             min: [7, 30, 0],
@@ -2351,6 +2352,7 @@ data.sort([{column: 1, desc: true}]);
         //console.log(data);
         
         $('#chart_div1_legend').empty();
+        $('#chart_div13_legend').empty();
         $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Organigrama jerárquico por año -> lenguaje -> autor</p>').appendTo('#chart_div13_legend');
       $('<p style="font-size: 16px;line-height: 1.6em; margin: 8px 0; width: 98%; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>En la línea de tiempo se identifican los repositorios generados en la consulta, se obtiene el año de creación, y a partir de este se obtienen los desarrollos con su respectivo lenguaje de programación  y por cada uno se muestra los repositorios.</p>').appendTo('#chart_div1_legend');
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
@@ -2452,9 +2454,9 @@ function getFrequency(items) {
         document.querySelector('.overlay-marker').style.top = Math.floor(cli.getYLocation(dataTable.getValue(5, 1))) - 50 + "px";
         document.querySelector('.overlay-marker').style.left = Math.floor(cli.getXLocation(5)) - 10 + "px";
       };
-      $("#frec_word").height(1000)
+      $("#frec_word").height(1500)
       $('#frec_word_legend').empty();
-      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se extrae las palabras con mayor frecuencia de todos los repositorios que se encuentran en la consulta generada.</p>').appendTo('#frec_word_legend');
+      $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>para sacar la frecuencia de palabras se realiza un proceso de conteo, etiquetado y numeración; donde a cada repositorio encontrado en la consulta le extrae el README, la descripción (si la tiene), una vez sacada esa información se le da una etiqueta y se realiza extracción de palabras clave, cada palabra clave es comparada con la información de cada extraída de cada repositorio, donde  se evalúa palabra a palabra, encontrando su relevancia y frecuencia. si las palabras están dentro de un mismo rango, al unir mas de tres de forma logica el resultado sera el tema central o al repositorio de GitHub de ese tema.</p>').appendTo('#frec_word_legend');
 
       var chart = new google.visualization.BarChart(document.getElementById('frec_word'));
       chart.draw(data, options);
@@ -2462,18 +2464,19 @@ function getFrequency(items) {
   }
     </script>
     <script type="text/javascript">
-    function reporte8() {
+    
+    /*function reporte8() {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
     function drawSeriesChart() {
     
-    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))*14; //izq a der eje x
+    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.watchers}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}))*0.1; //arriba a abajo eje y
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.score}))*-0.3;
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.score}))*14; //izq a der eje x
     
       var arr = [["name","stargazers_count","forks_count","language","Score"]].concat(datos.items.map(function(item){
-            return [item.name, item.stargazers_count/(maximo+100), item.forks_count/(maximoh/14), item.language, item.score ];
+            return [item.name, item.stargazers_count/(maximoh/100), item.forks_count/(maximoh/14), item.language, item.score ];
            }));
       var data = google.visualization.arrayToDataTable(arr);
       
@@ -2481,14 +2484,14 @@ function getFrequency(items) {
       // A partir de aquí, todo sigue igual
       //--------------------------------------------------------------------------------------------------
       var options =  {
-        title: 'Evaluación de mejores repositorios segun GitHub',
+        title: 'Evaluación de mejores repositorios segun los usuarios',
  
  
  
         hAxis: {
           title: 'Puntuación por repositorio',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
-          ticks: [minimoh, maximoh],
+          ticks: [0, maximoh+100],
           scaleType: 'log',
            
           viewWindow: {
@@ -2500,7 +2503,7 @@ function getFrequency(items) {
             fontSize: 14,
             color: '#053061',
             bold: true,
-            italic: false
+            italic: false 
           },
           titleTextStyle: {
             fontSize: 18,
@@ -2512,7 +2515,7 @@ function getFrequency(items) {
         vAxis: {
           title: 'Tamaño de usarios que usan los repositorios',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
-          ticks: [minimo, maximo],
+          ticks: [0, maximo-100],
           scaleType: 'log',
           textStyle: {
             fontSize: 18,
@@ -2545,6 +2548,7 @@ function getFrequency(items) {
         openInNewTab(elemento.clone_url)
       }
     }}
+    */
     </script>
 
     <script type="text/javascript">
@@ -2751,7 +2755,7 @@ function getFrequency(items) {
         $('#chart_divnew12_legend').empty();
         $('#chart_divnew11_legend').empty();
         $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Mapa de árbol por similitud de palabras clave</p>').appendTo('#chart_divnew12_legend');
-        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Mapa de árbol (treemap) que muestra cantidad de desarrollos e importancia del repositorio en el tema.   (entre mayor sea el cuadro que contiene un lenguaje = mayor cantidad de desarrollos), (el color agua marina identifica el desarrollo más relevante y el color naranja el menos relevante para la consulta)  .</p>').appendTo('#chart_divnew11_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Encuentra en la consulta generada cuantos de los desarrollos pertenecen a un lenguaje, seguido evalúa la puntuación que le asigna GitHub a cada repositorio y según esta escala se pinta el color. Así se conoce lenguaje e importancia del repositorio en el tema; según su tamaño: entre mayor sea el cuadro que contiene un lenguaje = mayor cantidad de desarrollos del tema. Según su color: el color naranja (100%) identifica el desarrollo más relevante y el color agua marina (100%) el menos relevante para la consulta.</p>').appendTo('#chart_divnew11_legend');
 
         var options = {   
     minColor: '#e7711c',

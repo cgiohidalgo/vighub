@@ -95,7 +95,7 @@ else
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://api.github.com/search/repositories?q=".urlencode($q)."&amp%3Bpage=".$page."&amp%3Bper_page=".$per_page."&sort=stars&order=desc",
+      CURLOPT_URL => "https://api.github.com/search/repositories?q=".urlencode($q)."&page=".$page."&per_page=".$per_page."&sort=stars&order=desc",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -119,10 +119,10 @@ else
 
   }
   $resultadofinal = null;
-  for($i =0; $i < 1 ; $i++){
+  for($i =0; $i < 2 ; $i++){
     $resultadofinal = peticciongithub($q, $i+1,$per_page,$resultadofinal );
     $tc = $resultadofinal->total_count;
-    if($tc <= ($i+1)*30){
+    if($tc <= ($i+1)*60){
       break;
     }
   }
@@ -145,6 +145,7 @@ else
     echo "cURL Error #:" . $err;
   } else {
     */echo $response;
+    xdebug_start_function_monitor();
   //}
 }
 //echo json_encode($repos);   

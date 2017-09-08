@@ -1,24 +1,28 @@
-<!--este no es-->
+<!--
 
 <form class="form-horizontal" role="form">
+    
     <div class="form-group">
+        
+        
+       
+        <div class="form-group">
         <label class="col-sm-2 control-label">Total Results: </label>
         <div class="col-sm-3">
             <label class="col-sm-2 control-label">{{totalResults}}</label>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Page: </label>
-        <div class="col-sm-2">
-            <select class="form-control" ng-change="search(topic)" ng-model="$parent.page">
-                <option ng-repeat="o in pages" value="{{o}}">{{o}}</option>
-            </select>
-        </div>
-        <label class="col-sm-2 control-label">Items by Page: </label>
+
+       <label class="col-sm-2 control-label">Página número: </label>
         <div class="col-sm-2">
             <select class="form-control" ng-change="search(topic)" ng-model="$parent.pageSize">
-                <option value="30">30</option>
-                <option value="60">60</option>
+                <option value="5">1</option>
+                <option value="10">2</option>
+                <option value="15">3</option>
+                <option value="20">4</option>
+                <option value="25">5</option>
+                <option value="30">6</option>
+
             </select>
         </div>
         <label class="col-sm-2 control-label">Order:</label>
@@ -35,17 +39,28 @@
 
     </div>
 </form>
+-->
 
 <form>
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        <input type="text" class="form-control" placeholder="Filtrar por Usuario, Repositorio o descripción" ng-model="searchFish">
-      </div>      
+      <div class="col-sm-9">
+        <input type="text"  class="form-control" style="height: 29px !important;"  placeholder="Filtrar por Usuario, Repositorio o descripción" ng-model="searchFish">
+      </div>
+      <div class="form-group">
+      <label class="col-sm-2 control-label" style="margin-right: -2% !important;">Página número: </label>
+            <select class="col-sm-1"  ng-change="search(topic)" ng-model="$parent.pageSize">
+                <option value="15">1</option>
+                <option value="20">2</option>
+                <option value="25">3</option>
+                <option value="30">4</option>
+                <option value="35">5</option>
+                <option value="30">Todos</option>
+            </select>
+        </div>      
     </div>
   </form>
 
-<table class="table table-bordered table-hover table-striped">
+<table style="max-width: 99% !important;" class="table table-bordered table-hover table-striped">
     <thead>
         <tr class="success">
             <th></th>
@@ -56,12 +71,7 @@
         </tr>
     </thead>
     <tbody>
-    <tr>
-    <a ng-click="crearJSON()" ng-href="{{ url }}">Descargar copia de esta consulta en formato JSON</a>
-     
-</tr>
-
-        <tr ng-repeat="item in list | orderBy:sortType:sortReverse | filter:searchFish">
+        <tr ng-repeat="item in list | limitTo: page*pageSize | limitTo: -1*pageSize | orderBy:sortType:sortReverse | filter:searchFish">
             <td>{{$index + 1}}</td>
             <td><a title="View details of {{item.owner.login}}" ng-click="userDetails(item.owner.login)">{{item.owner.login}}</a></td>
             <td>{{item.name}}</td>
@@ -69,6 +79,7 @@
             <td><a ng-href="{{item.html_url}}" target="_blank">{{item.html_url}}</a></td>
         </tr>
     </tbody>
+
     
     
     

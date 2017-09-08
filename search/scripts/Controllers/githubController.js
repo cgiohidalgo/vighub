@@ -93,8 +93,8 @@
         scope.topic = "";
         scope.username = "";
         scope.order = "+owner.login";
-        scope.page = 1;
-        scope.pageSize = 30;
+        scope.page =  3;
+        scope.pageSize = 15;
     
         //scope.save = function () {
             scope.savedJSON = angular.toJson(scope.tosave);
