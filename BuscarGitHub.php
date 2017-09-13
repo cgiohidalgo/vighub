@@ -1953,37 +1953,24 @@ escribir.border="3px black solid";
     function reporte2() {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
-    function drawSeriesChart() {
-    
-    var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))-100;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*100; //arriba a abajo eje y
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-1.3;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*10; //izq a der eje x
-    
-      var arr = [["name","Puntuación","Estrellas","Lenguaje","Copias"]].concat(datos.items.map(function(item){
-            return [item.name, item.score, item.stargazers_count, item.language, item.forks_count];
+      
+      function drawSeriesChart() {
+
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*10;
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}));
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.watchers}))*10;
+      
+      var arr = [["name","visitas","Estrellas","Lenguaje","Copias"]].concat(datos.items.map(function(item){
+            return [item.name, item.watchers/(maximoh/10), item.stargazers_count/(maximo+100), item.language, item.forks_count];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      
-      
-      // A partir de aquí, todo sigue igual
-      //--------------------------------------------------------------------------------------------------
+
       var options =  {
-        title: 'Evaluación de mejores repositorios segun GitHub',
- 
- 
- 
+        title: 'Evaluación de los mejores repositorios segun los usuarios',
         hAxis: {
-          title: 'Número de copias  por repositorio',
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
-          ticks: [minimoh, maximoh],
-          scaleType: 'log',
-           
-          viewWindow: {
-            min: [118, 130, 0],
-            max: [17, 30, 0]
-          },
-       
+          title: 'Acceso de usuarios',
+          minValue: -0.2,
           textStyle: {
             fontSize: 14,
             color: '#053061',
@@ -1998,10 +1985,8 @@ escribir.border="3px black solid";
           }
         },
         vAxis: {
-          title: 'Número de estrellas por respositorio',
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
-          ticks: [minimo, maximo],
-          scaleType: 'log',
+          title: 'Estrellas por repositorio ',
+          minValue: -0.2,
           textStyle: {
             fontSize: 18,
             color: '#67001f',
@@ -2016,7 +2001,6 @@ escribir.border="3px black solid";
           }
         },
         bubble: {textStyle: {fontSize: 11}}
- 
       };
       $("#series_new").height(1000)
       $('#series_new_legend').empty();
@@ -2069,34 +2053,25 @@ escribir.border="3px black solid";
     function reporte3() {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawSeriesChart);
-    function drawSeriesChart() {
+      
+      function drawSeriesChart() {
+
       var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*0.1; //arriba a abajo eje y
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*-0.3;
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count})); //izq a der eje x
-    
-      var arr = [["name","stargazers_count","forks_count","language","Score"]].concat(datos.items.map(function(item){
-            return [item.name, item.stargazers_count/(maximo*100), item.forks_count/(maximoh), item.language, item.score];
+      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*10;
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.score}));
+      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.score}))*10;
+      
+      var arr = [["name","Puntuación","Estrellas","Lenguaje","Copias"]].concat(datos.items.map(function(item){
+            return [item.name, item.score/(maximoh/10), item.stargazers_count/(maximo+100), item.language, item.forks_count];
            }));
       var data = google.visualization.arrayToDataTable(arr);
-      /*
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+40000; //este es para mover de aarriba a abajo en eje x 
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*(-10); //pa taco
-      var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}))-2000; //este es para mover de abajo a arriba en eje x
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.forks_count}))*(-1); //pa taco 
-      var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.forks_count}))+10000; //este es para mover de izquierda a derecha en eje x*/
-         var options =  {
-        title: 'Gráfico de burbujas para repositorios de mayor éxito',
-        hAxis: {
-          title: 'Copias por repositorio',
 
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
-          ticks: [0, 1],
-          scaleType: 'log',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          },
+      
+         var options =  {
+        title: 'Repositorios de mayor éxito',
+        hAxis: {
+          title: 'Puntuación de GitHub',
+          minValue: -0.2,
           textStyle: {
             fontSize: 14,
             color: '#053061',
@@ -2112,9 +2087,7 @@ escribir.border="3px black solid";
         },
         vAxis: {
           title: 'Estrellas por repositorio ',
-          //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximo],
-          ticks: [minimo, maximo],
-          scaleType: 'log',
+          minValue: -0.2,
           textStyle: {
             fontSize: 18,
             color: '#67001f',
@@ -2222,7 +2195,7 @@ data.sort([{column: 1, desc: true}]);
           }
         }
       };
-      $("#frec_lang").height(560)
+      $("#frec_lang").height(700)
       $('#frec_lang_legend').empty();
       $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0;text-align: center; background: cornsilk; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Se obtiene la frecuencia haciendo uso de extracción de características, donde se toma cada repositorio generado en la consulta, se extrae el lenguaje en el que se desarrolló y se hace un conteo de las veces se repite.</p>').appendTo('#frec_lang_legend');
       var chart = new google.visualization.BarChart(document.getElementById('frec_lang'));
@@ -2861,4 +2834,4 @@ $.ajax({
  </script>
     
 </body>
-<!-- InstanceEnd --></html>
+<!-- InstanceEnd --></html>7

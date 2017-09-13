@@ -1,5 +1,25 @@
+ 
+ <head>
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  
  <table class="table table-hover table-striped">
     <thead>
+    <p style="font-size: 21px;
+    line-height: 0.6em;
+    margin: 0px;
+    margin-left: 17px;
+    margin-right: 17px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background: #5cb85c;
+    padding: 16px;
+    border-radius: 195px;">HISOTRIAL DE CONSULTAS</p>
         <tr class="success">
             <th>Identificador </th>
             <th>Consulta</th>
@@ -7,7 +27,7 @@
     </thead>
     <tbody>
     <ul>
-        <tr ng-repeat="item in historial">
+        <tr ng-repeat= "item in historial | limitTo: 10 | limitTo: -1*pageSize" >
             <td>{{$index + 1}}</td>
             <td><a  ng-click="searchistory(item.id)">{{item.consulta}}</a></td>
         </tr>
