@@ -601,7 +601,7 @@ bootstrap.min.css:5*/
           <div id="frec_type" align="center" class="col-md-6" style="width: 100%;"></div>
           <div id="frec_type_legend"></div>
 
-          <div id="chart_div" align="center" class="col-md-8" style="width: 100%;"></div>
+          <div id="chart_div" align="center" class="col-md-8" style="width: 100%; position: relative;"></div>
           <div id="chart_div_legend"></div>
 
           <div id="frec_word" align="center" class="col-md-6" style="width: 100%;"></div>
@@ -1866,7 +1866,7 @@ reporte3();
 reporte4();
 reporte5();
 reporte6();
-reporte7();
+//reporte7();
 //reporte8();
 reporte9();
 reporte10();
@@ -1892,10 +1892,10 @@ escribir.border="3px black solid";
         data.sort([{column: 1, desc: true}]);
 
         var options = {
-      title : 'Palabras clave relevantes en motores de búsqueda de contenido en Internet',
+      title : 'PALABRAS CLAVE RELEVANTES EN MOTORES DE BÚSQUEDA',
       legend: { position: "none" },
       hAxis: {
-          title: 'Plabras clave',
+          title: 'Palabras clave',
           //ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 5, 10, maximoh ],
           textStyle: {
             fontSize: 4,
@@ -1933,7 +1933,7 @@ escribir.border="3px black solid";
 
         $("#chart_div").height(900)
         $('#chart_div_legend').empty();
-        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Haciendo uso de extracción de características, después de realizar la consulta se obtiene un json con todos los datos de la consulta, se aplica un proceso de etiquetado donde la palabra de mayor frecuencia será la más relevante, a partir de esta palabra se realiza un segundo etiquetado pero ya no se evalúa la frecuencia, sino que se evalúa la similitud con la primera palabra.</p>').appendTo('#chart_div_legend');
+        $('<p style="font-size: 16px;line-height: 1.6em; margin: 25px 0; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>Para obtener las palabras claves en motores de búsqueda se toman todos los repositorios que arroja la consulta, se obiete las palabras que con mayor número de frecuencia se encuentren en cada repositorio y estas se las compara con las otras palabras claves de los demás repositorios. Así se obtiene la frecuencia de las palabras claves más usadas en el tema.</p>').appendTo('#chart_div_legend');
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
     chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -1956,9 +1956,9 @@ escribir.border="3px black solid";
       
       function drawSeriesChart() {
 
-      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))-100;
+      var maximo = Math.max.apply(Math, datos.items.map(function(e){return e.stargazers_count}))+0.2;
       var minimo = Math.min.apply(Math, datos.items.map(function(e){return e.stargazers_count}))*10;
-      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}));
+      var minimoh = Math.min.apply(Math, datos.items.map(function(e){return e.watchers}))+0.2;
       var maximoh = Math.max.apply(Math, datos.items.map(function(e){return e.watchers}))*10;
       
       var arr = [["name","visitas","Estrellas","Lenguaje","Copias"]].concat(datos.items.map(function(item){
@@ -1967,40 +1967,33 @@ escribir.border="3px black solid";
       var data = google.visualization.arrayToDataTable(arr);
 
       var options =  {
-        title: 'Evaluación de los mejores repositorios segun los usuarios',
-        hAxis: {
-          title: 'Acceso de usuarios',
-          minValue: -0.2,
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
+        title: 'EVALUACIÓN DE LOS MEJORES REPOSITORIOS SEGÚN LOS USUARIOS',
+
+         hAxis: {
+          title: 'visitas a repositorio',
+          ticks: [-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,1,1.1],
+          minValue: -0.1
+
         },
         vAxis: {
-          title: 'Estrellas por repositorio ',
-          minValue: -0.2,
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
+          title: 'Número de estrellas por respositorio',
+          ticks: [-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,1,1,1.1,1.1],
+          minValue: -0.1
+          
         },
-        bubble: {textStyle: {fontSize: 11}}
+        bubble: {
+      textStyle: {
+        textStyle: {
+        auraColor: 'none'
+      },
+        fontSize: 5,
+      
+        color: 'black',
+        italic: true
+      }
+    },
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] }
+
       };
       $("#series_new").height(1000)
       $('#series_new_legend').empty();
@@ -2068,40 +2061,31 @@ escribir.border="3px black solid";
 
       
          var options =  {
-        title: 'Repositorios de mayor éxito',
+        title: 'REPOSITORIOS DE MAYOR ÉXITO',
         hAxis: {
           title: 'Puntuación de GitHub',
-          minValue: -0.2,
-          textStyle: {
-            fontSize: 14,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#053061',
-            bold: true,
-            italic: false
-          }
+          ticks: [-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,1,1.1],
+          minValue: -0.1
+
         },
         vAxis: {
-          title: 'Estrellas por repositorio ',
-          minValue: -0.2,
-          textStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 18,
-            color: '#67001f',
-            bold: true,
-            italic: false
-          }
+          title: 'Estrellas por repositorio',
+          ticks: [-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,1,1,1.1,1.1],
+          minValue: -0.1
+          
         },
-        bubble: {textStyle: {fontSize: 11}}
+        bubble: {
+      textStyle: {
+        textStyle: {
+        auraColor: 'none'
+        },
+          fontSize: 5,
+          color: 'black',
+          italic: true
+        }
+     },
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] }
+
       };
       $("#series_chart_div").height(800)
       $('#series_chart_legend').empty();
@@ -2154,7 +2138,7 @@ data.sort([{column: 1, desc: true}]);
 
       var options = {
 
-        title: 'Frecuencia de lenguajes de programación',
+        title: 'FRECUENCIA DE LENGUAJES DE PROGRAMACIÓN',
         legend: { position: "none" },
         chart: { title: 'Cheese',
                     subtitle: 'pieces' },
@@ -2218,13 +2202,13 @@ data.sort([{column: 1, desc: true}]);
       google.charts.setOnLoadCallback(drawAxisTickColors);
       function drawAxisTickColors() {
       var m = datos.items.map(function(item){
-            return [item.name, item.stargazers_count, item.owner.type === 'Organization' ? 'gold': 'silver'];
+            return [item.owner.login, item.stargazers_count, item.owner.type === 'Organization' ? 'gold': 'silver'];
            });
       var data = google.visualization.arrayToDataTable( 
          [['Nombre', 'Frequency', { role: 'style' }]].concat(m));
       
       var options = {
-        title: 'Frecuencia de actividad de organizaciones y usuarios',
+        title: 'FRECUENCIA DE ORGANIZACIONES Y USUARIOS',
         chart : {
           subtitle: 'Sales, Expenses, and Profit: 2014-2017',
         },
@@ -2272,7 +2256,7 @@ data.sort([{column: 1, desc: true}]);
       chart.draw(data, options);
         google.visualization.events.addListener(chart, 'select', selectHandler); 
       function selectHandler(e) {
-        var name =data.getValue(chart.getSelection()[0].row, 0)   
+        var name = data.getValue(chart.getSelection()[0].row, 0)   
         var elemento = datos.items.filter(function(e){
           return e.name == name;
         })[0];
@@ -2296,7 +2280,7 @@ data.sort([{column: 1, desc: true}]);
           return e.language;
           language.sort();
         })
-        var titulo = "Linea de tiempo";
+        var titulo = "Línea de tiempo";
         var lenguajes = _.uniq([titulo].concat(datositems.map(function(item){
             return  new Date(item.created_at).getFullYear()+""//language;
           })));
@@ -2326,7 +2310,7 @@ data.sort([{column: 1, desc: true}]);
         
         $('#chart_div1_legend').empty();
         $('#chart_div13_legend').empty();
-        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">Organigrama jerárquico por año -> lenguaje -> autor</p>').appendTo('#chart_div13_legend');
+        $('<p style="font-size: 18px; line-height: 1.6em; margin: 2px 0; margin-left: 17px; margin-right: 17px;  text-align: center; color: black; font-weight: bold; background: white; padding: 16px;">LÍNEA DE TIEMPO</p>').appendTo('#chart_div13_legend');
       $('<p style="font-size: 16px;line-height: 1.6em; margin: 8px 0; width: 98%; background: cornsilk; margin-left: 17px; margin-right: 17px;text-align: center; color: black;"><b style="font-size 18px; font-weight: bold;">Caption:</b>En la línea de tiempo se identifican los repositorios generados en la consulta, se obtiene el año de creación, y a partir de este se obtienen los desarrollos con su respectivo lenguaje de programación  y por cada uno se muestra los repositorios.</p>').appendTo('#chart_div1_legend');
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
         google.visualization.events.addListener(chart, 'select', selectHandler); 
@@ -2345,6 +2329,7 @@ data.sort([{column: 1, desc: true}]);
         //chart.draw(data, {allowHtml:true});
       }}
    </script>
+   <!--
    <script type="text/javascript">
     function reporte7 (){
       google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -2366,7 +2351,7 @@ function getFrequency(items) {
     }
     var obj = []
     for (var prop in freq) {
-      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
+      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of", "fromthe", "examplesfrom"], prop))
         obj.push([prop, freq[prop]]);
     } 
     return obj;
@@ -2375,7 +2360,24 @@ function getFrequency(items) {
             return acc+" "+item.description;
 },"");
 
-   var arr = getFrequency(texto.split(" "));
+    //        
+          function getDuplas(texto){
+          let palabras = texto.split(" ")
+          let duplas = []
+          for(let i = 0; i< palabras.length ; i+=2)
+          {
+            if(i == palabras.length-1){
+              duplas.push([palabras[i]])
+            }
+            else{
+              duplas.push([palabras[i],palabras[i+1]])
+            }
+          }
+          return duplas
+        }
+        
+   var arr = getFrequency(getDuplas(texto).map(function(dupla){ return dupla.join(" ") }))
+   //
 
       data.addRows(arr);
       data.sort([{column: 1, desc: true}]);
@@ -2436,6 +2438,7 @@ function getFrequency(items) {
     }
   }
     </script>
+    -->
     <script type="text/javascript">
     
     /*function reporte8() {
@@ -2695,7 +2698,8 @@ function getFrequency(items) {
 function getFrequency(items) {
     var freq = {};
     for (var i=0; i<items.length;i++) {
-        var character = items[i].toLowerCase().replace(/\W/g, '');
+        //var character = items[i].toLowerCase().replace(/\W/g, '');
+        var character = items[i].toLowerCase().trim();
         if (freq[character]) {
            freq[character]++;
         } else {
@@ -2704,7 +2708,7 @@ function getFrequency(items) {
     }
     var obj = []
     for (var prop in freq) {
-      if(freq[prop] > 1 && ! _.contains(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of"], prop))
+      if(freq[prop] > 1 && ! _.contains(["a", "of the", "with a", "this is", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves","","a","at","the", "i", "to", "this", "for", "with", "on", "in", "or", "is", "an","and", "of", "with","in"], prop))
         obj.push([prop, 'Global', freq[prop], freq[prop]]);
     } 
     return obj;
@@ -2713,8 +2717,25 @@ function getFrequency(items) {
       var texto = datos.items.reduce(function(acc,item){  
             return acc+" "+item.description;
 },"");
-
-   var arr = getFrequency(texto.split(" "));
+        
+        //-----------------------
+        function getDuplas(texto){
+          let palabras = texto.split(" ")
+          let duplas = []
+          for(let i = 0; i< palabras.length ; i+=2)
+          {
+            if(i == palabras.length-1){
+              duplas.push([palabras[i]])
+            }
+            else{
+              duplas.push([palabras[i],palabras[i+1]])
+            }
+          }
+          return duplas
+        }
+        
+   var arr = getFrequency(getDuplas(texto).map(function(dupla){ return dupla.join(" ") }))
+   //------------------
 
         var data = google.visualization.arrayToDataTable(
           [
@@ -2834,4 +2855,4 @@ $.ajax({
  </script>
     
 </body>
-<!-- InstanceEnd --></html>7
+<!-- InstanceEnd --></html>
