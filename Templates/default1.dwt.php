@@ -154,23 +154,7 @@ if (!isset($_SESSION)) {
           <div>
             <div>
                 <div>
-                  <div>
-                      <ul>
-                        <li>
-    <!-- END html_validation -->
-                        </li>
-                      </ul>
-                      <!-- BEGIN switch_footer_links -->
-                      <ul>
-                        <li>
-                            <!-- BEGIN footer_link -->
-                              <!-- BEGIN switch_separator --> | <!-- END switch_separator -->
-                              </a>
-                            <!-- END footer_link -->
-                        </li>
-                      </ul>
-                      <!-- END switch_footer_links -->
-                  </div>
+                  
                   <br />
                   <p class="center">
                       
