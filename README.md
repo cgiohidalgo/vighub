@@ -28,7 +28,7 @@ Before you start, we recommend that you review the documentation of [proxy setti
 
    *Running this command will cause the server to restart automatically so that the changes are applied*
 
-6. Install the prerequisites, you can use `ap-get install apache2 && apt nano && apt nodejs && ` to do this. 
+6. Install the prerequisites, you can use `ap-get install apache2 && apt nano && apt nodejs && php7` to do this. 
 
 7. Logout (type `logout` in console) and intall mongo (use: wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 && sudo apt-get install gnupg && wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -).
