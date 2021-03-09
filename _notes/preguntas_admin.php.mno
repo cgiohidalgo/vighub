@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_Recordset1" value="name:id;datatype:int,name:pregunta;datatype:string,name:autor;datatype:string,name:created;datatype:datetime,name:modified;datatype:datetime" />
-	<infoitem key="UD_todos" value="name:id;datatype:int,name:pregunta;datatype:string,name:autor;datatype:string,name:created;datatype:datetime,name:modified;datatype:datetime" />
-	<infoitem key="UD_respuesta" value="name:id;datatype:int,name:pregunta_id;datatype:int,name:respuesta;datatype:string,name:colaborador;datatype:string,name:created;datatype:datetime,name:modified;datatype:datetime" />
-	<infoitem key="UD_respuetas" value="name:id;datatype:int,name:pregunta_id;datatype:int,name:respuesta;datatype:string,name:colaborador;datatype:string,name:created;datatype:datetime,name:modified;datatype:datetime" />
-</info>

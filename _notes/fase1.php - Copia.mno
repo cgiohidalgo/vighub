@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_conusltaCanvas" value="name:idcanvas;datatype:int,name:segmentos;datatype:blob,name:propuesta;datatype:blob,name:canales;datatype:blob,name:relacion;datatype:blob,name:flujos;datatype:blob,name:recursos;datatype:blob,name:actividades;datatype:blob,name:red;datatype:blob,name:estructura;datatype:blob,name:create;datatype:datetime,name:modified;datatype:datetime" />
-</info>
